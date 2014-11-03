@@ -1,0 +1,277 @@
+<%= form_for @post do |f| %>
+	<h1><%= image_tag 'logo.png'%></h1>
+	<div class="container">
+		<table class="form">
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>フライヤー</p>
+				</th>
+				<td class="form_center">
+					<ul class="form_uploads">
+						<li>
+							<div id="preview_field1"></div>
+							<input type="file" onchange="preview(this,1)" class="" id="">
+						</li>
+						<li>
+							<div id="preview_field2"></div>
+							<input type="file" onchange="preview(this,2)" class="" id="">
+						</li>
+						<li>
+							<div id="preview_field3"></div>
+							<input type="file" onchange="preview(this,3)" class="" id="">
+						</li>
+						<li>
+							<div id="preview_field4"></div>
+							<input type="file" onchange="preview(this,4)" class="" id="">
+						</li>
+					</ul>
+					<p class="form_center_text clear">※『.jpg』、『.jpeg』、『.png』、『.gif』ファイルを4つまでアップロードできます。</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>イベント名</p>
+				</th>
+				<td class="form_center">
+          <%= f.text_field :title, :class=>"form_text", :placeholder=>"(例) 名古屋アートクラブ定期展覧会" %>
+					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>紹介文</p>
+				</th>
+				<td class="form_center">
+          <%= f.text_area :body, :class=>"form_text", :placeholder=>"(例) 名古屋アートクラブ定期展覧会", :rows=>8 %>
+					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+          <p><span class="form_left_tag required">必須</span>カテゴリ</p>
+				</th>
+				<td class="form_center">
+					<%= f.collection_select :category_id, Category.all, :id, :title_ja %>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>開催日</p>
+				</th>
+				<td class="form_center">
+          <%= f.text_field :open_date, :class=>"form_date", :placeholder=>"(例) 2014-11-03", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
+					<span class="form_date_span">　〜　</span>
+          <%= f.text_field :close_date, :class=>"form_date", :placeholder=>"(例) 2014-11-06", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
+					<p class="form_date_text form_center_text">※開催期間中に休館日などがある場合は紹介文にその盲お書きください</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>開催時間</p>
+				</th>
+				<td class="form_center">
+          <%= f.text_field :open_time, :class=>"form_time timepicker", :placeholder=>"(例) 10:00" %>
+					<span>　〜　</span>
+          <%= f.text_field :close_time, :class=>"form_time timepicker", :placeholder=>"(例) 17:00" %>
+					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>開催場所</p>
+				</th>
+				<td class="form_center">
+          <%= f.text_field :title, :class=>"form_text", :placeholder=>"(例) ギャラリー名古屋" %>
+					<p class="form_center_text">※部屋番号なども明記してください。</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>料金</p>
+				</th>
+				<td class="form_center">
+          <%= f.number_field :charge, :class=>"form_text", :placeholder=>"(例) 0" %>
+					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>主催者</p>
+				</th>
+				<td class="form_center">
+          <%= f.text_field :promoter, :class=>"form_text", :placeholder=>"(例) 名古屋アートクラブ" %>
+					<p class="form_center_text">※</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag free">自由</span>Webサイト</p>
+				</th>
+				<td class="form_center">
+          <%= f.url_field :url, :class=>"form_text", :placeholder=>"(例) http://artpocket.me" %>
+					<p class="form_center_text">※ホームページやブログのURLをそのまま入力して下さい</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag free">自由</span>Facebook</p>
+				</th>
+				<td class="form_center">
+          <%= f.url_field :facebook, :class=>"form_text", :placeholder=>"(例) https://facebook.com/artpocket.me" %>
+					<p class="form_center_text">※イベントページやグループページのURLをそのまま入力してください</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag free">自由</span>Twitter</p>
+				</th>
+				<td class="form_center">
+          <%= f.url_field :twitter, :class=>"form_text", :placeholder=>"(例) https://twitter.com/artpocket" %>
+					<p class="form_center_text">※プロフィールページのURLをそのまま入力してください</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>連絡先</p>
+				</th>
+				<td class="form_center">
+          <%= f.email_field :mail, :class=>"form_text", :placeholder=>"(例) info@artpocket.me", :type=>"email" %>
+					<p class="form_center_text">※メールアドレスを入力してください</p>
+				</td>
+				<td class="form_right">
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>規約の同意</p>
+				</th>
+				<td class="form_center">
+					<input type="checkbox"> <a href="">利用規約</a>に同意する
+				</td>
+			</tr>
+		</table>
+		<p id="form_submit" class="form_submit">確認画面へ</p>
+	</div>
+<% end %>
+
+<div id="confirm">
+	<h1><%= image_tag 'logo.png'%></h1>
+	<div class="container">
+		<table class="form">
+			<tr>
+				<th class="form_left">
+					<p>イベント名</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">名古屋アートクラブ定期展覧会</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>紹介文</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>開催日</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">10/3 〜 10/10</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>開催時間</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">10:00 〜 17:00</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>開催場所</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">ギャラリー名古屋</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>料金</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">無料</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>主催者</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">名古屋アートクラブ</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>Webサイト</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">http://artpocket.me</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>Facebook</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">https://facebook.com/artpocket.me</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>Twitter</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">https://twitter.com/artpocket</p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>お問い合わせ先</p>
+				</th>
+				<td class="form_center">
+					<p class="form_center_text">info@atrtpocket.me</p>
+				</td>
+			</tr>
+		</table>
+		<button id="confirm_cancel" class="form_cancel">入力し直す</button>
+		<button id="confirm_submit" class="form_submit">以上の内容で申請する</button>
+	</div>
+</div>
