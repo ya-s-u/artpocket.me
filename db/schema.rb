@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20141103014046) do
   end
 
   create_table "posts", force: true do |t|
-    t.string   "hash",        null: false
+    t.string   "id_hash",     null: false
     t.string   "title"
     t.text     "body"
     t.integer  "category_id", null: false

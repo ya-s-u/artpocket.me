@@ -1,7 +1,7 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.string  :hash,  :null => false
+      t.string  :id_hash,  :null => false
       t.string  :title
       t.text    :body
       t.integer :category_id, :null => false, :index => true
