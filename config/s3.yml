@@ -1,0 +1,4 @@
+bucket: 'artpocket.me'
+access_key_id: 'AKIAI4NDC7E4AMJZIP4A'
+secret_access_key: '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'
+s3_host_name: s3-ap-northeast-1.amazonaws.com
