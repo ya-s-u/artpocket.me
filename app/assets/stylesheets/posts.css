@@ -229,6 +229,7 @@ font-weight: normal;
 .form_left {
 	width: 200px;
 	vertical-align: top;
+	font-weight: bold;
 }
 
 .form_left_tag {
