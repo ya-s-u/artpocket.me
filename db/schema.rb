@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104130300) do
+ActiveRecord::Schema.define(version: 20141104150854) do
 
   create_table "categories", force: true do |t|
     t.string   "title",      null: false
@@ -64,16 +64,16 @@ ActiveRecord::Schema.define(version: 20141104130300) do
   end
 
   create_table "posts", force: true do |t|
-    t.string   "id_hash",     null: false
+    t.string   "id_hash",                  null: false
     t.string   "title"
     t.text     "body"
-    t.integer  "category_id", null: false
-    t.date     "open_date",   null: false
-    t.date     "close_date",  null: false
-    t.time     "open_time",   null: false
-    t.time     "close_time",  null: false
-    t.integer  "charge",      null: false
-    t.string   "promoter",    null: false
+    t.integer  "category_id",              null: false
+    t.date     "open_date",                null: false
+    t.date     "close_date",               null: false
+    t.time     "open_time",                null: false
+    t.time     "close_time",               null: false
+    t.integer  "charge",                   null: false
+    t.string   "promoter",                 null: false
     t.string   "url"
     t.string   "facebook"
     t.string   "twitter"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20141104130300) do
     t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "place",       default: "", null: false
   end
 
   create_table "users", force: true do |t|
