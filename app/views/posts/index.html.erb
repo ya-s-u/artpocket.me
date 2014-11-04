@@ -1,12 +1,85 @@
-<%= debug @posts %>
-<%= debug @pictures %>
+<div class="header">
+	<div class="container">
+		<h1><%= image_tag 'logo.png'%></h1>
+		<ul class="nav">
+			<li>このサイトとは</li>
+			<li>利用規約</li>
+			<li>お問い合わせ</li>
+		</ul>
+		<ul class="category">
+			<li class="active">デザイン・イラスト</li>
+			<li>デザイン・イラスト</li>
+			<li>デザイン・イラスト</li>
+			<li>デザイン・イラスト</li>
+			<li>デザイン・イラスト</li>
+		</ul>
+	</div>
+</div>
+<div class="index">
+	<ul class="index_list">
+    <% @posts.each do |post| %>
+      <li>
+        <strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong>
+        <a href="./detail.html">
+          <%= image_tag(@posts[12].pictures[0].authenticated_image_url(:large)) %>
+        </a>
+        <p class="index_list_title"><%= post.title %></p>
+        <p class="index_list_data"><%= post.open_date %> 〜 <%= post.close_date %></p>
+        <p class="index_list_text"><%= post.body %>...</p>
+      </li>
+    <% end %>
+		<li>
+			<strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong>
+			<a href="./detail.html">
+				<img src="http://imgcc.naver.jp/kaze/mission/USER/20140726/77/743697/121/736x1041xdd1758bd7d721e3708e59e4.jpg">
+			</a>
+			<p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+		</li>
+		<li>
+			<a href="./detail.html">
+				<img src="http://img01.ecgo.jp/usr/ecowin3/img/121004113526.jpg">
+			</a>
+			<p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+		</li>
+		<li><a href="./detail.html"><img src="http://www.city.nerima.tokyo.jp/manabu/bunka/museum/tenrankai/tenrankaikako/tenrankai2011/takise-genichi.images/takisegenichi.jpg"></a><p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+    </li>
+		<li><strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong><a href="./detail.html"><img src="http://artscape.jp/report/curator/__icsFiles/artimage/2012/10/15/c002curator/1210sa_05_omote_fin2.jpg"></a><p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+    </li>
+		<li><a href="./detail.html"><img src="http://www.city.nerima.tokyo.jp/manabu/bunka/museum/tenrankai/tenrankaikako/tenrankai2010/nakamurahiroshi2010.images/nakamurahiroshi.jpg"></a><p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+    </li>
+		<li><a href="./detail.html"><img src="http://norieikegami.com/images/posters/5show.jpg"></a><p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+    </li>
+		<li><a href="./detail.html"><img src="http://www.loftwork.com/lw-content/users/21159/d8e3702bdd91d9035b3358ccd39fd847.jpg"></a><p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+    </li>
+		<li><a href="./detail.html"><img src="http://www.cinra.net/uploads/img/news/2012/20120411_finlanddesign_v.jpg"></a><p class="index_list_title">ヴァロットン展　冷たい炎の画家</p>
+			<p class="index_list_data">12/3〜12/10</p>
+			<p class="index_list_text">（写真は福岡会場とパーティーで行われた恒例のzineプレゼンテーションタイムの様子です。面白かった…！） 福岡の...</p>
+    </li>
+	</ul>
+</div>
+<div class="footer">
+</div>
 
-<div class="container">
-  <!-- Example row of columns -->
-  <% @pictures.each_with_index {|picture, i| %>
-    <%= image_tag(picture.authenticated_image_url(:large)) if picture.image.present? %>
-    <%= picture.created_at %>
-  <% } %>
-</div> <!-- /container -->
-<%= link_to 'New Article', new_post_path %>
-<!--
+<script type="text/javascript">
+$(window).load(function() {
+	$('.index_list').masonry({
+		itemSelector: 'li',
+		columnWidth: 300,
+		isFitWidth: true,
+	});
+})
+</script>
