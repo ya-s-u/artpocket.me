@@ -1,0 +1,8 @@
+<div class="container">
+  <!-- Example row of columns -->
+  <% @pictures.each_with_index {|picture, i| %>
+    <%= image_tag(picture.authenticated_image_url(:large)) if picture.image.present? %>
+    <%= picture.created_at %>
+  <% } %>
+</div> <!-- /container -->
+<%= link_to 'New Article', new_post_path %>
