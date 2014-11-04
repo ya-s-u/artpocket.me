@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104085146) do
+ActiveRecord::Schema.define(version: 20141104130300) do
 
   create_table "categories", force: true do |t|
     t.string   "title",      null: false
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20141104085146) do
     t.string   "facebook"
     t.string   "twitter"
     t.string   "mail"
-    t.integer  "manager_id",  null: false
+    t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
