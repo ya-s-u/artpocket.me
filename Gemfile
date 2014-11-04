@@ -39,4 +39,4 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'paperclip'
-gem 'aws-sdk-core'
+gem 'aws-sdk'

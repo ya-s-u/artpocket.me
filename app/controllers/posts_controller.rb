@@ -26,13 +26,17 @@ class PostsController < ApplicationController
         :url,
         :facebook,
         :twitter,
-        :mial
+        :mail
       ).merge(
         :id_hash => BCrypt::Password.create("my password"),
         :manager_id => 1
       )
-    @post = Post.new(data)
-    @post.save
+    #@post = Post.new(data)
+    #@post.save
+
+    data = params.require(:post).permit(:image).merge(:post_id => 1, :priority => 1)
+    @picture = Picture.new(data)
+    @picture.save
     redirect_to posts_path
   end
 
