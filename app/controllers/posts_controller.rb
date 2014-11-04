@@ -29,25 +29,20 @@ class PostsController < ApplicationController
         :twitter,
         :mail
       ).merge(
-        :id_hash => BCrypt::Password.create("my password"),
+        :id_hash => SecureRandom.urlsafe_base64(6),
         :manager_id => 1,
       )
     @post = Post.new(data)
     @post.save
 
-    if params[:images]
-      i = 0;
-      params[:images].each do |image|
+    i = 0;
+    params[:images].each do |image|
+      if image
         @post.pictures.create(:image => image, :priority => i)
         i += 1;
       end
     end
 
-=begin
-    data = params.require(:post).permit(:image).merge(:post_id => 1, :priority => 1)
-    @picture = Picture.new(data)
-    @picture.save
-=end
     redirect_to posts_path
   end
 

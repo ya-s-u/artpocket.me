@@ -1,4 +1,3 @@
-<%= debug @posts %>
 <div class="header">
 	<div class="container">
 		<h1><%= image_tag 'logo.png'%></h1>
@@ -22,7 +21,7 @@
       <li>
         <strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong>
         <a href="./detail.html">
-          <%= image_tag(@posts[12].pictures[0].authenticated_image_url(:large)) %>
+          <%= image_tag( post.pictures[0].authenticated_image_url(:pc_thumb)) %>
         </a>
         <p class="index_list_title"><%= post.title %></p>
         <p class="index_list_data"><%= post.open_date %> 〜 <%= post.close_date %></p>

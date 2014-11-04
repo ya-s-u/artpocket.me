@@ -2,9 +2,10 @@ class Picture < ActiveRecord::Base
   belongs_to :post
 
   has_attached_file :image, :styles => {
-      :thumb  => "100x100>",
-      :medium => "200x200>",
-      :large => "600x400>"
+      :mobile_thumb  => "540x9999>",
+      :mobile_large  => "1080x9999>",
+      :pc_thumb => "240x9999>",
+      :pc_large => "475x9999>"
     },
     :storage => :s3,
     :s3_permissions => :private,
