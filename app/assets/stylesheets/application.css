@@ -1,15 +1,83 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
  *= require_tree .
  *= require_self
  */
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: url("../images/bg.png") repeat;
+  font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  width: 100%;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  color: #555;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.clear {
+  clear: both;
+}
+
+.header {
+  background: white;
+}
+
+.header_logo {
+  text-align: center;
+  margin: 100px auto 60px auto;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.header_logo img {
+  width: 320px;
+}
+
+.nav {
+  position: absolute;
+  right: 60px;
+  top: 5px;
+}
+
+.nav li {
+  float: left;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.nav li:hover {
+  border-bottom: 1px dotted black;
+}
