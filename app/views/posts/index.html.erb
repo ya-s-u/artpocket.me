@@ -20,9 +20,9 @@
     <% @posts.each do |post| %>
       <li>
         <strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong>
-        <a href="./posts/show/<%= post.id %>.html">
+        <%= link_to post_path(post.id) do %>
           <%= image_tag(post.pictures[0].authenticated_image_url(:pc_thumb)) %>
-        </a>
+        <% end %>
         <p class="index_list_title"><%= truncate(post.title, :length=>35) %></p>
         <p class="index_list_data"><%= post.open_date %> 〜 <%= post.close_date %></p>
         <p class="index_list_text"><%= truncate(post.body, :length=>50) %></p>
@@ -71,9 +71,6 @@
     </li>
 	</ul>
 </div>
-<div class="footer">
-</div>
-
 <script type="text/javascript">
 $(window).load(function() {
 	$('.index_list').masonry({

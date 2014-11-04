@@ -198,34 +198,6 @@ font-weight: normal;
 	border-bottom: 1px solid #eee;
 }
 
-.detail_bottom_calendar_wrap {
-	overflow-x: scroll;
-}
-
-.detail_bottom_calendar {
-	table-layout: fixed;
-	border-top: 1px solid #eee;
-}
-
-.detail_bottom_calendar tr {
-	vertical-align: middle;
-	text-align: center;
-}
-
-.detail_bottom_calendar th {
-	width: 130px;
-	padding: 10px 0 10px 5px;
-	border-bottom: 1px solid #eee;
-	background: #eee;
-}
-
-.detail_bottom_calendar td {
-	width: 130px;
-	padding: 10px 0;
-	border-bottom: 1px solid #eee;
-	background: white;
-}
-
 .detail_bottom_map {
 	margin: 40px 0;
 }
