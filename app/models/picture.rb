@@ -1,5 +1,5 @@
 class Picture < ActiveRecord::Base
-  belongs_to :posts
+  belongs_to :post
 
   has_attached_file :image, :styles => {
       :thumb  => "100x100>",
@@ -9,7 +9,7 @@ class Picture < ActiveRecord::Base
     :storage => :s3,
     :s3_permissions => :private,
     :s3_credentials => "#{Rails.root}/config/s3.yml",
-    :path => ":pictures/:style/:id.:extension"
+    :path => "pictures/:style/:id.:extension"
 
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 

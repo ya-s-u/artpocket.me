@@ -1,3 +1,6 @@
+<%= debug @posts %>
+<%= debug @pictures %>
+
 <div class="container">
   <!-- Example row of columns -->
   <% @pictures.each_with_index {|picture, i| %>
@@ -6,3 +9,4 @@
   <% } %>
 </div> <!-- /container -->
 <%= link_to 'New Article', new_post_path %>
+<!--
