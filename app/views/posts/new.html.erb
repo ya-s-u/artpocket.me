@@ -179,15 +179,36 @@
 <% end %>
 
 <div id="confirm">
-	<h1><%= image_tag 'logo.png'%></h1>
-	<div class="container">
+	<h1 class="form_logo"><%= image_tag 'logo.png'%></h1>
+	<div class="container form_container">
 		<table class="form">
+			<tr>
+				<th class="form_left">
+					<p>フライヤー</p>
+				</th>
+				<td class="form_center">
+					<ul class="form_uploads">
+						<li>
+							<div id="confirm_field1"></div>
+						</li>
+						<li>
+							<div id="confirm_field2"></div>
+						</li>
+						<li>
+							<div id="confirm_field3"></div>
+						</li>
+						<li>
+							<div id="confirm_field4"></div>
+						</li>
+					</ul>
+				</td>
+			</tr>
 			<tr>
 				<th class="form_left">
 					<p>イベント名</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">名古屋アートクラブ定期展覧会</p>
+					<p id="confirm_title" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -195,7 +216,15 @@
 					<p>紹介文</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
+					<p id="confirm_body" class="form_center_text"></p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p>カテゴリ</p>
+				</th>
+				<td class="form_center">
+					<p id="confirm_category" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -203,7 +232,7 @@
 					<p>開催日</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">10/3 〜 10/10</p>
+					<p class="form_center_text"><span id="confirm_open_date"></span> 〜 <span id="confirm_close_date"></span></p>
 				</td>
 			</tr>
 			<tr>
@@ -211,7 +240,7 @@
 					<p>開催時間</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">10:00 〜 17:00</p>
+					<p class="form_center_text"><span id="confirm_open_time"></span> 〜 <span id="confirm_close_time"></span></p>
 				</td>
 			</tr>
 			<tr>
@@ -219,7 +248,7 @@
 					<p>開催場所</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">ギャラリー名古屋</p>
+					<p id="confirm_place" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -227,7 +256,7 @@
 					<p>料金</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">無料</p>
+					<p id="confirm_charge" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -235,7 +264,7 @@
 					<p>主催者</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">名古屋アートクラブ</p>
+					<p id="confirm_promoter" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -243,7 +272,7 @@
 					<p>Webサイト</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">http://artpocket.me</p>
+					<p id="confirm_url" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -251,7 +280,7 @@
 					<p>Facebook</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">https://facebook.com/artpocket.me</p>
+					<p id="confirm_facebook" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -259,7 +288,7 @@
 					<p>Twitter</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">https://twitter.com/artpocket</p>
+					<p id="confirm_twitter" class="form_center_text"></p>
 				</td>
 			</tr>
 			<tr>
@@ -267,11 +296,11 @@
 					<p>お問い合わせ先</p>
 				</th>
 				<td class="form_center">
-					<p class="form_center_text">info@atrtpocket.me</p>
+					<p id="confirm_mail" class="form_center_text"></p>
 				</td>
 			</tr>
 		</table>
-		<button id="confirm_cancel" class="form_cancel">入力し直す</button>
-		<button id="confirm_submit" class="form_submit">以上の内容で申請する</button>
+		<p id="confirm_cancel" class="form_cancel">入力し直す</p>
+		<p id="confirm_submit" class="form_submit">以上の内容で申請する</p>
 	</div>
 </div>

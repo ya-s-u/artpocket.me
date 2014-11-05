@@ -9,6 +9,24 @@ $(function() {
 
   FormSubmit.click(function() {
     Form.hide();
+
+    var form_list = [
+      'title',  'body', 'open_date',  'close_date',
+      'open_time',  'close_time', 'place',  'charge',
+      'promoter', 'url',  'facebook', 'twitter',
+      'mail'
+    ];
+    $.each(form_list, function(i, value) {
+        $('#confirm_'+value).text($('#post_'+value).val());
+    });
+
+    var category = [
+      'イラスト・グラフィック',  '建築・インテリア・空間',  'プロダクト・パッケージ',
+      '写真・映像・デジタル', 'ファッション', 'インスタレーション',
+      'セミナー・講演会', 'ワークショップ'
+    ];
+    $('#confirm_category').text(category[$('#post_category_id').val()-1]);
+
     Confirm.show();
     $('html,body').animate({
       scrollTop: 0
@@ -39,6 +57,7 @@ function preview(ele, n) {
     fr.onload = function() {
         img.src = fr.result;  // 読み込んだ画像データをsrcにセット
         document.getElementById('preview_field'+n).appendChild(img);
+        document.getElementById('confirm_field'+n).appendChild(img);
     }
     fr.readAsDataURL(file);  // 画像読み込み
 }

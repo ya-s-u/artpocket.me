@@ -331,11 +331,11 @@ font-weight: normal;
 
 .form_submit {
 	display: block;
+	width: 550px;
 	margin: 20px auto 40px auto;
-	padding: 12px 220px;
+	padding: 12px 0;
 	font-size: 16px;
-	border: 0px;
-	outline: none;
+	text-align: center;
 	color: white;
 	background: #EC4550;
 	border-radius: 3px;
