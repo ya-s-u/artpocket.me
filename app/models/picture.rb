@@ -1,5 +1,6 @@
 class Picture < ActiveRecord::Base
   belongs_to :post
+  data = YAML.load_file("#{Rails.root}/config/s3.yml")[Rails.env]
 
   has_attached_file :image, :styles => {
       :mobile_thumb  => "540x9999>",
@@ -8,14 +9,15 @@ class Picture < ActiveRecord::Base
       :pc_large => "475x9999>"
     },
     :storage => :s3,
-    :s3_permissions => :private,
     :s3_credentials => "#{Rails.root}/config/s3.yml",
-    :path => "pictures/:style/:id.:extension"
+    :path => "pictures/:style/:id.:extension",
+    :url => ":s3_alias_url",
+    :s3_host_alias => data["bucket"]
 
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   def authenticated_image_url(style)
-    image.s3_object(style).url_for(:read, :secure => true)
+    image.s3_object(style).url_for(:read, :secure => false)
   end
 
 end

@@ -21,7 +21,7 @@
       <li>
         <strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong>
         <%= link_to post_path(post.id) do %>
-          <%= image_tag(post.pictures[0].authenticated_image_url(:pc_thumb)) %>
+          <%= image_tag(post.pictures[0].image.url(:pc_thumb)) %>
         <% end %>
         <p class="index_list_title"><%= truncate(post.title, :length=>35) %></p>
         <p class="index_list_data"><%= post.open_date %> 〜 <%= post.close_date %></p>
