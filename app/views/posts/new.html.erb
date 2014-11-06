@@ -69,7 +69,29 @@
 				<td class="form_center">
           <%= f.text_field :open_date, :class=>"form_date", :placeholder=>"(例) 2014-11-03", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
 					<span class="form_date_span">　〜　</span>
-          <%= f.text_field :close_date, :class=>"form_date", :placeholder=>"(例) 2014-11-06", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
+          <%= f.text_field :close_date, :class=>"form_date beatpicker", :placeholder=>"(例) 2014-11-06", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
+					<script>
+					customOptions = {
+						daysSimple: ["日" , "月" , "火" , "水" , "木" , "金" , "土"],
+						monthsFull: ["1月" , "2月" , "3月" , "4月" , "5月" , "6月" , "7月" , "8月" , "9月" , "10月" , "11月" , "12月"],
+						labels: {
+							today: "Tod",
+							gotoDateInput: "Insert your date",
+							gotoDateButton: "Set",
+							clearButton: "Wipe"
+						},
+						modules: {
+							header: true,
+							footer: false,
+							daysOfTheWeek: true,
+							navBar: true,
+							today: false,
+							gotoDate: false,
+							icon: false,
+							clear: false
+						}
+					}
+					</script>
 					<p class="form_date_text form_center_text">※開催期間中に休館日などがある場合は紹介文にその盲お書きください</p>
 				</td>
 				<td class="form_right">
