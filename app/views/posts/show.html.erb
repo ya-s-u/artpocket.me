@@ -1,40 +1,33 @@
 <div class="header">
   <div class="container">
-    <h1 class="header_logo"><%= image_tag 'logo.png'%></h1>
-    <ul class="nav">
+    <h1 class="header_logo show_logo"><%= image_tag 'logo.png'%></h1>
+    <ul class="header_nav">
       <li>このサイトとは</li>
       <li>利用規約</li>
       <li>お問い合わせ</li>
     </ul>
-    <ul class="category">
-      <li class="active">デザイン・イラスト</li>
-      <li>デザイン・イラスト</li>
-      <li>デザイン・イラスト</li>
-      <li>デザイン・イラスト</li>
-      <li>デザイン・イラスト</li>
-    </ul>
   </div>
 </div>
-<div class="detail">
+<div class="show">
 	<div class="container">
-		<div class="detail_left">
-			<ul class="detail_left_picts">
+		<div class="show_left">
+			<ul class="show_left_picts">
         <% @post.pictures.each do |image| %>
 				  <li><%= image_tag(image.authenticated_image_url(:pc_large)) %></li>
         <% end %>
 			</ul>
 		</div>
-		<div class="detail_right_wrap">
-			<div class="detail_right">
-				<h2 class="detail_right_title"><%= @post.title %></h2>
-				<ul class="detail_right_sns">
+		<div class="show_right_wrap">
+			<div class="show_right">
+				<h2 class="show_right_title"><%= @post.title %></h2>
+				<ul class="show_right_sns">
 					<li class="twitter"></li>
 					<li class="facebook"></li>
 					<li class="google"></li>
 					<li class="hatena"></li>
 				</ul>
-				<p class="detail_right_summary"><%= simple_format @post.body %></p>
-				<table class="detail_right_info">
+				<p class="show_right_body"><%= simple_format @post.body %></p>
+				<table class="show_right_info">
 					<tbody>
 						<tr>
 							<th>開催日</th>
@@ -74,12 +67,68 @@
 						</tr>
 					</tbody>
 				</table>
+        <table class="show_right_calendar">
+          <tbody>
+            <tr>
+              <th>開催日</th>
+              <td>
+                <%= @post.open_date %> 〜 <%= @post.close_date %>
+                </br>
+                <%= @post.open_time %> 〜 <%= @post.close_time %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 			</div>
 		</div>
 	</div>
-	<div class="detail_bottom">
+	<div class="show_bottom">
 		<div class="container">
-			<div id="map" class="detail_bottom_map" style="width: 100%; height: 300px;"></div>
+			<div id="map" class="show_bottom_map" style="width: 100%; height: 300px;"></div>
 		</div>
 	</div>
 </div>
+
+<script>
+$(window).load(function() {
+  var map;
+  map = new GMaps({
+   div: '#map',
+   lat: 35.681382,
+   lng: 139.766084,
+   zoo: 16,
+  });
+
+  map.addMarker({
+   lat: 35.681382,
+   lng: 139.766084,
+   title: '東京駅',
+   infoWindow: {
+     content: '<p>HTML Content</p>'
+   }
+  });
+
+ $(".show_right_sns .twitter").socialbutton("twitter", {
+   button : "horizontal",
+   text : "つぶやきに含めるテキスト",
+   url : "<%=request.url%>",
+ }).width(95);
+
+ $(".show_right_sns .facebook").socialbutton("facebook_like", {
+   button : "button_count",
+   url : "<%=request.url%>",
+ }).width(110);
+
+ $(".show_right_sns .google").socialbutton("google_plusone", {
+   button : "medium",
+   url : "<%=request.url%>",
+   count : true,
+ }).width(70);
+
+ $(".show_right_sns .hatena").socialbutton("hatena", {
+   button : "standard",
+   url : "<%=request.url%>",
+   title : "<%=@post.title%>",
+ }).width(70);
+})
+</script>

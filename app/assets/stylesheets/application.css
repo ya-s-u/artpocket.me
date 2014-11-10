@@ -56,33 +56,43 @@ table {
   clear: both;
 }
 
+/* Header */
+
 .header {
   background: white;
 }
 
 .header_logo {
   text-align: center;
-  margin: 100px auto 60px auto;
   font-size: 18px;
   font-weight: normal;
 }
 
 .header_logo img {
-  width: 320px;
+  width: 300px;
 }
 
-.nav {
+.header_nav {
   position: absolute;
   right: 60px;
   top: 5px;
 }
 
-.nav li {
+.header_nav li {
   float: left;
   margin-left: 20px;
   font-size: 14px;
 }
 
-.nav li:hover {
-  border-bottom: 1px dotted black;
+.header_category {
+  overflow: hidden;
+  margin: 30px 0;
+  padding: 12px 0;
+}
+
+.header_category li {
+  float: left;
+  margin: 0 15px;
+  color: #999;
+  line-height: 1.2em;
 }

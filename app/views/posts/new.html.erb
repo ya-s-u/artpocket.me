@@ -56,7 +56,7 @@
 				<th class="form_left">
           <p><span class="form_left_tag required">必須</span>カテゴリ</p>
 				</th>
-				<td class="form_center">
+				<td class="form_center form_select">
 					<%= f.collection_select :category_id, Category.all, :id, :title_ja %>
 				</td>
 				<td class="form_right">
@@ -71,7 +71,7 @@
 					<span class="form_date_span">　〜　</span>
           <%= f.text_field :close_date, :class=>"form_date beatpicker", :placeholder=>"(例) 2014-11-06", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
 					<script>
-					customOptions = {
+						customOptions = {
 						daysSimple: ["日" , "月" , "火" , "水" , "木" , "金" , "土"],
 						monthsFull: ["1月" , "2月" , "3月" , "4月" , "5月" , "6月" , "7月" , "8月" , "9月" , "10月" , "11月" , "12月"],
 						labels: {
@@ -192,7 +192,7 @@
 					<p><span class="form_left_tag required">必須</span>規約の同意</p>
 				</th>
 				<td class="form_center">
-					<input type="checkbox"> <a href="">利用規約</a>に同意する
+					<input type="checkbox" id="form_check"> <a href="">利用規約</a>に同意する
 				</td>
 			</tr>
 		</table>
@@ -206,7 +206,7 @@
 		<table class="form">
 			<tr>
 				<th class="form_left">
-					<p>フライヤー</p>
+					<p><span class="form_left_tag required">必須</span>フライヤー</p>
 				</th>
 				<td class="form_center">
 					<ul class="form_uploads">
@@ -227,7 +227,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>イベント名</p>
+					<p><span class="form_left_tag required">必須</span>イベント名</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_title" class="form_center_text"></p>
@@ -235,7 +235,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>紹介文</p>
+					<p><span class="form_left_tag required">必須</span>紹介文</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_body" class="form_center_text"></p>
@@ -243,7 +243,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>カテゴリ</p>
+					<p><span class="form_left_tag required">必須</span>カテゴリ</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_category" class="form_center_text"></p>
@@ -251,7 +251,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>開催日</p>
+					<p><span class="form_left_tag required">必須</span>開催日</p>
 				</th>
 				<td class="form_center">
 					<p class="form_center_text"><span id="confirm_open_date"></span> 〜 <span id="confirm_close_date"></span></p>
@@ -259,7 +259,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>開催時間</p>
+					<p><span class="form_left_tag required">必須</span>開催時間</p>
 				</th>
 				<td class="form_center">
 					<p class="form_center_text"><span id="confirm_open_time"></span> 〜 <span id="confirm_close_time"></span></p>
@@ -267,7 +267,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>開催場所</p>
+					<p><span class="form_left_tag required">必須</span>開催場所</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_place" class="form_center_text"></p>
@@ -275,7 +275,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>料金</p>
+					<p><span class="form_left_tag required">必須</span>料金</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_charge" class="form_center_text"></p>
@@ -283,7 +283,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>主催者</p>
+					<p><span class="form_left_tag required">必須</span>主催者</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_promoter" class="form_center_text"></p>
@@ -291,7 +291,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>Webサイト</p>
+					<p><span class="form_left_tag free">自由</span>Webサイト</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_url" class="form_center_text"></p>
@@ -299,7 +299,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>Facebook</p>
+					<p><span class="form_left_tag free">自由</span>Facebook</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_facebook" class="form_center_text"></p>
@@ -307,7 +307,7 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>Twitter</p>
+					<p><span class="form_left_tag free">自由</span>Twitter</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_twitter" class="form_center_text"></p>
@@ -315,14 +315,14 @@
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p>お問い合わせ先</p>
+					<p><span class="form_left_tag required">必須</span>お問い合わせ先</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_mail" class="form_center_text"></p>
 				</td>
 			</tr>
 		</table>
-		<p id="confirm_cancel" class="form_cancel">入力し直す</p>
-		<p id="confirm_submit" class="form_submit">以上の内容で申請する</p>
+		<p id="confirm_cancel" class="confirm_cancel">入力し直す</p>
+		<p id="confirm_submit" class="confirm_submit">以上の内容で申請する</p>
 	</div>
 </div>

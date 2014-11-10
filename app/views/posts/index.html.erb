@@ -1,12 +1,12 @@
 <div class="header">
 	<div class="container">
-		<h1 class="header_logo"><%= image_tag 'logo.png'%></h1>
-		<ul class="nav">
+		<h1 class="header_logo index_logo"><%= image_tag 'logo.png'%></h1>
+		<ul class="header_nav">
 			<li>このサイトとは</li>
 			<li>利用規約</li>
 			<li>お問い合わせ</li>
 		</ul>
-		<ul class="category">
+		<ul class="header_category">
 			<li class="active">デザイン・イラスト</li>
 			<li>デザイン・イラスト</li>
 			<li>デザイン・イラスト</li>
@@ -19,7 +19,7 @@
 	<ul class="index_list">
     <% @posts.each do |post| %>
       <li>
-        <strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong>
+        <strong class="index_list_new"><span class="index_list_new_inner"></span><span class="index_list_new_text">人気</span></strong>
         <%= link_to post_path(post.id) do %>
           <%= image_tag(post.pictures[0].image.url(:pc_thumb)) %>
         <% end %>
@@ -29,7 +29,6 @@
       </li>
     <% end %>
 		<li>
-			<strong class="new catch"><span class="catch-inner"></span><span class="words">人気</span></strong>
 			<a href="./detail.html">
 				<img src="http://imgcc.naver.jp/kaze/mission/USER/20140726/77/743697/121/736x1041xdd1758bd7d721e3708e59e4.jpg">
 			</a>

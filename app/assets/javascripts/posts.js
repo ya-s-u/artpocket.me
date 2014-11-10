@@ -49,62 +49,20 @@ function indexFunc() {
  * Post#show
  **********************************************/
 function showFunc() {
-   var map;
-   map = new GMaps({
-     div: '#map',
-     lat: 35.681382,
-     lng: 139.766084,
-     zoo: 16,
-   });
-
-   map.addMarker({
-     lat: 35.681382,
-     lng: 139.766084,
-     title: '東京駅',
-     infoWindow: {
-       content: '<p>HTML Content</p>'
-     }
-   })
-
-   $(window).load(function() {
-     $(".detail_right_sns .twitter").socialbutton("twitter", {
-       button : "horizontal",
-       text : "つぶやきに含めるテキスト",
-       url : "<%=request.url%>",
-     }).width(95);
-
-     $(".detail_right_sns .facebook").socialbutton("facebook_like", {
-       button : "button_count",
-       url : "<%=request.url%>",
-     }).width(110);
-
-     $(".detail_right_sns .google").socialbutton("google_plusone", {
-       button : "medium",
-       url : "<%=request.url%>",
-       count : true,
-     }).width(70);
-
-     $(".detail_right_sns .hatena").socialbutton("hatena", {
-       button : "standard",
-       url : "<%=request.url%>",
-       title : "<%=@post.title%>",
-     }).width(70);
-   })
-
    $(window).scroll(function () {
      var s = $(this).scrollTop();
-     var r = $('.detail_right_wrap').offset().top;
-     var l = $('.detail_left').offset().top + $('.detail_left').height();
-     var f = l-r-$('.detail_right').height();
+     var r = $('.show_right_wrap').offset().top;
+     var l = $('.show_left').offset().top + $('.show_left').height();
+     var f = l-r-$('.show_right').height();
 
      if (0 <= s && s <= r) {
-       $('.detail_right').css('position','static');
+       $('.show_right').css('position','static');
      } else if (s > r && s < f) {
-       $('.detail_right').css('position','fixed');
-       $('.detail_right').css('top','0');
+       $('.show_right').css('position','fixed');
+       $('.show_right').css('top','0');
      } else if (s > f) {
-       $('.detail_right').css('position','absolute');
-       $('.detail_right').css('top',f);
+       $('.show_right').css('position','absolute');
+       $('.show_right').css('top',f);
      }
    })
  }
@@ -121,7 +79,20 @@ function newFunc() {
 
     Confirm.hide();
 
+    var isChecked = false;
+    $('#form_check').change(function(){
+    	if ($(this).is(':checked')) {
+    		isChecked = true;
+        FormSubmit.addClass('active');
+    	} else {
+    		isChecked = false;
+        FormSubmit.removeClass('active');
+    	}
+    });
+
     FormSubmit.click(function() {
+      if(!isChecked) return;
+
       Form.hide();
 
       var form_list = [
@@ -146,6 +117,7 @@ function newFunc() {
         scrollTop: 0
       }, 300);
     })
+
     ConfirmCancel.click(function() {
       Form.show();
       Confirm.hide();
@@ -153,6 +125,7 @@ function newFunc() {
         scrollTop: 0
       }, 300);
     })
+
     ConfirmSubmit.click(function() {
       var n=0;
       $(this).addClass('disable').text('送信中...');
