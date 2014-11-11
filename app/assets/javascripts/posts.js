@@ -156,4 +156,20 @@ function newFunc() {
       'maxTime': '23:30',
     });
   });
+
+  $('#form_radio_charge').hide();
+
+  $('#form_radio_charge_free').click(function(){
+    $('#form_radio_charge_free').attr("checked", true );
+    $('#form_radio_charge').attr("checked", false );
+    $(':input[name="post[charge]"]').val(0);
+    $('#form_input_charge').val("");
+  });
+
+  $('#form_input_charge').change(function(){
+    $('#form_radio_charge').attr("checked", true );
+    $('#form_radio_charge_free').attr("checked", false );
+    $(':input[name="post[charge]"]').val($(this).val());
+  });
+
 }

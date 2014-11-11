@@ -70,28 +70,6 @@
           <%= f.text_field :open_date, :class=>"form_date", :placeholder=>"(例) 2014-11-03", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
 					<span class="form_date_span">　〜　</span>
           <%= f.text_field :close_date, :class=>"form_date beatpicker", :placeholder=>"(例) 2014-11-06", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
-					<script>
-						customOptions = {
-						daysSimple: ["日" , "月" , "火" , "水" , "木" , "金" , "土"],
-						monthsFull: ["1月" , "2月" , "3月" , "4月" , "5月" , "6月" , "7月" , "8月" , "9月" , "10月" , "11月" , "12月"],
-						labels: {
-							today: "Tod",
-							gotoDateInput: "Insert your date",
-							gotoDateButton: "Set",
-							clearButton: "Wipe"
-						},
-						modules: {
-							header: true,
-							footer: false,
-							daysOfTheWeek: true,
-							navBar: true,
-							today: false,
-							gotoDate: false,
-							icon: false,
-							clear: false
-						}
-					}
-					</script>
 					<p class="form_date_text form_center_text">※開催期間中に休館日などがある場合は紹介文にその盲お書きください</p>
 				</td>
 				<td class="form_right">
@@ -126,7 +104,10 @@
 					<p><span class="form_left_tag required">必須</span>料金</p>
 				</th>
 				<td class="form_center">
-          <%= f.number_field :charge, :class=>"form_text", :placeholder=>"(例) 0" %>
+          <div class="form_free"><input type="radio" name="charge" id="form_radio_charge_free" checked>無料<span>/</span></div>
+					<input type="radio" name="charge" id="form_radio_charge">
+					<input type="number" id="form_input_charge" class="form_text form_input_charge" placeholder="(例) 700" min="100" max="10000" step="100"><span>円</span>
+					<%= f.hidden_field :charge %>
 					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
 				</td>
 				<td class="form_right">
@@ -200,7 +181,7 @@
 	</div>
 <% end %>
 
-<div id="confirm">
+<div id="confirm" class="confirm">
 	<h1 class="form_logo"><%= image_tag 'logo.png'%></h1>
 	<div class="container form_container">
 		<table class="form">
@@ -326,3 +307,25 @@
 		<p id="confirm_submit" class="confirm_submit">以上の内容で申請する</p>
 	</div>
 </div>
+<script>
+customOptions = {
+	daysSimple: ["日" , "月" , "火" , "水" , "木" , "金" , "土"],
+	monthsFull: ["1月" , "2月" , "3月" , "4月" , "5月" , "6月" , "7月" , "8月" , "9月" , "10月" , "11月" , "12月"],
+	labels: {
+		today: "Tod",
+		gotoDateInput: "Insert your date",
+		gotoDateButton: "Set",
+		clearButton: "Wipe"
+	},
+	modules: {
+		header: true,
+		footer: false,
+		daysOfTheWeek: true,
+		navBar: true,
+		today: false,
+		gotoDate: false,
+		icon: false,
+		clear: false
+	}
+}
+</script>

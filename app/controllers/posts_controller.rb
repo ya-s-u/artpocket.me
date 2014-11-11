@@ -13,6 +13,8 @@ class PostsController < ApplicationController
   end
 
   def create
+    id_hash = SecureRandom.urlsafe_base64(6)
+
     data = params.require(:post).permit(
         :pictures,
         :title,
@@ -29,7 +31,7 @@ class PostsController < ApplicationController
         :twitter,
         :mail
       ).merge(
-        :id_hash => SecureRandom.urlsafe_base64(6),
+        :id_hash => id_hash,
         :manager_id => 1,
       )
     @post = Post.new(data)
@@ -43,7 +45,11 @@ class PostsController < ApplicationController
       end
     end
 
-    redirect_to posts_path
+    redirect_to complete_post, id_hash
+  end
+
+  def complete
+    @post = Post.find_by(:id_hash => params[:id_hash])
   end
 
 end

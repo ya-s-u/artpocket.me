@@ -22,7 +22,7 @@
 
 .index_list li a {
 	display: block;
-	border: 5px solid white;
+	border: 6px solid white;
 }
 
 .index_list li a img {
@@ -361,6 +361,21 @@
 	-moz-border-radius: 3px;
 }
 
+.form_free {
+	float: left;
+	width: 180px;
+	margin: 9px 0;
+}
+
+.form_free span {
+	margin: 0 60px;
+}
+
+.form_input_charge {
+	width: 200px;
+	margin-right: 5px;
+}
+
 .form_submit {
 	display: block;
 	width: 550px;
@@ -378,6 +393,10 @@
 .form_submit.active {
 	cursor: pointer;
 	background: #EC4550;
+}
+
+.confirm {
+	padding: 40px 0 80px 0;
 }
 
 .confirm_cancel {
