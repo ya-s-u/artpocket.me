@@ -1,0 +1,18 @@
+/* statics */
+.statics_title {
+  font-size: 24px;
+}
+
+/* statics#terms */
+.terms > li {
+  padding: 20px 0;
+  border-top: 1px solid #eaeaea;
+}
+
+.tems_title {
+  font-size: 20px;
+}
+
+ol li {
+  list-style: decimal;
+}
