@@ -110,7 +110,7 @@ function newFunc() {
       '写真・映像・デジタル', 'ファッション', 'インスタレーション',
       'セミナー・講演会', 'ワークショップ'
     ];
-    $('#confirm_category').text(category[$('#post_category_id').val()-1]);
+    $('#confirm_category').text(category[Math.floor($('#post_category_id').val()/10)]);
 
     Confirm.show();
     $('html,body').animate({
