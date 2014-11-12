@@ -29,6 +29,9 @@ $.route(
   }},
   {path: /.*\/posts/,func: function() {
     indexFunc();
+  }},
+  {path: /./,func: function() {
+    indexFunc();
   }}
 );
 
