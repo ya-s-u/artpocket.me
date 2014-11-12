@@ -71,82 +71,66 @@ function showFunc() {
  * Post#new
  **********************************************/
 function newFunc() {
-    var Form = $('#new_post');
-    var FormSubmit = $('#form_submit');
-    var Confirm = $('#confirm');
-    var ConfirmCancel = $('#confirm_cancel');
-    var ConfirmSubmit = $('#confirm_submit');
+  var Form = $('#new_post');
+  var FormSubmit = $('#form_submit');
+  var Confirm = $('#confirm');
+  var ConfirmCancel = $('#confirm_cancel');
+  var ConfirmSubmit = $('#confirm_submit');
 
-    Confirm.hide();
+  Confirm.hide();
 
-    var isChecked = false;
-    $('#form_check').change(function(){
-    	if ($(this).is(':checked')) {
-    		isChecked = true;
-        FormSubmit.addClass('active');
-    	} else {
-    		isChecked = false;
-        FormSubmit.removeClass('active');
-    	}
+  var isChecked = false;
+  $('#form_check').change(function(){
+  	if ($(this).is(':checked')) {
+  		isChecked = true;
+      FormSubmit.addClass('active');
+  	} else {
+  		isChecked = false;
+      FormSubmit.removeClass('active');
+  	}
+  });
+
+  FormSubmit.click(function() {
+    if(!isChecked) return;
+
+    Form.hide();
+
+    var form_list = [
+      'title',  'body', 'open_date',  'close_date',
+      'open_time',  'close_time', 'place',  'charge',
+      'promoter', 'url',  'facebook', 'twitter',
+      'mail'
+    ];
+    $.each(form_list, function(i, value) {
+        $('#confirm_'+value).text($('#post_'+value).val());
     });
 
-    FormSubmit.click(function() {
-      if(!isChecked) return;
+    var category = [
+      'イラスト・グラフィック',  '建築・インテリア・空間',  'プロダクト・パッケージ',
+      '写真・映像・デジタル', 'ファッション', 'インスタレーション',
+      'セミナー・講演会', 'ワークショップ'
+    ];
+    $('#confirm_category').text(category[$('#post_category_id').val()-1]);
 
-      Form.hide();
+    Confirm.show();
+    $('html,body').animate({
+      scrollTop: 0
+    }, 300);
+  })
 
-      var form_list = [
-        'title',  'body', 'open_date',  'close_date',
-        'open_time',  'close_time', 'place',  'charge',
-        'promoter', 'url',  'facebook', 'twitter',
-        'mail'
-      ];
-      $.each(form_list, function(i, value) {
-          $('#confirm_'+value).text($('#post_'+value).val());
-      });
+  ConfirmCancel.click(function() {
+    Form.show();
+    Confirm.hide();
+    $('html,body').animate({
+      scrollTop: 0
+    }, 300);
+  })
 
-      var category = [
-        'イラスト・グラフィック',  '建築・インテリア・空間',  'プロダクト・パッケージ',
-        '写真・映像・デジタル', 'ファッション', 'インスタレーション',
-        'セミナー・講演会', 'ワークショップ'
-      ];
-      $('#confirm_category').text(category[$('#post_category_id').val()-1]);
-
-      Confirm.show();
-      $('html,body').animate({
-        scrollTop: 0
-      }, 300);
-    })
-
-    ConfirmCancel.click(function() {
-      Form.show();
-      Confirm.hide();
-      $('html,body').animate({
-        scrollTop: 0
-      }, 300);
-    })
-
-    ConfirmSubmit.click(function() {
-      var n=0;
-      $(this).addClass('disable').text('送信中...');
-      $('#new_post').submit();
-    })
-
-  function preview(ele, n) {
-      if (!ele.files.length) return;  // ファイル未選択
-
-      var file = ele.files[0];
-      if (!/^image\/(png|jpg|jpeg|gif)$/.test(file.type)) return;  // typeプロパティでMIMEタイプを参照
-
-      var img = document.createElement('img');
-      var fr = new FileReader();
-      fr.onload = function() {
-          img.src = fr.result;  // 読み込んだ画像データをsrcにセット
-          document.getElementById('preview_field'+n).appendChild(img);
-          document.getElementById('confirm_field'+n).appendChild(img);
-      }
-      fr.readAsDataURL(file);  // 画像読み込み
-  }
+  ConfirmSubmit.click(function() {
+    var n=0;
+    $(this).addClass('disable').text('送信中...');
+    $('#new_post').submit();
+  })
 
   $(function() {
     $('.timepicker').timepicker({

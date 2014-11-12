@@ -107,7 +107,7 @@
           <div class="form_free"><input type="radio" name="charge" id="form_radio_charge_free" checked>無料<span>/</span></div>
 					<input type="radio" name="charge" id="form_radio_charge">
 					<input type="number" id="form_input_charge" class="form_text form_input_charge" placeholder="(例) 700" min="100" max="10000" step="100"><span>円</span>
-					<%= f.hidden_field :charge %>
+					<%= f.hidden_field :charge, :value=>'0' %>
 					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
 				</td>
 				<td class="form_right">
@@ -308,6 +308,22 @@
 	</div>
 </div>
 <script>
+function preview(ele, n) {
+	if (!ele.files.length) return;  // ファイル未選択
+
+	var file = ele.files[0];
+	if (!/^image\/(png|jpg|jpeg|gif)$/.test(file.type)) return;  // typeプロパティでMIMEタイプを参照
+
+	var img = document.createElement('img');
+	var fr = new FileReader();
+	fr.onload = function() {
+			img.src = fr.result;  // 読み込んだ画像データをsrcにセット
+			document.getElementById('preview_field'+n).appendChild(img);
+			document.getElementById('confirm_field'+n).appendChild(img);
+	}
+	fr.readAsDataURL(file);  // 画像読み込み
+}
+
 customOptions = {
 	daysSimple: ["日" , "月" , "火" , "水" , "木" , "金" , "土"],
 	monthsFull: ["1月" , "2月" , "3月" , "4月" , "5月" , "6月" , "7月" , "8月" , "9月" , "10月" , "11月" , "12月"],
