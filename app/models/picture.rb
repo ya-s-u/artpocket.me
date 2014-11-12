@@ -3,7 +3,7 @@ class Picture < ActiveRecord::Base
 
   case ENV['RAILS_ENV']
     when "development"
-      S3_BUCKET_NAME = YAML.load_file("#{Rails.root}/config/s3.yml")[Rails.env]['bucket']
+      S3_BUCKET_NAME = "dev-cdn.artpocket.me"
     when "production"
       S3_BUCKET_NAME = ENV['S3_BUCKET_NAME']
   end
@@ -16,6 +16,7 @@ class Picture < ActiveRecord::Base
     },
     :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :bucket => S3_BUCKET_NAME,
     :path => "pictures/:style/:id.:extension",
     :url => ":s3_alias_url",
     :s3_host_alias => S3_BUCKET_NAME
