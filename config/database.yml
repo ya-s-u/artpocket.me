@@ -6,12 +6,3 @@ development:
   pool: 10
   username: bed5a04cd5394b
   password: 1798e543
-
-production:
-  adapter: mysql2
-  encoding: utf8
-  host: us-cdbr-iron-east-01.cleardb.net
-  database: heroku_d0b2d1623a69ff1
-  pool: 10
-  username: bed5a04cd5394b
-  password: 1798e543
