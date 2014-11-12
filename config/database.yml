@@ -6,3 +6,12 @@ development:
   pool: 10
   username: bed5a04cd5394b
   password: 1798e543
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  host: ENV['CLEARDB_HOST']
+  database: ENV['CLEARDB_DATABASE']
+  pool: 10
+  username: ENV['CLEARDB_USER_NAME']
+  password: ENV['CLEARDB_PASSWORD']
