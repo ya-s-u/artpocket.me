@@ -3,8 +3,8 @@
 	<div class="container">
 		<div class="show_left">
 			<ul class="show_left_picts">
-        <% @post.pictures.each do |image| %>
-				  <li><%= image_tag(image.authenticated_image_url(:pc_large)) %></li>
+        <% @post.pictures.each do |picture| %>
+				  <li><%= image_tag(picture.image.url(:pc_large)) %></li>
         <% end %>
 			</ul>
 		</div>

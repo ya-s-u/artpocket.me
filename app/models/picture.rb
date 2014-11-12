@@ -22,8 +22,4 @@ class Picture < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
-  def authenticated_image_url(style)
-    image.s3_object(style).url_for(:read, :secure => false)
-  end
-
 end
