@@ -1,10 +1,10 @@
 <div class="header">
   <div class="container">
-    <h1 class="header_logo show_logo"><%= image_tag 'logo.png'%></h1>
+    <h1 class="header_logo show_logo"><%= link_to image_tag('logo.png'), :root %></h1>
     <ul class="header_nav">
-      <li>このサイトとは</li>
-      <li>利用規約</li>
-      <li>お問い合わせ</li>
+      <li><%= link_to 'このサイトとは', :terms_statics %></li>
+      <li><%= link_to '利用規約', :terms_statics %></li>
+      <li><%= link_to 'お問い合わせ', :terms_statics %></li>
     </ul>
   </div>
 </div>

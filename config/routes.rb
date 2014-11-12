@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'posts#index'
   resources :posts
   get 'posts/complete/:id_hash' => 'posts#complete', as: :complete_post
-  get 'statics/terms' => 'statics#terms', as: :terms_statics
+  get 'terms' => 'statics#terms', as: :terms_statics
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

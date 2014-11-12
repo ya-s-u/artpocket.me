@@ -1,20 +1,4 @@
-<div class="header">
-	<div class="container">
-		<h1 class="header_logo index_logo"><%= image_tag 'logo.png'%></h1>
-		<ul class="header_nav">
-			<li>このサイトとは</li>
-			<li>利用規約</li>
-			<li>お問い合わせ</li>
-		</ul>
-		<ul class="header_category">
-			<li class="active">デザイン・イラスト</li>
-			<li>デザイン・イラスト</li>
-			<li>デザイン・イラスト</li>
-			<li>デザイン・イラスト</li>
-			<li>デザイン・イラスト</li>
-		</ul>
-	</div>
-</div>
+<%= render 'templates/header_long' %>
 <div class="index">
 	<ul class="index_list">
     <% @posts.each do |post| %>
