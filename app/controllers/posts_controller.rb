@@ -45,7 +45,7 @@ class PostsController < ApplicationController
       end
     end
 
-    redirect_to complete_post, id_hash
+    redirect_to complete_post, :id_hash
   end
 
   def complete
