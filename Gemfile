@@ -45,3 +45,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'paperclip'
 gem 'aws-sdk'
+
+group :production do
+  gem 'newrelic_rpm'
+end
