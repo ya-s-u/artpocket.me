@@ -60,6 +60,7 @@ table {
 
 .header {
   background: white;
+  margin-bottom: 30px;
 }
 
 .header_logo {
@@ -95,4 +96,9 @@ table {
   margin: 0 15px;
   color: #999;
   line-height: 1.2em;
+}
+
+/* Footer */
+.footer {
+  background: white;
 }
