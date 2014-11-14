@@ -45,11 +45,10 @@ class PostsController < ApplicationController
       end
     end
 
-    redirect_to complete_post, :id_hash
+    redirect_to complete_post
   end
 
   def complete
-    @post = Post.find_by(:id_hash => params[:id_hash])
   end
 
 end
