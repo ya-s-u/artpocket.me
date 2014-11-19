@@ -1,3 +1,1 @@
-json.posts @posts do |post|
-  json.(post, :id, :title)
-end
+json.(@post, :id, :title, :pictures)
