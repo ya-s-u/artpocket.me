@@ -60,6 +60,12 @@ GEM
       rack-accept
       rack-mount
       virtus (>= 1.0.0)
+    grape-jbuilder (0.2.0)
+      grape (>= 0.3)
+      i18n
+      jbuilder
+      tilt
+      tilt-jbuilder (>= 0.4.0)
     hashie (3.3.1)
     hike (1.2.3)
     i18n (0.6.11)
@@ -134,6 +140,9 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    tilt-jbuilder (0.6.1)
+      jbuilder
+      tilt (<= 1.5.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -152,6 +161,7 @@ DEPENDENCIES
   aws-sdk
   bcrypt (~> 3.1.7)
   grape
+  grape-jbuilder
   jbuilder (~> 2.0)
   jquery-rails
   mysql
