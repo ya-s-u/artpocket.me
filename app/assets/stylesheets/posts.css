@@ -21,8 +21,11 @@
 }
 
 .index_list li a {
-	display: block;
+	display: table-cell;
+	height: 337px;
 	border: 6px solid white;
+	background: white;
+	vertical-align: middle;
 }
 
 .index_list li a img {
