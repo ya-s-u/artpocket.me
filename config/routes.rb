@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :posts
   get 'posts/complete/:id_hash' => 'posts#complete', as: :complete_post
+  get 'about' => 'statics#about', as: :about_statics
   get 'terms' => 'statics#terms', as: :terms_statics
 
   mount API => '/'
