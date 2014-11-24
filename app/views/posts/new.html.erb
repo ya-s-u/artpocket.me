@@ -318,8 +318,8 @@ function preview(ele, n) {
 	var fr = new FileReader();
 	fr.onload = function() {
 			img.src = fr.result;  // 読み込んだ画像データをsrcにセット
-			document.getElementById('preview_field'+n).appendChild(img);
-			document.getElementById('confirm_field'+n).appendChild(img);
+			$('#preview_field'+n).append('<img src="'+img.src+'">');
+			$('#confirm_field'+n).append('<img src="'+img.src+'">');
 	}
 	fr.readAsDataURL(file);  // 画像読み込み
 }
