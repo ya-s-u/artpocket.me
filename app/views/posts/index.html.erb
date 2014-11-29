@@ -1,16 +1,17 @@
-<%= render 'templates/header_long' %>
-<div class="index">
-	<ul class="index_list">
-    <% @posts.each do |post| %>
-      <li>
-        <strong class="index_list_new"><span class="index_list_new_inner"></span><span class="index_list_new_text">人気</span></strong>
-        <%= link_to post_path(post.id) do %>
-          <%= image_tag(post.pictures[0].image.url(:pc_thumb)) %>
-        <% end %>
-        <p class="index_list_title"><%= truncate(post.title, :length=>35) %></p>
-        <p class="index_list_data"><%= post.open_date %> 〜 <%= post.close_date %></p>
-        <p class="index_list_text"><%= truncate(post.body, :length=>50) %></p>
-      </li>
-    <% end %>
-	</ul>
-</div>
+<%= image_tag('banner.png', {:class=>'main_right_banner'}) %>
+<h3 class="main_right_title">新着イベント一覧</h3>
+<ul class="posts">
+	<% @posts.each do |post| %>
+		<li>
+			<%= link_to post_path(post.id) do %>
+				<div class="posts_thumb">
+					<%= image_tag(post.pictures[0].image.url(:pc_thumb)) %>
+				</div>
+				<p class="posts_title"><%= truncate(post.title, :length=>35) %></p>
+				<p class="posts_date"><i class="icon-calendar"></i><%= post.open_date %> 〜 <%= post.close_date %>　<i class="icon-map"></i>市民文化ギャラリー</p>
+				<p class="posts_text"><%= truncate(post.body, :length=>50) %></p>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+<p class="posts_more">もっと表示する</p>
