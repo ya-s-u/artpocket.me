@@ -1,6 +1,8 @@
+<div class="new">
+<div class="container">
+
 <%= form_for @post, :html => {multipart: true} do |f| %>
-	<h1 class="form_logo"><%= image_tag 'logo.png'%></h1>
-	<div class="container form_container">
+	<div class="form_container">
 		<table class="form">
 			<tr>
 				<th class="form_left">
@@ -307,6 +309,10 @@
 		<p id="confirm_submit" class="confirm_submit">以上の内容で申請する</p>
 	</div>
 </div>
+
+</div>
+</div>
+
 <script>
 function preview(ele, n) {
 	if (!ele.files.length) return;  // ファイル未選択

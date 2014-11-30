@@ -106,6 +106,13 @@
 /**********************************************
 * Post#new
 **********************************************/
+.new {
+	background: url(../images/form_bg.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
 .new_post {
 	padding: 40px 0 80px 0;
 }
@@ -117,8 +124,8 @@
 }
 
 .form_container {
-	background: white;
-	box-shadow: 0 0 5px #ddd;
+	background: rgba(255,255,255,0.9);
+	border-radius: 10px;
 }
 
 .form {
