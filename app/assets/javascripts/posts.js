@@ -39,13 +39,6 @@ $.route(
  * Post#index
  **********************************************/
 function indexFunc() {
-  $(window).load(function() {
-    $('.index_list').masonry({
-      itemSelector: 'li',
-      columnWidth: 300,
-      isFitWidth: true,
-    });
-  })
 }
 
 /**********************************************

@@ -1,81 +1,79 @@
 <div class="show">
-	<div class="container">
-		<div class="show_left">
-			<ul class="show_left_picts">
-        <% @post.pictures.each do |picture| %>
-				  <li><%= image_tag(picture.image.url(:pc_large)) %></li>
-        <% end %>
+	<div class="show_left">
+		<ul class="show_left_picts">
+      <% @post.pictures.each do |picture| %>
+			  <li><%= image_tag(picture.image.url(:pc_large)) %></li>
+      <% end %>
+		</ul>
+	</div>
+	<div class="show_right_wrap">
+		<div class="show_right">
+			<h2 class="show_right_title"><%= @post.title %></h2>
+			<ul class="show_right_sns">
+				<li class="twitter"></li>
+				<li class="facebook"></li>
+				<li class="google"></li>
+				<li class="hatena"></li>
 			</ul>
-		</div>
-		<div class="show_right_wrap">
-			<div class="show_right">
-				<h2 class="show_right_title"><%= @post.title %></h2>
-				<ul class="show_right_sns">
-					<li class="twitter"></li>
-					<li class="facebook"></li>
-					<li class="google"></li>
-					<li class="hatena"></li>
-				</ul>
-				<p class="show_right_body"><%= simple_format @post.body %></p>
-				<table class="show_right_info">
-					<tbody>
-						<tr>
-							<th>開催日</th>
-							<td>
-                <%= @post.open_date %> 〜 <%= @post.close_date %>
-                </br>
-                <%= @post.open_time %> 〜 <%= @post.close_time %>
-              </td>
-						</tr>
-						<tr>
-							<th>開催場所</th>
-							<td></td>
-						</tr>
-						<tr>
-							<th>URL</th>
-							<td><%= @post.url %></td>
-						</tr>
-						<tr>
-							<th>Facebook</th>
-							<td><%= @post.facebook %></td>
-						</tr>
-						<tr>
-							<th>Twitter</th>
-							<td><%= @post.twitter %></td>
-						</tr>
-						<tr>
-							<th>料金</th>
-							<td><%= @post.charge %></td>
-						</tr>
-						<tr>
-							<th>主催</th>
-							<td><%= @post.promoter %></td>
-						</tr>
-						<tr>
-							<th>お問い合わせ</th>
-							<td><%= @post.mail %></td>
-						</tr>
-					</tbody>
-				</table>
-        <table class="show_right_calendar">
-          <tbody>
-            <tr>
-              <th>開催日</th>
-              <td>
-                <%= @post.open_date %> 〜 <%= @post.close_date %>
-                </br>
-                <%= @post.open_time %> 〜 <%= @post.close_time %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-			</div>
+			<p class="show_right_body"><%= simple_format @post.body %></p>
+			<table class="show_right_info">
+				<tbody>
+					<tr>
+						<th>開催日</th>
+						<td>
+              <%= @post.open_date %> 〜 <%= @post.close_date %>
+              </br>
+              <%= @post.open_time %> 〜 <%= @post.close_time %>
+            </td>
+					</tr>
+					<tr>
+						<th>開催場所</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>URL</th>
+						<td><%= @post.url %></td>
+					</tr>
+					<tr>
+						<th>Facebook</th>
+						<td><%= @post.facebook %></td>
+					</tr>
+					<tr>
+						<th>Twitter</th>
+						<td><%= @post.twitter %></td>
+					</tr>
+					<tr>
+						<th>料金</th>
+						<td><%= @post.charge %></td>
+					</tr>
+					<tr>
+						<th>主催</th>
+						<td><%= @post.promoter %></td>
+					</tr>
+					<tr>
+						<th>お問い合わせ</th>
+						<td><%= @post.mail %></td>
+					</tr>
+				</tbody>
+			</table>
+      <table class="show_right_calendar">
+        <tbody>
+          <tr>
+            <th>開催日</th>
+            <td>
+              <%= @post.open_date %> 〜 <%= @post.close_date %>
+              </br>
+              <%= @post.open_time %> 〜 <%= @post.close_time %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 		</div>
 	</div>
-	<div class="show_bottom">
-		<div class="container">
-			<div id="map" class="show_bottom_map" style="width: 100%; height: 300px;"></div>
-		</div>
+</div>
+<div class="show_bottom">
+	<div class="container">
+		<div id="map" class="show_bottom_map" style="width: 100%; height: 300px;"></div>
 	</div>
 </div>
 

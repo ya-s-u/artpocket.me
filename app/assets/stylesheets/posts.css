@@ -1,110 +1,7 @@
 /**********************************************
 * Post#index
 **********************************************/
-.index_logo {
-	margin: 100px auto 60px auto;
-}
 
-.index {
-	padding: 0 5%;
-}
-
-.index_list {
-	overflow: hidden;
-	margin: 0 auto;
-}
-
-.index_list li {
-	float: left;
-	width: 250px;
-	margin: 25px;
-}
-
-.index_list li a {
-	display: table-cell;
-	height: 337px;
-	border: 6px solid white;
-	background: white;
-	vertical-align: middle;
-}
-
-.index_list li a img {
-	display: block;
-}
-
-.index_list li a:hover {
-	opacity: 0.5;
-}
-
-.index_list_data {
-	font-size: 14px;
-}
-
-.index_list_title {
-	margin: 10px 0 0 0;
-	color: #555;
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 1.3em;
-}
-
-.index_list_text {
-	font-size: 14px;
-	line-height: 1.3em;
-}
-
-.index_list_new {
-	position: absolute;
-	z-index: 99999;
-	left: -10px;
-	top: -10px;
-	display: block;
-}
-
-.index_list_new_inner {
-	background-color: #eb8087;
-	width: 40px;
-	height: 40px;
-	position: relative;
-	text-align: center;
-	display: block;
-}
-
-.index_list_new_inner:before {
-	-webkit-transform: rotate(30deg);
-	-moz-transform: rotate(30deg);
-	-ms-transform: rotate(30deg);
-	-o-transform: rotate(30deg);
-}
-
-.index_list_new_inner:after {
-	-webkit-transform: rotate(60deg);
-	-moz-transform: rotate(60deg);
-	-ms-transform: rotate(60deg);
-	-o-transform: rotate(60deg);
-}
-
-.index_list_new_inner:before, .index_list_new_inner:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 40px;
-	width: 40px;
-	background-color: #e65d65;
-}
-
-.index_list_new_text {
-	position: absolute;
-	left: 0;
-	top: 0;
-	text-align: center;
-	line-height: 40px;
-	width: 40px;
-	color: #fff;
-	font-size: 14px;
-	font-weight: normal;
-}
 
 /**********************************************
 * Post#show
@@ -114,7 +11,7 @@
 }
 
 .show {
-	padding: 40px 0;
+	overflow: hidden;
 }
 
 .show_left {
@@ -123,19 +20,19 @@
 	margin-right: 30px;
 }
 
-.show_left_picts li {
-	margin-bottom: 10px;
-}
-
 .show_right_wrap {
 	float: right;
-	width: 475px;
+	width: 415px;
 }
 
 .show_right {
-	width: 475px;
+	width: 415px;
 	position: static;
 	top: 0;
+}
+
+.show_left_picts li {
+	margin-bottom: 10px;
 }
 
 .show_right_title {

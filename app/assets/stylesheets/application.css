@@ -220,6 +220,7 @@ body {
 }
 
 .main_right_banner {
+  height: 280px;
 	margin-bottom: 20px;
 }
 
@@ -263,6 +264,7 @@ body {
 	right: 0;
 	bottom: 0;
 	margin: auto;
+  max-height: 100%;
 }
 
 .posts_title {
