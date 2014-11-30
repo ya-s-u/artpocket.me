@@ -16,8 +16,7 @@ a {
 p {
 	margin: 0;
 	color: #555;
-	font-size: 15px;
-	-webkit-font-smoothing: antialiased;
+	font-size: 16px;
 }
 
 img {
@@ -277,6 +276,7 @@ body {
 
 .posts_date {
 	font-size: 14px;
+  margin: 3px 0;
 }
 
 .posts_date i {

@@ -6,19 +6,16 @@
 /* statics#terms */
 .terms > li {
   list-style: decimal;
-  margin: 0 0 2px 2em;
-  padding: 30px 0;
-  border-top: 1px solid #eaeaea;
+  margin: 0 0 2px 25px;
+  padding: 20px 0;
 }
 
 .tems_title {
   font-size: 20px;
 }
 
-.terms_ul > li {
-  list-style: circle;
-  margin: 0 0 2px 2em;
-  color: #555;
+.terms_ol {
+  margin-left: -50px;
 }
 
 .terms_ol > li {
