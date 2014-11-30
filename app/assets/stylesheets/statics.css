@@ -1,6 +1,21 @@
-/* statics */
-.statics_title {
+/* statics#about */
+.about_copy {
+  text-align: center;
   font-size: 24px;
+}
+
+.about_logo {
+  display: block;
+  width: 500px;
+  margin: 20px auto;
+}
+
+.about_text {
+  text-align: center;
+  font-size: 18px;
+}
+
+.about_mock {
 }
 
 /* statics#terms */

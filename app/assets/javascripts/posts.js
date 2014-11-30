@@ -45,22 +45,22 @@ function indexFunc() {
  * Post#show
  **********************************************/
 function showFunc() {
-  $(window).scroll(function () {
-    var s = $(this).scrollTop();
-    var r = $('.show_right_wrap').offset().top;
-    var l = $('.show_left').offset().top + $('.show_left').height();
-    var f = l-r-$('.show_right').height();
-
-    if (0 <= s && s <= r) {
-      $('.show_right').css('position','static');
-    } else if (s > r && s < f) {
-      $('.show_right').css('position','fixed');
-      $('.show_right').css('top','0');
-    } else if (s > f) {
-      $('.show_right').css('position','absolute');
-      $('.show_right').css('top',f);
-    }
-  })
+  // $(window).scroll(function () {
+  //   var s = $(this).scrollTop();
+  //   var r = $('.show_right_wrap').offset().top;
+  //   var l = $('.show_left').offset().top + $('.show_left').height();
+  //   var f = l-r-$('.show_right').height();
+  //
+  //   if (0 <= s && s <= r) {
+  //     $('.show_right').css('position','static');
+  //   } else if (s > r && s < f) {
+  //     $('.show_right').css('position','fixed');
+  //     $('.show_right').css('top','0');
+  //   } else if (s > f) {
+  //     $('.show_right').css('position','absolute');
+  //     $('.show_right').css('top',f);
+  //   }
+  // })
  }
 
 /**********************************************
