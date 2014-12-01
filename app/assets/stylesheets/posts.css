@@ -328,3 +328,26 @@
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 }
+
+/**********************************************
+* Post#complete
+**********************************************/
+.posts_complete {
+	width: 840px;
+	margin: 0 auto;
+	padding: 140px;
+}
+.posts_complete_title {
+	font-size: 50px;
+	text-align: center;
+}
+
+.posts_complete_border {
+	display: block;
+	width: 500px;
+	margin: 20px auto 40px;
+}
+
+.posts_complete_text {
+	text-align: center;
+}

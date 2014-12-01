@@ -50,6 +50,7 @@ class PostsController < ApplicationController
   end
 
   def complete
+    render :layout => 'simple'  
   end
 
 end
