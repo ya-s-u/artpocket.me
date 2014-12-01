@@ -107,9 +107,6 @@
 * Post#new
 **********************************************/
 .new {
-	background: url(../images/form_bg.jpg);
-	background-size: cover;
-	background-attachment: fixed;
 }
 
 
@@ -125,7 +122,7 @@
 
 .form_container {
 	background: rgba(255,255,255,0.9);
-	border-radius: 10px;
+	border-radius: 4px;
 }
 
 .form {

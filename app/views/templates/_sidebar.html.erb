@@ -1,5 +1,7 @@
 <div class="sidebar">
-  <span class="sidebar_submit">フライヤー登録申請はこちら</span>
+  <%= link_to :new_post, {:target=>"_blank",:class=>"sidebar_submit"} do %>
+    フライヤー登録申請はこちら
+  <% end %>
   <h3 class="sidebar_title calendar">カレンダーから探す</h3>
   <table class="sidebar_calendar">
     <tr>
