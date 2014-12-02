@@ -1,3 +1,4 @@
 <h1>フライヤーの申請ありがとうございます</h1>
-<img src="http://dev-cdn.artpocket.me/pictures/pc_large/171.jpg?1417494452">
+<%= image_tag(@post.pictures[0].image.url(:pc_thumb)) %>
 <p><%= @post.title %></p>
+<p>審査完了まで現在、最大で24時間いただいております。</p>

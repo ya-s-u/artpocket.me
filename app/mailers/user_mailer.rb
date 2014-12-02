@@ -7,9 +7,6 @@ class UserMailer < ActionMailer::Base
   #   en.user_mailer.post_confirm.subject
   #
   def post_confirm(post)
-    # @greeting = "Hi"
-    #
-    # mail to: "yasu1003@gmail.com"
     @post = post
     mail to: @post.mail,
          subject: "フライヤーの申請ありがとうございます"
