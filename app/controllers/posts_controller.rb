@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    UserMailer.post_confirm(@post).deliver
   end
 
   def new
@@ -46,11 +47,12 @@ class PostsController < ApplicationController
       end
     end
 
-    redirect_to complete_post
+    redirect_to complete_post(p: @post.id_hash)
   end
 
   def complete
-    render :layout => 'simple'  
+    @id_hash = params[:p]
+    render :layout => 'simple'
   end
 
 end

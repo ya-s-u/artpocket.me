@@ -36,4 +36,17 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  # For Mandrill
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587,
+    :enable_starttls_auto => true,
+    :user_name => "app31267571@heroku.com",
+    :password  => "vha0fYGO9Mo4KeWYj1hRyg",
+    :authentication => 'login',
+    :domain => 'heroku.com',
+  }
 end
