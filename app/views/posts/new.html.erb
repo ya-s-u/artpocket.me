@@ -172,7 +172,7 @@
 				<p><span class="form_left_tag required">必須</span>規約の同意</p>
 			</th>
 			<td class="form_center">
-				<input type="checkbox" id="form_check"> <a href="">利用規約</a>に同意する
+				<input type="checkbox" id="form_check" class="form_check"><%= link_to "利用規約", :terms_statics, {:target=>"_blank", :class=>"form_check_link"} %>に同意する
 			</td>
 		</tr>
 	</table>

@@ -271,9 +271,17 @@
 	margin-right: 5px;
 }
 
+.form_check {
+	margin-right: 10px;
+}
+
+.form_check_link {
+	color: #0092ED;
+}
+
 .form_submit {
 	display: block;
-	width: 550px;
+	width: 500px;
 	margin: 20px auto 40px auto;
 	padding: 12px 0;
 	font-size: 16px;
@@ -288,10 +296,6 @@
 .form_submit.active {
 	cursor: pointer;
 	background: #EC4550;
-}
-
-.confirm {
-	padding: 40px 0 80px 0;
 }
 
 .confirm_cancel {
