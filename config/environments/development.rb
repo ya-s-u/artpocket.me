@@ -49,4 +49,6 @@ Rails.application.configure do
     :authentication => 'login',
     :domain => 'heroku.com',
   }
+
+  config.action_mailer.delivery_method = :letter_opener_web
 end
