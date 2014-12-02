@@ -46,13 +46,20 @@ table {
   font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
 }
 
+.simple .container {
+  position: relative;
+  width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 /* Common */
 .application {
 	border-top: 10px solid #ffcb2e;
 	font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
 }
 
-.container {
+.application .container {
 	position: relative;
 	width: 1200px;
 	margin: 0 auto;

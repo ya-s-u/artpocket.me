@@ -106,18 +106,14 @@
 /**********************************************
 * Post#new
 **********************************************/
-.new {
-}
-
-
-.new_post {
-	padding: 40px 0 80px 0;
+.form_logo {
+	margin: 60px 0 40px;
 }
 
 .form_logo img {
 	display: block;
-	width: 260px;
-	margin: 0 auto 40px auto;
+	width: 280px;
+	margin: 0 auto;
 }
 
 .form_container {
@@ -126,24 +122,22 @@
 }
 
 .form {
-	width: 940px;
-	margin: 20px;
 }
 
 .form tr {
 	display: block;
 	border-bottom: 1px solid #eee;
-	padding: 20px 0;
+	padding: 20px;
 }
 
 .form_left {
-	width: 200px;
+	width: 180px;
 	vertical-align: top;
 	font-weight: bold;
 }
 
 .form_left p {
-	padding-left: 10px;
+	text-align: left;
 }
 
 .form_left_tag {
@@ -165,7 +159,7 @@
 }
 
 .form_center {
-	width: 580px;
+	width: 600px;
 	vertical-align: top;
 }
 
@@ -187,8 +181,7 @@
 }
 
 .form_right {
-	width: 100px;
-	vertical-align: top;
+	width: 0px;
 }
 
 .form_text {
@@ -265,6 +258,10 @@
 	margin: 9px 0;
 }
 
+.form_free > input {
+	margin-right: 10px;
+}
+
 .form_free span {
 	margin: 0 60px;
 }
@@ -302,7 +299,7 @@
 	float: left;
 	display: block;
 	width: 250px;
-	margin: 20px auto 40px 80px;
+	margin: 20px auto 40px 35px;
 	padding: 12px 0;
 	font-size: 16px;
 	text-align: center;
@@ -333,9 +330,7 @@
 * Post#complete
 **********************************************/
 .posts_complete {
-	width: 840px;
-	margin: 0 auto;
-	padding: 140px;
+	padding: 140px 0;
 }
 .posts_complete_title {
 	font-size: 50px;
