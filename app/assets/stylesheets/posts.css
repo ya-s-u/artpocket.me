@@ -16,12 +16,8 @@
 	margin-right: 30px;
 }
 
-.show_right_wrap {
-	float: right;
-	width: 415px;
-}
-
 .show_right {
+	float: right;
 	width: 415px;
 	position: static;
 	top: 0;
@@ -102,6 +98,7 @@
 	width: 365px;
 	padding: 10px 5px 10px 0;
 	border-bottom: 1px solid #eaeaea;
+	font-size: 15px;
 }
 
 .show_right_calendar {
