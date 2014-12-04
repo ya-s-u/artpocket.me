@@ -10,12 +10,10 @@
 		<div class="show_right">
 			<h2 class="show_right_title"><%= @post.title %></h2>
 			<ul class="show_right_sns">
-				<li class="twitter"></li>
-				<li class="facebook"></li>
-				<li class="google"></li>
-				<li class="hatena"></li>
-			</ul>
-			<p class="show_right_body"><%= simple_format @post.body %></p>
+	      <li class="show_right_sns facebook" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=893420327351170&amp;link=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F&amp;feature=share&amp;display=popup&amp;redirect_uri=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F', 'facebookWindow', 'height=306, width=650, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-facebook"></i>シェアする</li>
+	      <li class="show_right_sns twitter" onclick="window.open('https://twitter.com/share?text=<%= @post.title %> @artpocket&amp;url=http://artpocket.me', 'twitterWindow', 'height=420, width=550, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-twitter"></i>ツイートする</li>
+	  </ul>
+			<%= simple_format @post.body, {:class=>"show_right_body"} %>
 			<table class="show_right_info">
 				<tbody>
 					<tr>
@@ -123,27 +121,4 @@ $(document).ready(function(){
      content: '<p>HTML Content</p>'
    }
   });
-
- $(".show_right_sns .twitter").socialbutton("twitter", {
-   button : "horizontal",
-   text : "つぶやきに含めるテキスト",
-   url : "<%=request.url%>",
- }).width(95);
-
- $(".show_right_sns .facebook").socialbutton("facebook_like", {
-   button : "button_count",
-   url : "<%=request.url%>",
- }).width(110);
-
- $(".show_right_sns .google").socialbutton("google_plusone", {
-   button : "medium",
-   url : "<%=request.url%>",
-   count : true,
- }).width(70);
-
- $(".show_right_sns .hatena").socialbutton("hatena", {
-   button : "standard",
-   url : "<%=request.url%>",
-   title : "<%=@post.title%>",
- }).width(70);
 </script>

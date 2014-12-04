@@ -40,17 +40,45 @@
 }
 
 .show_right_sns {
-	display: block;
-	overflow: hidden;
+	margin-bottom: 25px;
 }
 
 .show_right_sns li {
+	cursor: pointer;
 	float: left;
-	margin-right: 10px;
+	width: 200px;
+	padding-bottom: 8px;
+	border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: white;
+	font-size: 16px;
+}
+
+.show_right_sns li:hover {
+	opacity: 0.6;
+}
+
+.show_right_sns li i {
+	padding: 0 10px 0 20px;
+	font-size: 34px;
+	position: relative;
+	top: 7px;
+}
+
+.show_right_sns.facebook {
+	background: #3468af;
+	margin-right: 15px;
+}
+
+.show_right_sns.twitter {
+	background: #55acee;
 }
 
 .show_right_body {
-	margin: 15px 0 20px;
+	margin-bottom: 20px;
 }
 
 .show_right_info {
