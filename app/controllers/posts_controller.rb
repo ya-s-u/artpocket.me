@@ -25,6 +25,7 @@ class PostsController < ApplicationController
         :close_date,
         :open_time,
         :close_time,
+        :place,
         :charge,
         :promoter,
         :url,
