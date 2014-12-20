@@ -8,29 +8,17 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag %>
 </head>
-<body class="application">
+<body>
 <%= render 'templates/header' %>
 <div class="main">
 	<div class="container">
-    <div id="mainLeft" class="main_left">
-      <%= render 'templates/sidebar' %>
-    </div>
-    <div id="mainRight" class="main_right">
-      <%= yield %>
-    </div>
-    <i id="mainTop" class="main_top icon-up"></i>
+    <%= yield %>
+    <i id="mainTop" class="main_gotop icon-up"></i>
   </div>
 </div>
 <%= render 'templates/footer' %>
 <script type="text/javascript">
 $(document).ready(function(){
-  header = $('#Header');
-  mainLeft = $('#mainLeft');
-  mainRight = $('#mainRight');
-  const mainLeftSize = mainLeft.height() + header.outerHeight(true) - $(window).height();
-  const mainRightPosition = mainLeft.outerWidth(true);
-  const mainRightSize = header.outerHeight(true) + mainRight.height() - $(window).height();
-
   mainTop = $('#mainTop');
   mainTop.hide();
 
@@ -38,29 +26,6 @@ $(document).ready(function(){
   	$('body, html').animate({scrollTop: 0}, 500);
   	return false;
   });
-
-  $(window).scroll(function () {
-  	var scroll = $(this).scrollTop();
-
-  	if(scroll > mainLeftSize && scroll <= mainRightSize) {
-  		mainLeft.css('position', 'fixed');
-  		mainLeft.css('bottom', '0');
-  		mainRight.css('margin-left', mainRightPosition);
-  	} else if(scroll > mainRightSize) {
-  		mainLeft.css('position', 'absolute');
-  		mainLeft.css('bottom', '0');
-  		mainRight.css('margin-left', mainRightPosition);
-  	} else {
-  		mainLeft.css('position', 'static');
-  		mainRight.css('margin-left', '0');
-  	}
-
-  	if(scroll > mainRightSize) {
-  		mainTop.show();
-  	} else {
-  		mainTop.hide();
-  	}
-  })
 });
 </script>
 </body>
