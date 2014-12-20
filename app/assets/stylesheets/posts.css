@@ -1,7 +1,54 @@
 /**********************************************
 * Post#index
 **********************************************/
+.index_list {
+	overflow: hidden;
+}
 
+.index_list li {
+	float: left;
+	width: 270px;
+	margin: 10px 14px 20px 14px;
+}
+
+.index_list li a {
+	display: block;
+}
+
+.index_list_thumb {
+	padding: 7px;
+	background: white;
+	border-radius: 3px;
+}
+
+.index_list_thumb img {
+	display: block;
+}
+
+.index_list li a:hover {
+	opacity: 0.7;
+}
+
+.index_list_date {
+	font-size: 13px;
+	color: #aaa;
+}
+
+.index_list_title {
+	margin: 6px 0 0 0;
+	color: #555;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.3em;
+}
+
+.index_more {
+	padding: 10px 0;
+	font-size: 16px;
+	text-align: center;
+	background: #999;
+	color: white;
+}
 
 /**********************************************
 * Post#show

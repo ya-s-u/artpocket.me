@@ -1,17 +1,24 @@
-<%= image_tag('banner.png', {:class=>'main_right_banner'}) %>
-<h3 class="main_right_title">新着イベント一覧</h3>
-<ul class="posts">
+<ul id="IndexList" class="index_list">
 	<% @posts.each do |post| %>
 		<li>
 			<%= link_to post_path(post.id) do %>
-				<div class="posts_thumb">
+				<div class="index_list_thumb">
 					<%= image_tag(post.pictures[0].image.url(:pc_thumb)) %>
 				</div>
-				<p class="posts_title"><%= truncate(post.title, :length=>35) %></p>
-				<p class="posts_date"><i class="icon-calendar"></i><%= post.open_date.strftime("%m/%d") %>〜<%= post.close_date.strftime("%m/%d") %>　<i class="icon-map"></i>市民文化ギャラリー</p>
-				<p class="posts_text"><%= truncate(post.body, :length=>50) %></p>
+				<h2 class="index_list_title"><%= truncate(post.title, :length=>35) %></h2>
+				<p class="index_list_date"><i class="icon-calendar"></i><%= post.open_date.strftime("%m/%d") %>〜<%= post.close_date.strftime("%m/%d") %>　<i class="icon-map"></i>市民文化ギャラリー</p>
 			<% end %>
 		</li>
 	<% end %>
 </ul>
-<p class="posts_more">もっと表示する</p>
+<p class="index_more">もっと表示する</p>
+
+<script type="text/javascript">
+$(window).load(function() {
+	$('#IndexList').masonry({
+		itemSelector: 'li',
+		columnWidth: 300,
+		isFitWidth: true,
+	});
+})
+</script>
