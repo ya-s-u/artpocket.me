@@ -47,7 +47,11 @@ table {
 * Common
 **********************************************/
 body {
+<<<<<<< HEAD
 	border-top: 10px solid #ffcb2e;
+=======
+	background: #f7f7f7;
+>>>>>>> 新デザイン
 	font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
 }
 
@@ -64,52 +68,46 @@ body {
 **********************************************/
 .header {
 	overflow: hidden;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+	background: white;
+	border-top: 10px solid  #ffcb2e;
 }
 
-.header_logo {
+.header_description {
 	float: left;
-	width: 300px;
-}
-
-.header_logo > a {
-	display: block;
-	padding: 30px 25px 0 0;
+	position: relative;
+	top: 50px;
+	font-size: 16px;
+	color: #555;
 }
 
 .header_menu {
-	float: left;
-	border-right: 1px solid #eee;
+	float: right;
+	position: relative;
+	top: 48px;
 }
 
 .header_menu > li {
 	float: left;
-	width: 140px;
-	height: 100px;
-	border-left: 1px solid #eee;
+	margin-left: 15px;
+}
+
+.header_menu > li:first-child {
+	border-left: none;
 }
 
 .header_menu > li > a {
-	display: block;
-	padding: 35px 0;
-	text-align: center;
 	font-size: 14px;
-	font-weight: bold;
+	color: #999;
 }
 
 .header_menu > li > a:hover {
-	color: #bbb;
+	opacity: 0.5;
 }
 
-.header_menu > li > a > i {
-	display: block;
-	font-size: 22px;
-}
-
-.header_appstore {
-	float: left;
-	width: 150px;
-	margin: 20px 0 0 20px;
+.header_logo {
+	width: 320px;
+	margin: 40px auto 20px auto;
 }
 
 
@@ -139,11 +137,18 @@ body {
 * Footer
 **********************************************/
 .footer {
+<<<<<<< HEAD
 	height: 200px;
 	background: #eee;
 }
 
 .footer_credit {
+=======
+}
+
+.footer_credit {
+	margin: 20px 0;
+>>>>>>> 新デザイン
 	text-align: center;
 	font-size: 12px;
 }

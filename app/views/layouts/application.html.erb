@@ -10,12 +10,17 @@
 </head>
 <body>
 <%= render 'templates/header' %>
+<<<<<<< HEAD
 <div class="main">
 	<div class="container">
     <%= yield %>
     <i id="mainTop" class="main_gotop icon-up"></i>
   </div>
 </div>
+=======
+<%= yield %>
+<i id="mainTop" class="main_gotop icon-up"></i>
+>>>>>>> 新デザイン
 <%= render 'templates/footer' %>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -26,6 +31,19 @@ $(document).ready(function(){
   	$('body, html').animate({scrollTop: 0}, 500);
   	return false;
   });
+<<<<<<< HEAD
+=======
+
+  $(window).scroll(function () {
+  	var scroll = $(this).scrollTop();
+
+  	if(scroll > 100) {
+  		mainTop.fadeIn("slow");
+  	} else {
+  		mainTop.fadeOut("slow");
+  	}
+  })
+>>>>>>> 新デザイン
 });
 </script>
 </body>
