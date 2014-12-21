@@ -23,4 +23,11 @@ class Picture < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+  def aspect_ratio
+    data = Marshal.load(Base64.decode64(meta_meta))
+    width = data[:original][:width]
+    height = data[:original][:height]
+    height.to_f / width.to_f
+  end
+
 end
