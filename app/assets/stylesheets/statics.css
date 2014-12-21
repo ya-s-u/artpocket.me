@@ -1,4 +1,22 @@
 /**********************************************
+* Common
+**********************************************/
+.statics_container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.statics_title {
+  padding: 20px 0;
+  font-size: 22px;
+}
+
+.statics {
+  background: white;
+  padding: 20px 0;
+}
+
+/**********************************************
 * About
 **********************************************/
 .about_copy {
@@ -23,11 +41,6 @@
 /**********************************************
 * Terms
 **********************************************/
-.terms {
-  width: 980px;
-  margin: 0 auto;
-}
-
 .terms_list > li {
   list-style: decimal;
   margin: 0 0 2px 25px;
