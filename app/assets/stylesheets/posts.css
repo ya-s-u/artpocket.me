@@ -19,6 +19,7 @@
 	padding: 7px;
 	background: white;
 	border-radius: 3px;
+	border: 1px solid #eee;
 }
 
 .index_list_thumb img {
