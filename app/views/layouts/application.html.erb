@@ -10,20 +10,22 @@
 </head>
 <body>
 <%= render 'templates/header' %>
-<<<<<<< HEAD
 <div class="main">
 	<div class="container">
     <%= yield %>
     <i id="mainTop" class="main_gotop icon-up"></i>
   </div>
 </div>
-=======
-<%= yield %>
-<i id="mainTop" class="main_gotop icon-up"></i>
->>>>>>> 新デザイン
 <%= render 'templates/footer' %>
 <script type="text/javascript">
 $(document).ready(function(){
+  header = $('#Header');
+  mainLeft = $('#mainLeft');
+  mainRight = $('#mainRight');
+  const mainLeftSize = mainLeft.height() + header.outerHeight(true) - $(window).height();
+  const mainRightPosition = mainLeft.outerWidth(true);
+  const mainRightSize = header.outerHeight(true) + mainRight.height() - $(window).height();
+
   mainTop = $('#mainTop');
   mainTop.hide();
 
@@ -31,19 +33,29 @@ $(document).ready(function(){
   	$('body, html').animate({scrollTop: 0}, 500);
   	return false;
   });
-<<<<<<< HEAD
-=======
 
   $(window).scroll(function () {
   	var scroll = $(this).scrollTop();
 
-  	if(scroll > 100) {
-  		mainTop.fadeIn("slow");
+  	if(scroll > mainLeftSize && scroll <= mainRightSize) {
+  		mainLeft.css('position', 'fixed');
+  		mainLeft.css('bottom', '0');
+  		mainRight.css('margin-left', mainRightPosition);
+  	} else if(scroll > mainRightSize) {
+  		mainLeft.css('position', 'absolute');
+  		mainLeft.css('bottom', '0');
+  		mainRight.css('margin-left', mainRightPosition);
   	} else {
-  		mainTop.fadeOut("slow");
+  		mainLeft.css('position', 'static');
+  		mainRight.css('margin-left', '0');
+  	}
+
+  	if(scroll > mainRightSize) {
+  		mainTop.show();
+  	} else {
+  		mainTop.hide();
   	}
   })
->>>>>>> 新デザイン
 });
 </script>
 </body>
