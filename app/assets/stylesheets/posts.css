@@ -1,6 +1,82 @@
 /**********************************************
-* Post#index
+* Index
 **********************************************/
+<<<<<<< HEAD
+.posts {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.posts > li {
+	float: left;
+	width: 290px;
+	height: 520px;
+	margin: 0 25px 40px 0;
+}
+
+.posts > li > a {
+	display: block;
+}
+
+.posts > li > a:hover {
+	opacity: 0.5;
+}
+
+.posts > li:nth-child(3n) {
+	margin-right: 0;
+}
+
+.posts_thumb {
+	position: relative;
+	height: 407px;
+	margin-bottom: 10px;
+	background: #fafafa;
+	border: 1px solid #ddd;
+}
+
+.posts_thumb > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	max-height: 100%;
+}
+
+.posts_title {
+	margin: 3px 0;
+	color: #cd5053;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.1em;
+}
+
+.posts_date {
+	font-size: 14px;
+	margin: 3px 0;
+}
+
+.posts_date i {
+	position: relative;
+	top: 2px;
+	margin-right: 2px;
+	font-size: 18px;
+	color: #777;
+}
+
+.posts_text {
+	font-size: 14px;
+	line-height: 1.3em;
+}
+
+.posts_more {
+	padding: 10px 0;
+	font-size: 16px;
+	text-align: center;
+	background: #999;
+	color: white;
+=======
 .index_list {
 	overflow: hidden;
 }
@@ -16,7 +92,7 @@
 }
 
 .index_list_thumb {
-	padding: 7px;
+	padding: 6px;
 	background: white;
 	border-radius: 3px;
 }
@@ -32,6 +108,7 @@
 .index_list_date {
 	font-size: 13px;
 	color: #aaa;
+>>>>>>> 新デザイン
 }
 
 .index_list_title {
@@ -51,10 +128,12 @@
 }
 
 /**********************************************
-* Post#show
+* Show
 **********************************************/
 .show {
 	overflow: hidden;
+	width: 980px;
+	margin: 0 auto;
 }
 
 .show_left {
@@ -176,7 +255,7 @@
 }
 
 /**********************************************
-* Post#new
+* New
 **********************************************/
 .form_logo {
 	margin: 60px 0 40px;
@@ -403,7 +482,7 @@
 }
 
 /**********************************************
-* Post#complete
+* Complete
 **********************************************/
 .posts_complete {
 	padding: 140px 0;

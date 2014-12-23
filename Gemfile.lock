@@ -102,6 +102,8 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paperclip-meta (1.1.0)
+      paperclip (>= 3.0.2, < 5.0)
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -178,6 +180,7 @@ DEPENDENCIES
   mysql2
   newrelic_rpm
   paperclip
+  paperclip-meta
   rails (= 4.1.6)
   rails_12factor
   sdoc (~> 0.4.0)

@@ -47,7 +47,11 @@ table {
 * Common
 **********************************************/
 body {
+<<<<<<< HEAD
+	border-top: 10px solid #ffcb2e;
+=======
 	background: #f7f7f7;
+>>>>>>> 新デザイン
 	font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
 }
 
@@ -72,8 +76,8 @@ body {
 .header_description {
 	float: left;
 	position: relative;
-	top: 48px;
-	font-size: 17px;
+	top: 50px;
+	font-size: 16px;
 	color: #555;
 }
 
@@ -133,11 +137,18 @@ body {
 * Footer
 **********************************************/
 .footer {
-	height: 20px;
-	background: white;
+<<<<<<< HEAD
+	height: 200px;
+	background: #eee;
 }
 
 .footer_credit {
+=======
+}
+
+.footer_credit {
+	margin: 20px 0;
+>>>>>>> 新デザイン
 	text-align: center;
 	font-size: 12px;
 }

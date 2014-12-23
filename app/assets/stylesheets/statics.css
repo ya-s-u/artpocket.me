@@ -1,4 +1,24 @@
-/* statics#about */
+/**********************************************
+* Common
+**********************************************/
+.statics_container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.statics_title {
+  padding: 20px 0;
+  font-size: 22px;
+}
+
+.statics {
+  background: white;
+  padding: 20px 0;
+}
+
+/**********************************************
+* About
+**********************************************/
 .about_copy {
   text-align: center;
   font-size: 24px;
@@ -18,8 +38,10 @@
 .about_mock {
 }
 
-/* statics#terms */
-.terms > li {
+/**********************************************
+* Terms
+**********************************************/
+.terms_list > li {
   list-style: decimal;
   margin: 0 0 2px 25px;
   padding: 20px 0;
