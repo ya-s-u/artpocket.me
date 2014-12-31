@@ -64,7 +64,6 @@ body {
 **********************************************/
 .header {
 	overflow: hidden;
-	margin-bottom: 20px;
 	background: white;
 	border-top: 10px solid  #ffcb2e;
 }
@@ -133,11 +132,10 @@ body {
 * Footer
 **********************************************/
 .footer {
-	height: 20px;
-	background: white;
 }
 
 .footer_credit {
+	padding: 20px 0;
 	text-align: center;
 	font-size: 12px;
 }
