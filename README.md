@@ -17,7 +17,7 @@
 
 ## 環境
 |用途|動作環境|データベース|静的ファイル|
-|---|---|---|
+|---|---|---|---|
 |ローカル|Webric|ClearDB(artpocket-develop)|S3(dev-cdn.artpocket.me)|
 |デベロップメント|Heroku(artpocket-develop)|ClearDB(artpocket-develop)|S3(dev-cdn.artpocket.me)|
 |プロダクション|Heroku(artpocket-production)|ClearDB(artpocket-production)|S3(cdn.artpocket.me)|
