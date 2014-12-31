@@ -47,6 +47,8 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'grape'
 gem 'grape-jbuilder'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development do
   gem 'letter_opener'
