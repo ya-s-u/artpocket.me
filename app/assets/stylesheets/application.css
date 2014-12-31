@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5 {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: none!important;
 	color: #555;
 }
 
@@ -72,7 +72,7 @@ body {
 .header_description {
 	float: left;
 	position: relative;
-	top: 48px;
+	top: 44px;
 	font-size: 17px;
 	color: #555;
 }
@@ -80,7 +80,7 @@ body {
 .header_menu {
 	float: right;
 	position: relative;
-	top: 48px;
+	top: 46px;
 }
 
 .header_menu > li {
@@ -103,7 +103,7 @@ body {
 
 .header_logo {
 	width: 320px;
-	margin: 40px auto 20px auto;
+	margin: 30px auto;
 }
 
 
