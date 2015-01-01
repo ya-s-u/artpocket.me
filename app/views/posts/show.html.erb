@@ -1,27 +1,28 @@
 <div class="show">
-	<div id="showLeft" class="show_left">
-		<ul class="show_left_picts">
-      <% @post.pictures.each do |picture| %>
-			  <li><%= image_tag(picture.image.url(:pc_large)) %></li>
-      <% end %>
-		</ul>
-	</div>
-	<div id="showRight" class="show_right">
-		<h2 class="show_right_title"><%= @post.title %></h2>
-		<ul class="show_right_sns">
-      <li class="show_right_sns facebook" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=893420327351170&amp;link=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F&amp;feature=share&amp;display=popup&amp;redirect_uri=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F', 'facebookWindow', 'height=306, width=650, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-facebook"></i>シェアする</li>
-      <li class="show_right_sns twitter" onclick="window.open('https://twitter.com/share?text=<%= @post.title %> @artpocket&amp;url=http://artpocket.me', 'twitterWindow', 'height=420, width=550, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-twitter"></i>ツイートする</li>
-  </ul>
-		<%= simple_format @post.body, {:class=>"show_right_body"} %>
-		<table class="show_right_info">
-			<tbody>
-				<tr>
-					<th>開催日</th>
-					<td>
-            <%= @post.open_date.strftime("%Y年%m月%d日") %> 〜 <%= @post.close_date.strftime("%Y年%m月%d日") %>
-            </br>
-            <%= @post.open_time.strftime("%H:%M") %> 〜 <%= @post.close_time.strftime("%H:%M") %>
-          </td>
+	<div class="container">
+		<div id="showLeft" class="show_left">
+			<ul class="show_left_picts">
+				<% @post.pictures.each do |picture| %>
+				<li><%= image_tag(picture.image.url(:pc_large)) %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div id="showRight" class="show_right">
+			<h2 class="show_right_title"><%= @post.title %></h2>
+			<ul class="show_right_sns">
+				<li class="show_right_sns facebook" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=893420327351170&amp;link=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F&amp;feature=share&amp;display=popup&amp;redirect_uri=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F', 'facebookWindow', 'height=306, width=650, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-facebook"></i>シェアする</li>
+				<li class="show_right_sns twitter" onclick="window.open('https://twitter.com/share?text=<%= @post.title %> @artpocket&amp;url=http://artpocket.me', 'twitterWindow', 'height=420, width=550, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-twitter"></i>ツイートする</li>
+			</ul>
+			<%= simple_format @post.body, {:class=>"show_right_body"} %>
+			<table class="show_right_info">
+				<tbody>
+					<tr>
+						<th>開催日</th>
+						<td>
+							<%= @post.open_date.strftime("%Y年%m月%d日") %> 〜 <%= @post.close_date.strftime("%Y年%m月%d日") %>
+						</br>
+						<%= @post.open_time.strftime("%H:%M") %> 〜 <%= @post.close_time.strftime("%H:%M") %>
+					</td>
 				</tr>
 				<% if @post.place.present? %>
 				<tr>
@@ -61,112 +62,54 @@
 				</tr>
 			</tbody>
 		</table>
-    <table class="sidebar_calendar">
-			<tr>
-			<td colspan="7">2014年12月</td>
-			</tr>
-			<tr>
-			<td>日</td>
-			<td>月</td>
-			<td>火</td>
-			<td>水</td>
-			<td>木</td>
-			<td>金</td>
-			<td>土</td>
-			</tr>
-			<tr>
-			<td></td>
-			<td>1</td>
-			<td>2</td>
-			<td>3</td>
-			<td>4</td>
-			<td>5</td>
-			<td>6</td>
-			</tr>
-			<tr>
-			<td>7</td>
-			<td>8</td>
-			<td>9</td>
-			<td>10</td>
-			<td>11</td>
-			<td>12</td>
-			<td>13</td>
-			</tr>
-			<tr>
-			<td>14</td>
-			<td>15</td>
-			<td>16</td>
-			<td>17</td>
-			<td>18</td>
-			<td>19</td>
-			<td>20</td>
-			</tr>
-			<tr>
-			<td>21</td>
-			<td>22</td>
-			<td>23</td>
-			<td>24</td>
-			<td>25</td>
-			<td>26</td>
-			<td>27</td>
-			</tr>
-			<tr>
-			<td>28</td>
-			<td>29</td>
-			<td>30</td>
-			<td>31</td>
-			<td></td>
-			<td></td>
-			<td></td>
-			</tr>
-		</table>
 	</div>
 </div>
-<div class="show_bottom">
-		<div id="map" class="show_bottom_map" style="width: 100%; height: 300px;"></div>
-</div>
+<!-- <div class="show_bottom">
+<div id="map" class="show_bottom_map" style="width: 100%; height: 300px;"></div>
+</div> -->
 <script type="text/javascript">
-// $(document).ready(function(){
-// 	header = $('#Header');
-// 	showLeft = $('#showLeft');
-// 	showRight = $('#showRight');
-//
-// 	const showLeftSize = showLeft.height() + header.outerHeight(true) - $(window).height();
-// 	const showRightPosition = showLeft.outerWidth(true);
-// 	const showRightSize = header.outerHeight(true) + showRight.height() - $(window).height();
-//
-// 	$(window).scroll(function () {
-// 		var scroll = $(this).scrollTop();
-//
-// 		if(scroll > showLeftSize && scroll <= showRightSize) {
-// 			showLeft.css('position', 'fixed');
-// 			showLeft.css('bottom', '0');
-// 			showRight.css('margin-left', showRightPosition);
-// 		} else if(scroll > showRightSize) {
-// 			showLeft.css('position', 'absolute');
-// 			showLeft.css('bottom', '0');
-// 			showRight.css('margin-left', showRightPosition);
-// 		} else {
-// 			showLeft.css('position', 'static');
-// 			showRight.css('margin-left', '0');
-// 		}
-// 	})
+$(document).ready(function(){
+	header = $('#Header');
+	showLeft = $('#showLeft');
+	showRight = $('#showRight');
+
+	const showLeftSize = showLeft.height() + header.outerHeight(true) - $(window).height();
+	const showRightPosition = showLeft.outerWidth(true);
+	const showRightSize = header.outerHeight(true) + showRight.height() - $(window).height();
+
+	$(window).scroll(function () {
+		var scroll = $(this).scrollTop();
+
+		// if(scroll > showLeftSize && scroll <= showRightSize) {
+		// 	showLeft.css('position', 'fixed');
+		// 	showLeft.css('bottom', '0');
+		// 	showRight.css('margin-left', showRightPosition);
+		// } else if(scroll > showRightSize) {
+		// 	showLeft.css('position', 'absolute');
+		// 	showLeft.css('bottom', '0');
+		// 	showRight.css('margin-left', showRightPosition);
+		// } else {
+		// 	showLeft.css('position', 'static');
+		// 	showRight.css('margin-left', '0');
+		// }
+	})
+});
+
+// var map;
+// map = new GMaps({
+// 	div: '#map',
+// 	lat: 35.681382,
+// 	lng: 139.766084,
+// 	zoo: 16,
 // });
-
-  var map;
-  map = new GMaps({
-   div: '#map',
-   lat: 35.681382,
-   lng: 139.766084,
-   zoo: 16,
-  });
-
-  map.addMarker({
-   lat: 35.681382,
-   lng: 139.766084,
-   title: '東京駅',
-   infoWindow: {
-     content: '<p>HTML Content</p>'
-   }
-  });
+//
+// map.addMarker({
+// 	lat: 35.681382,
+// 	lng: 139.766084,
+// 	title: '東京駅',
+// 	infoWindow: {
+// 		content: '<p>HTML Content</p>'
+// 	}
+// });
 </script>
+</div>
