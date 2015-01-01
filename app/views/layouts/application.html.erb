@@ -9,13 +9,9 @@
   <%= favicon_link_tag %>
 </head>
 <body>
-<%= render 'templates/header' %>
-<div class="main">
-	<div class="container">
-    <%= yield %>
-    <i id="mainGoTop" class="main_gotop icon-up"></i>
-  </div>
-</div>
-<%= render 'templates/footer' %>
+  <%= render 'templates/header' %>
+  <%= yield %>
+  <i id="mainGoTop" class="gotop icon-up"></i>
+  <%= render 'templates/footer' %>
 </body>
 </html>

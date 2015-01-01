@@ -18,6 +18,7 @@ a {
 p {
 	margin: 0;
 	color: #555;
+	line-height: 1.3em;
 	font-size: 16px;
 }
 
@@ -71,7 +72,7 @@ body {
 .header_description {
 	float: left;
 	position: relative;
-	top: 44px;
+	top: 42px;
 	font-size: 17px;
 	color: #555;
 }
@@ -109,13 +110,7 @@ body {
 /**********************************************
 * Main
 **********************************************/
-.main {
-	clear: both;
-	overflow: hidden;
-	margin-bottom: 80px;
-}
-
-.main_gotop {
+.gotop {
 	cursor: pointer;
 	position: fixed;
 	right: 40px;
