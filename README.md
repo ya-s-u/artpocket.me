@@ -1,4 +1,4 @@
-[![wercker status](https://app.wercker.com/status/21db8171170decf7149dd9be003e27b0/s "wercker status")](https://app.wercker.com/project/bykey/21db8171170decf7149dd9be003e27b0)
+[![wercker status](https://app.wercker.com/status/c4780fc9b210a5c21c81807b419b4d10/s "wercker status")](https://app.wercker.com/project/bykey/c4780fc9b210a5c21c81807b419b4d10)
 
 # アートポケット(web,api)
 
