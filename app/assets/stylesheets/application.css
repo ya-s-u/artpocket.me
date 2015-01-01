@@ -73,7 +73,7 @@ body {
 .header_description {
 	float: left;
 	position: relative;
-	top: 42px;
+	top: 52px;
 	font-size: 17px;
 	color: #555;
 }
@@ -86,7 +86,7 @@ body {
 
 .header_menu > li {
 	float: left;
-	margin-left: 15px;
+	margin-left: 25px;
 }
 
 .header_menu > li:first-child {
@@ -104,7 +104,12 @@ body {
 
 .header_logo {
 	width: 320px;
-	margin: 30px auto;
+	margin: 40px auto;
+}
+
+.header_logo > a {
+	display: block;
+	height: 44px;
 }
 
 
