@@ -8,6 +8,6 @@ deploy:
         - wouter/email-notify:
             from: support@artpocket.me
             to: support@artpocket.me
-            username: support
+            username: support@artpocket.me
             password: $password
             host: smtp.zoho.com:465
