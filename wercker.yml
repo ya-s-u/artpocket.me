@@ -3,6 +3,8 @@ services:
     - wercker/mysql
 deploy:
     steps:
+        - heroku-deploy
+    after-steps:
         - wouter/email-notify:
             from: support@artpocket.me
             to: support@artpocket.me
