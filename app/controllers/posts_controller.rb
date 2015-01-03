@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    render :layout => 'simple'
+    #render :layout => 'simple'
   end
 
   def create
