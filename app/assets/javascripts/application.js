@@ -19,9 +19,9 @@ $(document).ready(function(){
     var scroll = $(this).scrollTop();
 
     if(scroll > 200) {
-      mainGoTop.fadeIn("normal");
+      mainGoTop.fadeIn("fast");
     } else {
-      mainGoTop.fadeOut("normal");
+      mainGoTop.fadeOut("fast");
     }
   })
 });

@@ -75,11 +75,13 @@
 	margin-bottom: 20px;
 }
 
+.show_left_picts li:last-child {
+	margin-bottom: 0;
+}
+
 .show_right {
 	float: right;
 	width: 465px;
-	position: static;
-	top: 0;
 }
 
 .show_right_title {
@@ -99,7 +101,7 @@
 	cursor: pointer;
 	float: left;
 	width: 225px;
-	padding-bottom: 16px;
+	padding-bottom: 8px;
 	border-radius: 5px;
 	-ms-border-radius: 5px;
 	-webkit-border-radius: 5px;

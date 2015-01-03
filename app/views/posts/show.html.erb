@@ -69,29 +69,41 @@
 </div> -->
 <script type="text/javascript">
 $(document).ready(function(){
-	header = $('#Header');
-	showLeft = $('#showLeft');
-	showRight = $('#showRight');
+	Header = $('#Header');
+	Left = $('#showLeft');
+	Right = $('#showRight');
 
-	const showLeftSize = showLeft.height() + header.outerHeight(true) - $(window).height();
-	const showRightPosition = showLeft.outerWidth(true);
-	const showRightSize = header.outerHeight(true) + showRight.height() - $(window).height();
+	const WidthLeft = Left.outerWidth(true);
+	const HeightWindow = $(window).height();
+	const HeightHeader = Header.height();
+	const HeightLeft = Left.height();
+	const HeightRight = Right.height();
+	const OffsetLeft = Left.offset();
+	const OffsetRight = Right.offset();
 
 	$(window).scroll(function () {
-		var scroll = $(this).scrollTop();
+		var s = $(this).scrollTop();
 
-		// if(scroll > showLeftSize && scroll <= showRightSize) {
-		// 	showLeft.css('position', 'fixed');
-		// 	showLeft.css('bottom', '0');
-		// 	showRight.css('margin-left', showRightPosition);
-		// } else if(scroll > showRightSize) {
-		// 	showLeft.css('position', 'absolute');
-		// 	showLeft.css('bottom', '0');
-		// 	showRight.css('margin-left', showRightPosition);
-		// } else {
-		// 	showLeft.css('position', 'static');
-		// 	showRight.css('margin-left', '0');
-		// }
+		if(HeightLeft < HeightRight) {
+			if(s > OffsetLeft.top + HeightLeft - HeightWindow && s <= OffsetRight.top + HeightRight - HeightWindow) {
+				Left.css({'position':'fixed', 'bottom':0});
+				Right.css({'margin-left':WidthLeft});
+			} else if(s > OffsetRight.top + HeightRight - HeightWindow) {
+				Left.css({'position':'absolute', 'bottom':0});
+				Right.css({'margin-left':WidthLeft});
+			} else {
+				Left.css({'position':'static'});
+				Right.css({'margin-left':0});
+			}
+		} else {
+			if(s > OffsetRight.top + HeightRight - HeightWindow && s <= OffsetLeft.top + HeightLeft - HeightWindow) {
+				Right.css({'position':'fixed', 'bottom':0, 'left':OffsetRight.left, 'right':''});
+			} else if(s > OffsetLeft.top + HeightLeft - HeightWindow) {
+				Right.css({'position':'absolute', 'bottom':0, 'left':'', 'right':0});
+			} else {
+				Right.css({'position':'static'});
+			}
+		}
 	})
 });
 
