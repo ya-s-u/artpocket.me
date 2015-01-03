@@ -2,10 +2,10 @@ box: wercker/ubuntu12.04-ruby2.0.0
 services:
     - wercker/mysql
 deploy:
-    after-steps:
+    steps:
         - wouter/email-notify:
             from: support@artpocket.me
             to: support@artpocket.me
             username: support
-            password: @rtp0cket
+            password: $password
             host: smtp.zoho.com:465
