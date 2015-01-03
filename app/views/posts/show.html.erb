@@ -73,16 +73,25 @@ $(document).ready(function(){
 	Left = $('#showLeft');
 	Right = $('#showRight');
 
-	const WidthLeft = Left.outerWidth(true);
-	const HeightWindow = $(window).height();
-	const HeightHeader = Header.height();
-	const HeightLeft = Left.height();
-	const HeightRight = Right.height();
-	const OffsetLeft = Left.offset();
-	const OffsetRight = Right.offset();
+	// const WidthLeft = Left.outerWidth(true);
+	// const HeightWindow = $(window).height();
+	// const HeightHeader = Header.height();
+	// const HeightLeft = Left.height();
+	// const HeightRight = Right.height();
+	// const OffsetLeft = Left.offset();
+	// const OffsetRight = Right.offset();
+	
+	var HeightWindow = $(window).height();
+	var OffsetLeft = Left.offset();
+	var OffsetRight = Right.offset();
 
 	$(window).scroll(function () {
 		var s = $(this).scrollTop();
+
+		var WidthLeft = Left.outerWidth(true);
+		var HeightHeader = Header.height();
+		var HeightLeft = Left.height();
+		var HeightRight = Right.height();
 
 		if(HeightLeft < HeightRight) {
 			if(s > OffsetLeft.top + HeightLeft - HeightWindow && s <= OffsetRight.top + HeightRight - HeightWindow) {
