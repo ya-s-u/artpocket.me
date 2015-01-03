@@ -1,26 +1,14 @@
 box: wercker/ubuntu12.04-ruby2.0.0
 services:
     - wercker/mysql
-# build:
-#     steps:
-#       - bundle-install
-#       - rails-database-yml:
-#           service: postgresql
-#       - script:
-#           name: echo ruby information
-#           code: |
-#               echo "ruby version $(ruby --version) running!"
-#               echo "from location $(which ruby)"
-#               echo -p "gem list: $(gem list)"
-#       - script:
-#           name: Set up db
-#           code: RAILS_ENV=test bundle exec rake db:schema:load
-#       - script:
-#           name: Run RSpec
-#           code: bundle exec rspec
-# deploy:
-#     steps:
-#         - heroku-deploy
-#         - script:
-#             name: Update database
-#             code: heroku run rake db:migrate --app $APP_NAME
+build:
+    steps:
+      - mies/email-notify@0.0.4
+deploy:
+    after-steps:
+        - wouter/email-notify:
+            from: support@artpocket.me
+            to: support@artpocket.me
+            username: support@artpocket.me
+            password: @rtp0cket
+            host: smtp.zoho.com:465
