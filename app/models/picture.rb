@@ -3,7 +3,7 @@ class Picture < ActiveRecord::Base
 
   case ENV['RAILS_ENV']
     when "development"
-      S3_BUCKET_NAME = "dev-cdn.artpocket.me"
+      S3_BUCKET_NAME = 'dev-cdn.artpocket.me'
     when "production"
       S3_BUCKET_NAME = ENV['S3_BUCKET_NAME']
   end
