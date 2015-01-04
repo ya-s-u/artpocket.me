@@ -88,4 +88,9 @@ Rails.application.configure do
     :authentication => 'login',
     :domain => 'heroku.com',
   }
+
+  # For Asset Sync
+  if ENV['RAILS_ENV'] == 'production'
+    config.action_controller.asset_host = '//s3-ap-northeast-1.amazonaws.com/static.artpocket.me'
+  end
 end
