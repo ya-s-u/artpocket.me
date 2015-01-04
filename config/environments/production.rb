@@ -90,6 +90,6 @@ Rails.application.configure do
   }
 
   # For Asset Sync
-  config.action_controller.asset_host = "//s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}"
+  config.action_controller.asset_host = "//#{ENV['S3_BUCKET_NAME']}"
 
 end
