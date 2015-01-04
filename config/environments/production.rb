@@ -90,7 +90,6 @@ Rails.application.configure do
   }
 
   # For Asset Sync
-  if ENV['RAILS_ENV'] == 'production'
-    config.action_controller.asset_host = '//static.artpocket.me'
-  end
+  config.action_controller.asset_host = "//#{ENV['S3_BUCKET_NAME']}"
+
 end
