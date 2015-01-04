@@ -67,7 +67,7 @@ body {
 .header {
 	overflow: hidden;
 	background: white;
-	border-top: 10px solid  #ffcb2e;
+	border-top: 8px solid  #ffcb2e;
 }
 
 .header_description {
@@ -95,7 +95,6 @@ body {
 
 .header_menu > li > a {
 	font-size: 14px;
-	color: #999;
 }
 
 .header_menu > li > a:hover {

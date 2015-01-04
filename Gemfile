@@ -48,3 +48,8 @@ end
 group :production do
   gem 'newrelic_rpm'
 end
+
+# For Production
+if ENV['RAILS_ENV'] == 'production'
+  gem 'asset_sync'
+end
