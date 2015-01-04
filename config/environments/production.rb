@@ -91,6 +91,6 @@ Rails.application.configure do
 
   # For Asset Sync
   if ENV['RAILS_ENV'] == 'production'
-    config.action_controller.asset_host = '//s3-ap-northeast-1.amazonaws.com/static.artpocket.me'
+    config.action_controller.asset_host = '//static.artpocket.me'
   end
 end
