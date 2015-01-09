@@ -1,120 +1,118 @@
 <div class="show">
-	<div class="container">
-		<div id="showLeft" class="show_left">
-			<ul class="show_left_picts">
-				<% @post.pictures.each do |picture| %>
-				<li><%= image_tag(picture.image.url(:pc_large)) %></li>
-				<% end %>
-			</ul>
-		</div>
-		<div id="showRight" class="show_right">
-			<h2 class="show_right_title"><%= @post.title %></h2>
-			<ul class="show_right_sns">
-				<li class="show_right_sns facebook" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=893420327351170&amp;link=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F&amp;feature=share&amp;display=popup&amp;redirect_uri=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F', 'facebookWindow', 'height=306, width=650, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-facebook"></i>シェアする</li>
-				<li class="show_right_sns twitter" onclick="window.open('https://twitter.com/share?text=<%= @post.title %> @artpocket&amp;url=http://artpocket.me', 'twitterWindow', 'height=420, width=550, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-twitter"></i>ツイートする</li>
-			</ul>
-			<%= simple_format @post.body, {:class=>"show_right_body"} %>
-			<table class="show_right_info">
-				<tbody>
-					<tr>
-						<th>開催日</th>
-						<td>
-							<%= @post.open_date.strftime("%Y年%m月%d日") %> 〜 <%= @post.close_date.strftime("%Y年%m月%d日") %>
-						</br>
-						<%= @post.open_time.strftime("%H:%M") %> 〜 <%= @post.close_time.strftime("%H:%M") %>
-					</td>
-				</tr>
-				<% if @post.place.present? %>
-				<tr>
-					<th>開催場所</th>
-					<td><%= @post.place %></td>
-				</tr>
-				<% end %>
-				<% if @post.url.present? %>
-				<tr>
-					<th>URL</th>
-					<td><%= link_to @post.url, @post.url, {:target=>"_blank"} %></td>
-				</tr>
-				<% end %>
-				<% if @post.facebook.present? %>
-				<tr>
-					<th>Facebook</th>
-					<td><%= link_to @post.facebook, @post.facebook, {:target=>"_blank"} %></td>
-				</tr>
-				<% end %>
-				<% if @post.twitter.present? %>
-				<tr>
-					<th>Twitter</th>
-					<td><%= link_to @post.twitter, @post.twitter, {:target=>"_blank"} %></td>
-				</tr>
-				<% end %>
-				<tr>
-					<th>料金</th>
-					<td><%= @post.charge>0 ? "#{@post.charge}円" : "無料" %></td>
-				</tr>
-				<tr>
-					<th>主催</th>
-					<td><%= @post.promoter %></td>
-				</tr>
-				<tr>
-					<th>お問い合わせ</th>
-					<td><%= mail_to @post.mail %></td>
-				</tr>
-			</tbody>
-		</table>
+	<div id="showLeft" class="show_left">
+		<ul class="show_left_picts">
+			<% @post.pictures.each do |picture| %>
+			<li><%= image_tag(picture.image.url(:pc_large)) %></li>
+			<% end %>
+		</ul>
 	</div>
+	<div id="showRight" class="show_right">
+		<h2 class="show_right_title"><%= @post.title %></h2>
+		<ul class="show_right_sns">
+			<li class="show_right_sns facebook" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=893420327351170&amp;link=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F&amp;feature=share&amp;display=popup&amp;redirect_uri=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F', 'facebookWindow', 'height=306, width=650, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-facebook"></i>シェアする</li>
+			<li class="show_right_sns twitter" onclick="window.open('https://twitter.com/share?text=<%= @post.title %> @artpocket&amp;url=http://artpocket.me', 'twitterWindow', 'height=420, width=550, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-twitter"></i>ツイートする</li>
+		</ul>
+		<%= simple_format @post.body, {:class=>"show_right_body"} %>
+		<table class="show_right_info">
+			<tbody>
+				<tr>
+					<th>開催日</th>
+					<td>
+						<%= @post.open_date.strftime("%Y年%m月%d日") %> 〜 <%= @post.close_date.strftime("%Y年%m月%d日") %>
+					</br>
+					<%= @post.open_time.strftime("%H:%M") %> 〜 <%= @post.close_time.strftime("%H:%M") %>
+				</td>
+			</tr>
+			<% if @post.place.present? %>
+			<tr>
+				<th>開催場所</th>
+				<td><%= @post.place %></td>
+			</tr>
+			<% end %>
+			<% if @post.url.present? %>
+			<tr>
+				<th>URL</th>
+				<td><%= link_to @post.url, @post.url, {:target=>"_blank"} %></td>
+			</tr>
+			<% end %>
+			<% if @post.facebook.present? %>
+			<tr>
+				<th>Facebook</th>
+				<td><%= link_to @post.facebook, @post.facebook, {:target=>"_blank"} %></td>
+			</tr>
+			<% end %>
+			<% if @post.twitter.present? %>
+			<tr>
+				<th>Twitter</th>
+				<td><%= link_to @post.twitter, @post.twitter, {:target=>"_blank"} %></td>
+			</tr>
+			<% end %>
+			<tr>
+				<th>料金</th>
+				<td><%= @post.charge>0 ? "#{@post.charge}円" : "無料" %></td>
+			</tr>
+			<tr>
+				<th>主催</th>
+				<td><%= @post.promoter %></td>
+			</tr>
+			<tr>
+				<th>お問い合わせ</th>
+				<td><%= mail_to @post.mail %></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 <!-- <div class="show_bottom">
 <div id="map" class="show_bottom_map" style="width: 100%; height: 300px;"></div>
 </div> -->
 <script type="text/javascript">
-$(document).ready(function(){
-	Header = $('#Header');
-	Left = $('#showLeft');
-	Right = $('#showRight');
-
-	// const WidthLeft = Left.outerWidth(true);
-	// const HeightWindow = $(window).height();
-	// const HeightHeader = Header.height();
-	// const HeightLeft = Left.height();
-	// const HeightRight = Right.height();
-	// const OffsetLeft = Left.offset();
-	// const OffsetRight = Right.offset();
-	
-	var HeightWindow = $(window).height();
-	var OffsetLeft = Left.offset();
-	var OffsetRight = Right.offset();
-
-	$(window).scroll(function () {
-		var s = $(this).scrollTop();
-
-		var WidthLeft = Left.outerWidth(true);
-		var HeightHeader = Header.height();
-		var HeightLeft = Left.height();
-		var HeightRight = Right.height();
-
-		if(HeightLeft < HeightRight) {
-			if(s > OffsetLeft.top + HeightLeft - HeightWindow && s <= OffsetRight.top + HeightRight - HeightWindow) {
-				Left.css({'position':'fixed', 'bottom':0});
-				Right.css({'margin-left':WidthLeft});
-			} else if(s > OffsetRight.top + HeightRight - HeightWindow) {
-				Left.css({'position':'absolute', 'bottom':0});
-				Right.css({'margin-left':WidthLeft});
-			} else {
-				Left.css({'position':'static'});
-				Right.css({'margin-left':0});
-			}
-		} else {
-			if(s > OffsetRight.top + HeightRight - HeightWindow && s <= OffsetLeft.top + HeightLeft - HeightWindow) {
-				Right.css({'position':'fixed', 'bottom':0, 'left':OffsetRight.left, 'right':''});
-			} else if(s > OffsetLeft.top + HeightLeft - HeightWindow) {
-				Right.css({'position':'absolute', 'bottom':0, 'left':'', 'right':0});
-			} else {
-				Right.css({'position':'static'});
-			}
-		}
-	})
-});
+// $(document).ready(function(){
+// 	Header = $('#Header');
+// 	Left = $('#showLeft');
+// 	Right = $('#showRight');
+//
+// 	// const WidthLeft = Left.outerWidth(true);
+// 	// const HeightWindow = $(window).height();
+// 	// const HeightHeader = Header.height();
+// 	// const HeightLeft = Left.height();
+// 	// const HeightRight = Right.height();
+// 	// const OffsetLeft = Left.offset();
+// 	// const OffsetRight = Right.offset();
+//
+// 	var HeightWindow = $(window).height();
+// 	var OffsetLeft = Left.offset();
+// 	var OffsetRight = Right.offset();
+//
+// 	$(window).scroll(function () {
+// 		var s = $(this).scrollTop();
+//
+// 		var WidthLeft = Left.outerWidth(true);
+// 		var HeightHeader = Header.height();
+// 		var HeightLeft = Left.height();
+// 		var HeightRight = Right.height();
+//
+// 		if(HeightLeft < HeightRight) {
+// 			if(s > OffsetLeft.top + HeightLeft - HeightWindow && s <= OffsetRight.top + HeightRight - HeightWindow) {
+// 				Left.css({'position':'fixed', 'bottom':0});
+// 				Right.css({'margin-left':WidthLeft});
+// 			} else if(s > OffsetRight.top + HeightRight - HeightWindow) {
+// 				Left.css({'position':'absolute', 'bottom':0});
+// 				Right.css({'margin-left':WidthLeft});
+// 			} else {
+// 				Left.css({'position':'static'});
+// 				Right.css({'margin-left':0});
+// 			}
+// 		} else {
+// 			if(s > OffsetRight.top + HeightRight - HeightWindow && s <= OffsetLeft.top + HeightLeft - HeightWindow) {
+// 				Right.css({'position':'fixed', 'bottom':0, 'left':OffsetRight.left, 'right':''});
+// 			} else if(s > OffsetLeft.top + HeightLeft - HeightWindow) {
+// 				Right.css({'position':'absolute', 'bottom':0, 'left':'', 'right':0});
+// 			} else {
+// 				Right.css({'position':'static'});
+// 			}
+// 		}
+// 	})
+// });
 
 // var map;
 // map = new GMaps({

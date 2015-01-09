@@ -3,13 +3,13 @@
 **********************************************/
 .index_list {
 	overflow: hidden;
-	margin: 26px 0;
 }
 
 .index_list li {
 	float: left;
-	width: 274px;
-	margin: 0 13px 20px 13px;
+	width: 273px;
+	padding: 0 13px 20px 13px;
+	border-right: 1px solid #eee;
 }
 
 .index_list li a {
