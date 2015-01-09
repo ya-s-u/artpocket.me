@@ -12,11 +12,12 @@
 |CI|wercker||
 |ホスティング|Heroku(nginx+unicorn)||
 |ファイルサーバー|AWS S3||
-|メールサーバー|Mandrill||
+|メール送信サーバー|Mandrill||
+|メールサーバー|Zoho mail||
 |サーバー監視|NewRelic||
 |ログ監視|Logentries||
-|ドメイン取得|スタードメイン||
-|ネームサーバー|Dozens||
+|ドメイン|スタードメイン||
+|DNS|AWS Route53||
 
 
 ## 環境
@@ -27,9 +28,13 @@
 |プロダクション|Heroku(artpocket-production)|ClearDB(artpocket-production)|S3(cdn.artpocket.me)|
 
 ## DNS
+**ルートドメインをwwwへリダイレクト**
+
 |NAME|TYPE|PRIO|CONTENT|
 |---|---|---|---|
-|artpocket.me|CNAME||artpocket-production.herokuapp.com|
+|artpocket.me|A||ALIAS s3-website-ap-northeast-1.amazonaws.com|
+|www.artpocket.me|CNAME||artpocket-production.herokuapp.com|
+|*.artpocket.me|CNAME||artpocket-production.herokuapp.com|
 |dev.artpocket.me|CNAME||artpocket-development.herokuapp.com|
 |cdn.artpocket.me|CNAME||cdn.artpocket.me.s3-ap-northeast-1.amazonaws.com|
 |dev-cdn.artpocket.me|CNAME||dev-cdn.artpocket.me.s3-ap-northeast-1.amazonaws.com|
@@ -38,4 +43,5 @@
 |artpocket.me|MX|0|mx.zohomail.com|
 |artpocket.me|MX|10|mx2.zohomail.com|
 |artpocket.me|TXT||v=spf1 include:spf.mandrillapp.com ?all|
+|artpocket.me|TXT||v=spf1 mx include:zoho.com ~all|
 |mandrill._domainkey.artpocket.me|TXT||v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCrLHiExVd55zd/IQ/J/mRwSRMAocV/hMB3jXwaHH36d9NaVynQFYV8NaWi69c1veUtRzGt7yAioXqLj7Z4TeEUoOLgrKsn8YnckaGs9i3B3tVFB+Ch/4mPhXWiNfNdynHWBcPcbJ8kjEQ2U8y78dHZj1YeRXXVvWob2OaKynO8/lQIDAQAB;|
