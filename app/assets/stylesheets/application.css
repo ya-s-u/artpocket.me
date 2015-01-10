@@ -64,35 +64,45 @@ body {
 **********************************************/
 .top {
 	overflow: hidden;
-	height: 40px;
+	height: 60px;
 	background: #F9C704;
+}
+
+.top_logo {
+	float: left;
+	width: 180px;
+}
+
+.top_logo > a {
+	display: block;
+	height: 54px;
 }
 
 .top_description {
 	float: left;
-	margin: 10px 20px;
+	margin: 24px 0 0 20px;
 	font-size: 14px;
 	color: white;
 }
 
-.top_menu {
+.top_share {
 	float: right;
-	margin: 0 20px;
+	margin: 15px 20px;
 }
 
-.top_menu > li {
+.top_share > li {
 	float: left;
 }
 
-.top_menu > li > a {
-	display: block;
-	padding: 7px 10px;
-	font-size: 13px;
+.top_share > li > a > i {
+	font-size: 28px;
 	color: white;
 }
 
-.top_menu > li > a:hover {
-	background: rgba(0,0,0,0.05);
+.top_share > li > p {
+	font-size: 12px;
+	padding: 7px 0px;
+	color: white;
 }
 
 
@@ -101,59 +111,31 @@ body {
 **********************************************/
 .header {
 	overflow: hidden;
-	background: white;
-}
-
-.header_share {
-	float: left;
-	margin-top: 34px;
-}
-
-.header_share > li {
-	float: left;
-}
-
-.header_share > li > a > i {
-	font-size: 28px;
-}
-
-.header_share > li > p {
-	font-size: 12px;
-	padding: 7px 0px;
-}
-
-.header_logo {
-	width: 240px;
-	margin: 20px auto;
-}
-
-.header_logo > a {
-	display: block;
-	height: 54px;
-}
-
-.header_menu {
-	overflow: hidden;
-	padding: 8px 130px;
 	background: #f6f6f6;
+}
+
+.header_category {
+	overflow: hidden;
+	float: left;
+	padding: 8px 0;
 	border-radius: 6px;
 }
 
-.header_menu > li {
+.header_category > li {
 	float: left;
-	margin-right: 20px;
+	margin-right: 10px;
 }
 
-.header_menu > li:first-child {
-	padding-right: 20px;
+.header_category > li:first-child {
+	padding-right: 10px;
 	border-right: 1px solid #ddd;
 }
 
-.header_menu > li > a:hover {
+.header_category > li > a:hover {
 	opacity: 0.5;
 }
 
-.header_menu > li > a > i {
+.header_category > li > a > i {
 	float: left;
 	display: block;
 	position: relative;
@@ -166,6 +148,27 @@ body {
 	background: #0070d1;
 	color: white;
 	border-radius: 50%;
+}
+
+.header_menu {
+	display: none;
+	float: right;
+	margin: 0 20px;
+}
+
+.header_menu > li {
+	float: left;
+}
+
+.header_menu > li > a {
+	display: block;
+	padding: 7px 10px;
+	font-size: 13px;
+	color: white;
+}
+
+.header_menu > li > a:hover {
+	background: rgba(0,0,0,0.05);
 }
 
 
@@ -202,7 +205,6 @@ body {
 	float: right;
 	width: 279px;
 	padding-left: 20px;
-	border-left: 1px solid #ccc;
 }
 
 .sidebar_fb {

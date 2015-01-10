@@ -1,17 +1,15 @@
 <div class="top">
-  <p class="top_description">東海のアートイベントのフライヤー集めました</p>
-  <ul class="top_menu">
-    <li>
-      <%= link_to do %>このサイトとは<% end %>
-    </li>
-    <li>
-      <%= link_to :new_post do %>フライヤー登録<% end %>
-    </li>
-    <li>
-      <%= link_to do %>お問い合わせ<% end %>
-    </li>
-    <li>
-      <%= link_to :terms_statics do %>利用規約<% end %>
-    </li>
-  </ul>
+  <div class="container">
+    <h1 class="top_logo"><%= link_to image_tag('logo.png'), :root %></h1>
+    <p class="top_description">東海のアートイベントのフライヤー集めました</p>
+    <ul class="top_share">
+      <li><p>新着フライヤー情報をお届けします!!</p></li>
+      <li>
+        <%= link_to :terms_statics do %><i class="icon-twitter"></i><% end %>
+      </li>
+      <li>
+        <%= link_to :terms_statics do %><i class="icon-facebook"></i><% end %>
+      </li>
+    </ul>
+  </div>
 </div>
