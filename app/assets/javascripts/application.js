@@ -4,9 +4,8 @@
 //= stub active_admin
 //= require_tree .
 
-// Go to Top
 $(document).ready(function(){
-  header = $('#Header');
+  // Go Top
   mainGoTop = $('#mainGoTop');
   mainGoTop.hide();
 
@@ -15,6 +14,11 @@ $(document).ready(function(){
     return false;
   });
 
+  // Header
+  Top = $('#Top');
+  Header = $('#Header');
+  heightTop = Top.height();
+
   $(window).scroll(function () {
     var scroll = $(this).scrollTop();
 
@@ -22,6 +26,12 @@ $(document).ready(function(){
       mainGoTop.fadeIn("fast");
     } else {
       mainGoTop.fadeOut("fast");
+    }
+
+    if(scroll > heightTop) {
+      Header.css({'position':'fixed','top':0});
+    } else {
+      Header.css({'position':'absolute','top':''});
     }
   })
 });

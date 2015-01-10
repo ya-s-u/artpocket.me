@@ -85,23 +85,33 @@ body {
 	color: white;
 }
 
-.top_share {
+.top_menu {
 	float: right;
-	margin: 15px 20px;
+	margin-top: 12px;
 }
 
-.top_share > li {
+.top_menu > li {
 	float: left;
+	position: relative;
+	margin-left: 10px;
+	padding-left: 10px;
 }
 
-.top_share > li > a > i {
-	font-size: 28px;
+.top_menu > li:after {
+	content: '/';
+	position: absolute;
+	right: -14px;
+	top: 2px;
 	color: white;
+	font-size: 16px;
 }
 
-.top_share > li > p {
-	font-size: 12px;
-	padding: 7px 0px;
+.top_menu > li:last-child:after {
+	content: '';
+}
+
+.top_menu > li > a {
+	font-size: 13px;
 	color: white;
 }
 
@@ -110,7 +120,10 @@ body {
 * Header
 **********************************************/
 .header {
+	position: absolute;
 	overflow: hidden;
+	width: 100%;
+	z-index: 9999;
 	background: #f6f6f6;
 }
 
@@ -156,26 +169,32 @@ body {
 .header_category > li > a > i.architecture{background:#e74c3c}
 .header_category > li > a > i.fashion{background:#d35400}
 
-.header_menu {
-	display: none;
+.header_share {
 	float: right;
-	margin: 0 20px;
+	margin-top: 9px;
 }
 
-.header_menu > li {
+.header_share > li {
 	float: left;
+	margin-left: 10px;
 }
 
-.header_menu > li > a {
+.header_share > li > a > i {
 	display: block;
-	padding: 7px 10px;
-	font-size: 13px;
+	position: relative;
+	top: 5px;
+	width: 22px;
+	height: 21px;
+	text-align: center;
+	padding-top: 1px;
+	font-size: 18px;
+	background: #0070d1;
 	color: white;
+	border-radius: 50%;
 }
 
-.header_menu > li > a:hover {
-	background: rgba(0,0,0,0.05);
-}
+.header_share > li > a > i.facebook{background:#315096}
+.header_share > li > a > i.twitter{background:#55acee}
 
 
 /**********************************************
@@ -183,7 +202,7 @@ body {
 **********************************************/
 .main {
 	overflow: hidden;
-	margin: 30px 0;
+	margin: 80px 0 40px;
 }
 
 .left {
