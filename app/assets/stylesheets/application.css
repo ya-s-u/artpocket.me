@@ -141,14 +141,20 @@ body {
 	position: relative;
 	top: 5px;
 	width: 22px;
-	height: 22px;
+	height: 21px;
 	text-align: center;
 	margin-right: 6px;
-	font-size: 19px;
+	padding-top: 1px;
+	font-size: 18px;
 	background: #0070d1;
 	color: white;
 	border-radius: 50%;
 }
+
+.header_category > li > a > i.graphic{background:#3498db}
+.header_category > li > a > i.digital{background:#27ae60}
+.header_category > li > a > i.architecture{background:#e74c3c}
+.header_category > li > a > i.fashion{background:#d35400}
 
 .header_menu {
 	display: none;
