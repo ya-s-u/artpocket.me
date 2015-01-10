@@ -134,7 +134,7 @@ body {
 
 .header_menu {
 	overflow: hidden;
-	padding: 6px 130px;
+	padding: 8px 130px;
 	background: #f6f6f6;
 	border-radius: 6px;
 }
@@ -199,7 +199,7 @@ body {
 * Sidebar
 **********************************************/
 .sidebar {
-	float: left;
+	float: right;
 	width: 279px;
 	padding-left: 20px;
 	border-left: 1px solid #ccc;
