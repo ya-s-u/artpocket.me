@@ -38,7 +38,6 @@ li {
 }
 
 table {
-	width: 100%;
 	color: #555;
 	font-size: 14px;
 	word-wrap: break-word;
@@ -49,7 +48,6 @@ table {
 * Common
 **********************************************/
 body {
-	background: #f7f7f7;
 	font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
 }
 
@@ -62,59 +60,128 @@ body {
 
 
 /**********************************************
+* Global Menu
+**********************************************/
+.top {
+	overflow: hidden;
+	height: 40px;
+	background: #F9C704;
+}
+
+.top_description {
+	float: left;
+	margin: 10px 20px;
+	font-size: 14px;
+	color: white;
+}
+
+.top_menu {
+	float: right;
+	margin: 0 20px;
+}
+
+.top_menu > li {
+	float: left;
+}
+
+.top_menu > li > a {
+	display: block;
+	padding: 7px 10px;
+	font-size: 13px;
+	color: white;
+}
+
+.top_menu > li > a:hover {
+	background: rgba(0,0,0,0.05);
+}
+
+
+/**********************************************
 * Header
 **********************************************/
 .header {
 	overflow: hidden;
 	background: white;
-	border-top: 8px solid  #ffcb2e;
 }
 
-.header_description {
+.header_share {
 	float: left;
-	position: relative;
-	top: 52px;
-	font-size: 17px;
-	color: #555;
+	margin-top: 34px;
+}
+
+.header_share > li {
+	float: left;
+}
+
+.header_share > li > a > i {
+	font-size: 28px;
+}
+
+.header_share > li > p {
+	font-size: 12px;
+	padding: 7px 0px;
+}
+
+.header_logo {
+	width: 240px;
+	margin: 20px auto;
+}
+
+.header_logo > a {
+	display: block;
+	height: 54px;
 }
 
 .header_menu {
-	float: right;
-	position: relative;
-	top: 46px;
+	overflow: hidden;
+	padding: 6px 130px;
+	background: #f6f6f6;
+	border-radius: 6px;
 }
 
 .header_menu > li {
 	float: left;
-	margin-left: 25px;
+	margin-right: 20px;
 }
 
 .header_menu > li:first-child {
-	border-left: none;
-}
-
-.header_menu > li > a {
-	font-size: 14px;
+	padding-right: 20px;
+	border-right: 1px solid #ddd;
 }
 
 .header_menu > li > a:hover {
 	opacity: 0.5;
 }
 
-.header_logo {
-	width: 320px;
-	margin: 40px auto;
-}
-
-.header_logo > a {
+.header_menu > li > a > i {
+	float: left;
 	display: block;
-	height: 44px;
+	position: relative;
+	top: 5px;
+	width: 22px;
+	height: 22px;
+	text-align: center;
+	margin-right: 6px;
+	font-size: 19px;
+	background: #0070d1;
+	color: white;
+	border-radius: 50%;
 }
 
 
 /**********************************************
 * Main
 **********************************************/
+.main {
+	overflow: hidden;
+	margin: 30px 0;
+}
+
+.left {
+	float: left;
+	width: 900px;
+}
+
 .gotop {
 	cursor: pointer;
 	position: fixed;
@@ -129,9 +196,25 @@ body {
 
 
 /**********************************************
+* Sidebar
+**********************************************/
+.sidebar {
+	float: left;
+	width: 279px;
+	padding-left: 20px;
+	border-left: 1px solid #ccc;
+}
+
+.sidebar_fb {
+	border: 1px solid #eee;
+}
+
+
+/**********************************************
 * Footer
 **********************************************/
 .footer {
+	background-color: #f6f6f6;
 }
 
 .footer_credit {
