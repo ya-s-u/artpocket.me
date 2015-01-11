@@ -60,7 +60,6 @@ class PostsController < ApplicationController
 
   def complete
     @id_hash = params[:p]
-    render :layout => 'simple'
   end
 
 end

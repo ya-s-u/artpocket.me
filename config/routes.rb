@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   get 'about' => 'statics#about', as: :about_statics
   get 'terms' => 'statics#terms', as: :terms_statics
+  get 'contact' => 'statics#contact', as: :contact_statics
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
