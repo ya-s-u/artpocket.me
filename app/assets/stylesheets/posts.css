@@ -194,23 +194,23 @@
 /**********************************************
 * New
 **********************************************/
-.post_new_title {
-	margin: 30px auto;
-	width: 980px;
-	font-size: 24px;
+.new {
+	margin-right: 20px;
+	padding-right: 20px;
+	border-right: 1px solid #eee;
+}
+
+.new_title {
+	margin-bottom: 20px;
+	padding-top: 6px;
+	font-size: 22px;
 	font-weight: normal;
-}
-
-.post_new {
-	padding: 30px 0;
-	background: white;
-}
-
-.post_new > .container {
-	width: 980px;
+	border-top: 2px solid #F9C704;
+	color: #F9C704;
 }
 
 .form {
+	width: 100%;
 }
 
 .form tr {
@@ -248,7 +248,6 @@
 }
 
 .form_center {
-	width: 600px;
 	vertical-align: top;
 }
 
@@ -391,7 +390,7 @@
 	cursor: pointer;
 	float: left;
 	display: block;
-	width: 250px;
+	width: 200px;
 	margin: 20px auto 40px 35px;
 	padding: 12px 0;
 	font-size: 16px;
