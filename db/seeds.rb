@@ -9,6 +9,6 @@
 # coding: utf-8
 
 Category.create(:title => 'graphic', :title_ja => 'イラスト・グラフィック')
-Category.create(:title => 'interior', :title_ja => '建築・インテリア')
-Category.create(:title => 'degital', :title_ja => '写真・映像・メディア')
+Category.create(:title => 'architecture', :title_ja => '建築・インテリア')
+Category.create(:title => 'media', :title_ja => '写真・映像・メディア')
 Category.create(:title => 'fashion', :title_ja => 'ファッション・クラフト')
