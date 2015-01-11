@@ -145,11 +145,11 @@
 }
 
 .show_right_info th {
-	width: 110px;
+	width: 130px;
 	padding: 10px 0 10px 10px;
 	border-bottom: 1px solid #eaeaea;
 	font-weight: normal;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 1.4em;
 }
 
