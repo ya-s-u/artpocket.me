@@ -339,7 +339,9 @@ FormSubmit.click(function() {
 	});
 
 	var category = [
-		'イラスト・グラフィック',  '建築・インテリア', '写真・映像・メディア', 'ファッション・クラフト'
+		'イラスト・グラフィック',  '建築・インテリア',  '',
+		'写真・映像・メディア', 'ファッション・クラフト', '',
+		'', ''
 	];
 	$('#confirm_category').text(category[Math.floor($('#post_category_id').val()/10)]);
 
