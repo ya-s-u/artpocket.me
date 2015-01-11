@@ -1,65 +1,59 @@
 /**********************************************
 * Common
 **********************************************/
-.static_title {
-  margin: 30px auto;
-  width: 980px;
-  font-size: 24px;
-  font-weight: normal;
-}
-
 .static {
-  padding: 30px 0;
-  background: white;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 1px solid #eee;
 }
 
-.static > .container {
-  width: 980px;
+.static_section {
+  margin-bottom: 40px;
 }
+
+.static_section_title {
+  margin-bottom: 20px;
+  padding-top: 6px;
+  font-size: 22px;
+  font-weight: normal;
+  border-top: 2px solid #F9C704;
+  color: #F9C704;
+}
+
 
 /**********************************************
 * About
 **********************************************/
-.about_copy {
-  text-align: center;
-  font-size: 24px;
-}
-
-.about_logo {
-  display: block;
-  width: 500px;
-  margin: 20px auto;
-}
-
-.about_text {
-  text-align: center;
-  font-size: 18px;
-}
-
-.about_mock {
+.about > p {
+  margin-bottom: 1em;
 }
 
 
 /**********************************************
 * Terms
 **********************************************/
-.static_terms > li {
+.terms > li {
   list-style: decimal;
-  margin: 20px 0 20px 8px;
+  margin: 20px 0 20px -16px;
   font-size: 16px;
 }
 
-.static_terms >li > h3 {
+.terms >li > h3 {
   font-size: 16px;
 }
 
-.static_terms >li > ol {
-  margin-top: 10px;
+.terms >li > ol {
+  margin: 10px 0 0 -16px;
 }
 
-.static_terms >li > ol > li {
+.terms >li > ol > li {
   list-style: decimal;
   line-height: 1.3em;
   margin-bottom: 10px;
   color: #555;
 }
+
+
+/**********************************************
+* Contact
+**********************************************/
