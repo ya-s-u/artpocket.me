@@ -74,13 +74,11 @@ body {
 }
 
 .top_logo > a {
-	display: block;
-	height: 54px;
 }
 
 .top_description {
 	float: left;
-	margin: 24px 0 0 20px;
+	margin: 22px 0 0 20px;
 	font-size: 14px;
 	color: white;
 }
@@ -101,7 +99,7 @@ body {
 	content: '/';
 	position: absolute;
 	right: -14px;
-	top: 2px;
+	top: 1px;
 	color: white;
 	font-size: 16px;
 }
@@ -136,11 +134,11 @@ body {
 
 .header_category > li {
 	float: left;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .header_category > li:first-child {
-	padding-right: 10px;
+	padding-right: 20px;
 	border-right: 1px solid #ddd;
 }
 
@@ -228,8 +226,7 @@ body {
 **********************************************/
 .sidebar {
 	float: right;
-	width: 279px;
-	padding-left: 20px;
+	width: 299px;
 }
 
 .sidebar_fb {

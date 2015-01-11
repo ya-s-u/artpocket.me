@@ -2,7 +2,7 @@
 	<div class="container">
 		<ul class="header_category">
 			<li>
-				<%= link_to :terms_statics do %>全て<% end %>
+				<%= link_to :root do %>全て<% end %>
 			</li>
 			<li>
 				<%= link_to category_post_path(:category=>'graphic') do %>
@@ -27,10 +27,10 @@
 		</ul>
 		<ul class="header_share">
 			<li>
-				<%= link_to :terms_statics do %><i class="icon-facebook facebook"></i><% end %>
+				<%= link_to 'https://www.facebook.com/artpocket.me', {:target=>"_blank"} do %><i class="icon-facebook facebook"></i><% end %>
 			</li>
 			<li>
-				<%= link_to :terms_statics do %><i class="icon-twitter twitter"></i><% end %>
+				<%= link_to 'https://twitter.com/art_pocket', {:target=>"_blank"} do %><i class="icon-twitter twitter"></i><% end %>
 			</li>
 		</ul>
 	</div>

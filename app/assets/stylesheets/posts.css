@@ -7,8 +7,10 @@
 
 .index_list li {
 	float: left;
-	width: 273px;
-	padding: 0 13px 20px 13px;
+	width: 259px;
+	//padding: 0 20px 20px 20px;
+	padding: 0 20px 20px 0;
+	margin-right: 20px;
 	border-right: 1px solid #eee;
 }
 
@@ -17,8 +19,6 @@
 }
 
 .index_list_thumb {
-	padding: 10px;
-	background: white;
 	border-radius: 3px;
 }
 
