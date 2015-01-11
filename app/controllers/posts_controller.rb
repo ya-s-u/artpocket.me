@@ -53,7 +53,7 @@ class PostsController < ApplicationController
       end
     end
 
-    UserMailer.post_confirm(@post).deliver
+    UserMailer.post_confirm(@post).deliver if ENV['RAILS_ENV']=='development' || ENV['IS_MAILER']=='enable'
 
     redirect_to complete_post_path(p: @post.id_hash)
   end
