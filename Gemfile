@@ -36,6 +36,9 @@ gem 'aws-sdk'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 
+# For Responsive
+gem 'jpmobile'
+
 group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'

@@ -60,14 +60,6 @@ ActiveRecord::Schema.define(version: 20141231152129) do
     t.datetime "updated_at"
   end
 
-  create_table "managers", force: true do |t|
-    t.string   "username",   null: false
-    t.string   "mail",       null: false
-    t.string   "password",   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "pictures", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -112,7 +104,6 @@ ActiveRecord::Schema.define(version: 20141231152129) do
     t.string   "facebook"
     t.string   "twitter"
     t.string   "mail"
-    t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "place",       default: "", null: false

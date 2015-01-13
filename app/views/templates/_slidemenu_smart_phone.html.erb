@@ -1,0 +1,38 @@
+<div id="SlideMenu" class="slidemenu">
+  <div class="slidemenu-header">
+    <div>
+      Header
+    </div>
+  </div>
+  <div class="slidemenu-body">
+    <ul class="slidemenu-content">
+      <li><a class="menu-item" href="http://google.com">Menu 1</a></li>
+      <li><a class="menu-item" href="http://google.com">Menu 2</a></li>
+      <li><a class="menu-item" href="http://google.com">Menu 3</a></li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  var menu = $('#SlideMenu'), // スライドインするメニューを指定
+  menuBtn = $('#OpenSlideMenu'), // メニューボタンを指定
+  body = $(document.body),
+  menuWidth = menu.outerWidth();
+
+  // メニューボタンをクリックした時の動き
+  menuBtn.on('click', function(){
+    // body に open クラスを付与する
+    body.toggleClass('open');
+    if(body.hasClass('open')){
+      // open クラスが body についていたらメニューをスライドインする
+      body.animate({'right' : menuWidth }, 300);
+      menu.animate({'right' : 0 }, 300);
+    } else {
+      // open クラスが body についていなかったらスライドアウトする
+      menu.animate({'right' : -menuWidth }, 300);
+      body.animate({'right' : 0 }, 300);
+    }
+  });
+});
+</script>

@@ -2,7 +2,7 @@
 	<div id="showLeft" class="show_left">
 		<ul class="show_left_picts">
 			<% @post.pictures.each do |picture| %>
-			<li><%= image_tag(picture.image.url(:pc_large)) %></li>
+			<li><%= image_tag(picture.image.url(:resized)) %></li>
 			<% end %>
 		</ul>
 	</div>
@@ -54,10 +54,6 @@
 			<tr>
 				<th>主催</th>
 				<td><%= @post.promoter %></td>
-			</tr>
-			<tr>
-				<th>お問い合わせ</th>
-				<td><%= mail_to @post.mail %></td>
 			</tr>
 		</tbody>
 	</table>

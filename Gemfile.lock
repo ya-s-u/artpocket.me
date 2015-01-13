@@ -166,6 +166,7 @@ GEM
     formtastic (3.1.2)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.1.1)
+    google-analytics-rails (0.0.6)
     grape (0.9.0)
       activesupport
       builder
@@ -199,6 +200,7 @@ GEM
     jbuilder (2.2.4)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jpmobile (4.2.0)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -343,9 +345,11 @@ DEPENDENCIES
   aws-sdk
   bcrypt (~> 3.1.7)
   devise
+  google-analytics-rails
   grape
   grape-jbuilder
   jbuilder (~> 2.0)
+  jpmobile
   jquery-rails
   letter_opener
   letter_opener_web
