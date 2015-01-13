@@ -48,4 +48,5 @@ end
 group :production do
   gem 'newrelic_rpm'
   gem 'asset_sync'
+  gem 'google-analytics-rails'
 end
