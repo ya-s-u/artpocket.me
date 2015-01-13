@@ -7,14 +7,12 @@
 
 .index_list li {
 	float: left;
-	width: 259px;
-	padding: 0 20px 20px 0;
-	margin-right: 20px;
-	border-right: 1px solid #eee;
+	width: 50%;
 }
 
 .index_list li a {
 	display: block;
+	margin: 0 10px 10px 10px;
 }
 
 .index_list_thumb {

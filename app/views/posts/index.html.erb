@@ -18,7 +18,11 @@
 	$(window).load(function() {
 		$('#IndexList').masonry({
 			itemSelector: 'li',
-			columnWidth: 300,
+			<% if request.smart_phone? %>
+				columnWidth: (screen.availWidth)/2,
+			<% else %>
+				columnWidth: 300,
+			<% end %>
 			isFitWidth: true,
 		});
 	})

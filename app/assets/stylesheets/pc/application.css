@@ -72,9 +72,11 @@ body {
 .top_logo {
 	float: left;
 	width: 180px;
+	margin: 16px 0 0 0;
 }
 
-.top_logo > a {
+.top_logo > a > img {
+	display: block;
 }
 
 .top_description {

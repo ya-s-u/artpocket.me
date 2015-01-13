@@ -49,7 +49,11 @@ table {
 * Common
 **********************************************/
 body {
+	position: relative;
+	right: 0;
+	overflow-x: hidden;
 	font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
+	background: #f6f6f6;
 }
 
 .container {
@@ -61,56 +65,45 @@ body {
 
 
 /**********************************************
-* Global Menu
+* Slide Menu
 **********************************************/
-.top {
+.slidemenu {
+	position: fixed;
+	top: 0;
+	right: -240px;
+	width: 240px;
+	height: 100%;
+	background: #282828;
+}
+
+/**********************************************
+* Header
+**********************************************/
+.header {
 	overflow: hidden;
-	height: 60px;
+	z-index: 9999;
+	width: 100%;
+	height: 44px;
+	position: fixed;
 	background: #F9C704;
 }
 
-.top_logo {
-	float: left;
-	width: 180px;
-}
-
-.top_logo > a {
-}
-
-.top_description {
-	float: left;
-	margin: 22px 0 0 20px;
-	font-size: 14px;
-	color: white;
-}
-
-.top_menu {
-	float: right;
-	margin-top: 12px;
-}
-
-.top_menu > li {
-	float: left;
-	position: relative;
-	margin-left: 10px;
-	padding-left: 10px;
-}
-
-.top_menu > li:after {
-	content: '/';
+.header_logo {
 	position: absolute;
-	right: -14px;
-	top: 1px;
-	color: white;
-	font-size: 16px;
+	top: 11px;
+	left: 50%;
+	width: 140px;
+	margin: 0 0 0 -70px;
 }
 
-.top_menu > li:last-child:after {
-	content: '';
+.header_logo > a > img {
+	display: block;
 }
 
-.top_menu > li > a {
-	font-size: 13px;
+.header_button {
+	position: absolute;
+	right: 10px;
+	top: 6px;
 	color: white;
 }
 
@@ -118,7 +111,7 @@ body {
 /**********************************************
 * Header
 **********************************************/
-.header {
+/*.header {
 	position: absolute;
 	overflow: hidden;
 	width: 100%;
@@ -193,7 +186,7 @@ body {
 }
 
 .header_share > li > a > i.facebook{background:#315096}
-.header_share > li > a > i.twitter{background:#55acee}
+.header_share > li > a > i.twitter{background:#55acee}*/
 
 
 /**********************************************
@@ -201,12 +194,9 @@ body {
 **********************************************/
 .main {
 	overflow: hidden;
-	margin: 80px 0 40px;
 }
 
 .left {
-	float: left;
-	width: 900px;
 }
 
 .gotop {
@@ -226,8 +216,6 @@ body {
 * Sidebar
 **********************************************/
 .sidebar {
-	float: right;
-	width: 299px;
 }
 
 .sidebar_fb {
