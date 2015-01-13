@@ -4,7 +4,7 @@
 			<li>
 				<%= link_to post_path(post.id) do %>
 					<div class="index_list_thumb">
-						<%= image_tag(post.pictures[0].image.url(:pc_thumb)) %>
+						<%= image_tag(post.pictures[0].image.url(:resized)) %>
 					</div>
 					<h2 class="index_list_title"><%= truncate(post.title, :length=>35) %></h2>
 					<p class="index_list_date"><i class="icon-calendar"></i><%= post.open_date.strftime("%m/%d") %>〜<%= post.close_date.strftime("%m/%d") %>　<i class="icon-map"></i>市民文化ギャラリー</p>
