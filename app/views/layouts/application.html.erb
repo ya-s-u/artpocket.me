@@ -6,6 +6,7 @@
   <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <%= javascript_include_tag 'application' %>
+  <%= analytics_init if Rails.env.production? %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag %>
 </head>
@@ -21,6 +22,5 @@
       <i id="mainGoTop" class="gotop icon-up"></i>
     </div>
   </div>
-  <%= render 'templates/footer' %>
 </body>
 </html>

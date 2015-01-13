@@ -92,4 +92,11 @@ Rails.application.configure do
   # For Asset Sync
   config.action_controller.asset_host = "//#{ENV['S3_BUCKET_NAME']}"
 
+  # For Google Analytics
+  if ENV['SERVICE_ENV']=='production'
+    GA.tracker = "UA-58517741-1"
+  else
+    GA.tracker = "UA-xxxxxxxx-x"
+  end
+
 end
