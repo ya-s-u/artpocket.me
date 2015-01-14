@@ -59,11 +59,11 @@ class PostsController < ApplicationController
 
     UserMailer.post_confirm(@post).deliver if ENV['RAILS_ENV']=='development' || ENV['IS_MAILER']=='enable'
 
-    redirect_to complete_post_path(p: @post.id_hash)
+    redirect_to complete_post_path(@post.id_hash)
   end
 
   def complete
-    @id_hash = params[:p]
+    @id_hash = params[:hash_id]
   end
 
 end

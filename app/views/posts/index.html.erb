@@ -2,7 +2,7 @@
 	<ul id="IndexList" class="index_list">
 		<% @posts.each do |post| %>
 			<li>
-				<%= link_to post_path(post.id) do %>
+				<%= link_to show_post_path(post.id) do %>
 					<div class="index_list_thumb">
 						<%= image_tag(post.pictures[0].image.url(:resized)) %>
 					</div>
