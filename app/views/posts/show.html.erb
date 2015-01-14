@@ -19,7 +19,7 @@
 				</a>
 			</li>
 			<li class="show_right_sns twitter">
-				<a href="http://twitter.com/intent/tweet?text=『<%= @post.title %>』<%= @post.open_date.strftime("%m-月%d-日") %>から<%= @post.place %>で開催&amp;url=<%= request.url %>&amp;via=artpocket_me"
+				<a href="http://twitter.com/intent/tweet?text=『<%= @post.title %>』<%= @post.open_date.strftime("%-m月%-d日") %>から<%= @post.place %>で開催&amp;url=<%= request.url %>&amp;via=artpocket_me"
 				onClick="window.open(encodeURI(decodeURI(this.href)),
 				'tweetwindow',
 				'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=1'
