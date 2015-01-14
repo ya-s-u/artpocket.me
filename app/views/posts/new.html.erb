@@ -1,6 +1,6 @@
 <div class="new">
 	<h3 class="new_title">フライヤー登録</h3>
-	<%= form_for @post, :html => {multipart: true} do |f| %>
+	<%= form_for :post, :html => {multipart: true, id:'new_post'} do |f| %>
 		<table class="form">
 			<tr>
 				<th class="form_left">
