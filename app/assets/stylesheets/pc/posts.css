@@ -105,12 +105,15 @@
 	-webkit-border-radius: 5px;
 	-o-border-radius: 5px;
 	-moz-border-radius: 5px;
-	color: white;
 	font-size: 18px;
 }
 
 .show_right_sns li:hover {
 	opacity: 0.6;
+}
+
+.show_right_sns li a {
+	color: white;
 }
 
 .show_right_sns li i {

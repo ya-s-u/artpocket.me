@@ -1,3 +1,19 @@
+<% set_meta_tags({
+title: @post.title,
+og: {
+	type: 'article',
+	image: @post.pictures[0].image.url(:resized),
+	description: "【#{@post.open_date.strftime("%-m月%-d日")}〜#{@post.place}にて開催】#{@post.body}",
+},
+twitter: {
+    card: 'photo',
+    site: '@artpocket_me',
+		image: {
+	    _: @post.pictures[0].image.url(:resized),
+	  }
+},
+})%>
+
 <div class="show">
 	<div id="showLeft" class="show_left">
 		<ul class="show_left_picts">
@@ -9,8 +25,24 @@
 	<div id="showRight" class="show_right">
 		<h2 class="show_right_title"><%= @post.title %></h2>
 		<ul class="show_right_sns">
-			<li class="show_right_sns facebook" onclick="window.open('http://www.facebook.com/dialog/feed?app_id=893420327351170&amp;link=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F&amp;feature=share&amp;display=popup&amp;redirect_uri=http%3A%2F%2Fretrip.jp%2Farticles%2F2651%2F', 'facebookWindow', 'height=306, width=650, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-facebook"></i>シェアする</li>
-			<li class="show_right_sns twitter" onclick="window.open('https://twitter.com/share?text=<%= @post.title %> @artpocket&amp;url=http://artpocket.me', 'twitterWindow', 'height=420, width=550, menubar=no, toolbar=no, scrollbars=no');return false;"><i class="icon-twitter"></i>ツイートする</li>
+			<li class="show_right_sns facebook">
+				<a href="http://www.facebook.com/sharer.php?u=<%= request.url %>&amp;t=<%= @post.title %>"
+				onClick="window.open(encodeURI(decodeURI(this.href)),
+				'sharewindow',
+				'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=!'
+				); return false;">
+					<i class="icon-facebook"></i>シェアする
+				</a>
+			</li>
+			<li class="show_right_sns twitter">
+				<a href="http://twitter.com/intent/tweet?text=『<%= @post.title %>』<%= @post.open_date.strftime("%-m月%-d日") %>から<%= @post.place %>で開催&amp;url=<%= request.url %>&amp;via=artpocket_me"
+				onClick="window.open(encodeURI(decodeURI(this.href)),
+				'tweetwindow',
+				'width=550, height=450, personalbar=0, toolbar=0, scrollbars=1, resizable=1'
+				); return false;">
+					<i class="icon-twitter"></i>ツイートする
+				</a>
+			</li>
 		</ul>
 		<%= simple_format @post.body, {:class=>"show_right_body"} %>
 		<table class="show_right_info">
@@ -18,9 +50,9 @@
 				<tr>
 					<th>開催日</th>
 					<td>
-						<%= @post.open_date.strftime("%Y年%m月%d日") %> 〜 <%= @post.close_date.strftime("%Y年%m月%d日") %>
+						<%= @post.open_date.strftime("%Y年%-m月%-d日") %> 〜 <%= @post.close_date.strftime("%Y年%-m月%-d日") %>
 					</br>
-					<%= @post.open_time.strftime("%H:%M") %> 〜 <%= @post.close_time.strftime("%H:%M") %>
+					<%= @post.open_time.strftime("%-H:%M") %> 〜 <%= @post.close_time.strftime("%-H:%M") %>
 				</td>
 			</tr>
 			<% if @post.place.present? %>
