@@ -1,3 +1,10 @@
+<% set_meta_tags({
+title: 'フライヤー登録申請',
+og: {
+	type: 'website',
+},
+})%>
+
 <div class="new">
 	<h3 class="new_title">フライヤー登録</h3>
 	<%= form_for :post, :html => {multipart: true, id:'new_post'} do |f| %>

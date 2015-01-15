@@ -1,3 +1,18 @@
+<% set_meta_tags({
+title: @post.title,
+og: {
+	type: 'article',
+	image: @post.pictures[0].image.url(:resized),
+},
+twitter: {
+    card: 'photo',
+    site: '@artpocket_me',
+		image: {
+	    _: @post.pictures[0].image.url(:resized),
+	  }
+},
+})%>
+
 <div class="show">
 	<div id="showLeft" class="show_left">
 		<ul class="show_left_picts">

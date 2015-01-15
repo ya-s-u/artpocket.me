@@ -39,6 +39,9 @@ gem 'activeadmin', github: 'activeadmin'
 # For Responsive
 gem 'jpmobile'
 
+# For meta tag
+gem 'meta-tags'
+
 group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'
