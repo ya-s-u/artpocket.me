@@ -12,3 +12,4 @@ Category.create(:title => 'graphic', :title_ja => 'イラスト・グラフィ�
 Category.create(:title => 'architecture', :title_ja => '建築・インテリア')
 Category.create(:title => 'media', :title_ja => '写真・映像・メディア')
 Category.create(:title => 'fashion', :title_ja => 'ファッション・クラフト')
+Category.create(:title => 'other', :title_ja => 'その他')
