@@ -3,6 +3,7 @@ title: @post.title,
 og: {
 	type: 'article',
 	image: @post.pictures[0].image.url(:resized),
+	description: "【#{@post.open_date.strftime("%-m月%-d日")}〜#{@post.place}にて開催】#{@post.body}",
 },
 twitter: {
     card: 'photo',
