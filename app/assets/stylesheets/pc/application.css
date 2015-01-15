@@ -162,7 +162,6 @@ body {
 	margin-right: 6px;
 	padding-top: 1px;
 	font-size: 18px;
-	background: #0070d1;
 	color: white;
 	border-radius: 50%;
 }
@@ -178,6 +177,7 @@ body {
 .header_category > li > a > i.digital{background:#27ae60}
 .header_category > li > a > i.architecture{background:#e74c3c}
 .header_category > li > a > i.fashion{background:#d35400}
+.header_category > li > a > i.other{background:#0070d1}
 
 .header_category > li > a > i.fashion:before{font-size:23px;top:1px;left:1px}
 
@@ -248,6 +248,10 @@ body {
 .sidebar {
 	float: right;
 	width: 299px;
+}
+
+.sidebar li {
+	margin-bottom: 10px;
 }
 
 .sidebar_fb {
