@@ -99,7 +99,7 @@
 	cursor: pointer;
 	float: left;
 	width: 197px;
-	padding-bottom: 8px;
+	padding-bottom: 6px;
 	border-radius: 5px;
 	-ms-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -113,14 +113,17 @@
 }
 
 .show_right_sns li a {
+	display: block;
+	padding-top: 6px;
 	color: white;
 }
 
 .show_right_sns li i {
 	padding: 0 10px 0 20px;
-	font-size: 34px;
-	position: relative;
-	top: 8px;
+}
+
+.show_right_sns li i:before {
+	font-size: 22px;
 }
 
 .show_right_sns.facebook {

@@ -1,17 +1,18 @@
 @font-face {
-	font-family: 'icomoon';
-	src:url('<%= asset_path 'icomoon.eot?56gb9q' %>');
-	src:url('<%= asset_path 'icomoon.eot?#iefix56gb9q' %>') format('embedded-opentype'),
-		url('<%= asset_path 'icomoon.woff?56gb9q' %>') format('woff'),
-		url('<%= asset_path 'icomoon.ttf?56gb9q' %>') format('truetype'),
-		url('<%= asset_path 'icomoon.svg?56gb9q#icomoon' %>') format('svg');
+	font-family: "iconfont";
+	src: url('<%= asset_path 'flaticon.eot' %>');
+	src: url('<%= asset_path 'flaticon.eot#iefix' %>') format("embedded-opentype"),
+	url('<%= asset_path 'flaticon.woff' %>') format("woff"),
+	url('<%= asset_path 'flaticon.ttf' %>') format("truetype"),
+	url('<%= asset_path 'flaticon.svg' %>') format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
-
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
+[class^="icon-"]:before, [class*=" icon-"]:before,
+[class^="icon-"]:after, [class*=" icon-"]:after {
+	font-family: iconfont;
 	speak: none;
+	font-size: 18px;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -22,47 +23,24 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-.icon-clock:before {
-	content: "\e014";
+.icon-others:before {
+	content: "\e000";
 }
-
-.icon-search:before {
-	content: "\e036";
-}
-
-.icon-location:before {
-	content: "\e070";
-}
-
-.icon-up:before {
-	content: "\e096";
-}
-
-.icon-twitter:before {
-	content: "\e600";
-}
-
 .icon-facebook:before {
-	content: "\e60e";
+	content: "\e001";
 }
-
-.icon-at:before {
-	content: "\e601";
-}
-
 .icon-home:before {
-	content: "\e602";
+	content: "\e002";
 }
-
-.icon-camera:before {
-	content: "\e603";
+.icon-video:before {
+	content: "\e003";
 }
-
-.icon-scissors:before {
-	content: "\e604";
+.icon-painter:before {
+	content: "\e004";
 }
-
-.icon-brush:before {
-	content: "\e605";
+.icon-tshirt:before {
+	content: "\e005";
+}
+.icon-twitter:before {
+	content: "\e006";
 }
