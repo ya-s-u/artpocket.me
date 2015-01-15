@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include Jpmobile::ViewSelector
+
+  if request.mobile && request.mobile.tablet?
+    disable_mobile_view!
+  end
 end
