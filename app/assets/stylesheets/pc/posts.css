@@ -254,7 +254,13 @@
 }
 
 .form_center {
+	width: 640px;
 	vertical-align: top;
+}
+
+.form_center .error {
+	font-size: 16px;
+	color: red;
 }
 
 .form_uploads li {
@@ -279,6 +285,7 @@
 }
 
 .form_text {
+	display: block;
 	width: 550px;
 	max-width: 550px;
 	padding: 14px 14px;
@@ -361,6 +368,7 @@
 }
 
 .form_input_charge {
+	display: inline;
 	width: 200px;
 	margin-right: 5px;
 }
