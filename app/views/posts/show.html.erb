@@ -16,12 +16,15 @@ twitter: {
 
 <div class="show">
 	<div id="showLeft" class="show_left">
-		<ul class="show_left_picts">
+		<ul id="Slidee" class="show_left_picts">
 			<% @post.pictures.each do |picture| %>
-			<li><%= image_tag(picture.image.url(:resized)) %></li>
+				<li><%= image_tag(picture.image.url(:resized)) %></li>
 			<% end %>
 		</ul>
 	</div>
+	<% if request.smart_phone? %>
+		<div id="SlideNav" class="show_slide_nav"></div>
+	<% end %>
 	<div id="showRight" class="show_right">
 		<h2 class="show_right_title"><%= @post.title %></h2>
 		<ul class="show_right_sns">
