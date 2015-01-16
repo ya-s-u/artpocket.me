@@ -151,8 +151,8 @@
 }
 
 .show_right_info th {
-	width: 130px;
-	padding: 10px 0 10px 10px;
+	width: 80px;
+	padding: 10px;
 	border-bottom: 1px solid #eaeaea;
 	font-weight: normal;
 	font-size: 14px;
@@ -160,7 +160,7 @@
 }
 
 .show_right_info td {
-	width: 365px;
+	width: 345px;
 	padding: 10px 0;
 	border-bottom: 1px solid #eaeaea;
 	font-size: 16px;
