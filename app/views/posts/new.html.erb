@@ -32,9 +32,7 @@ og: {
 							<%= file_field_tag "images[]", :type => "file", :onchange => "preview(this,4)" %>
 						</li>
 					</ul>
-					<p class="form_center_text clear">※『.jpg』、『.jpeg』、『.png』、『.gif』ファイルを4つまでアップロードできます。</p>
-				</td>
-				<td class="form_right">
+					<p class="form_center_text clear">※「.jpg」「.jpeg」「.png」ファイルを4つまでアップロードできます。</p>
 				</td>
 			</tr>
 			<tr>
@@ -45,18 +43,14 @@ og: {
 	        <%= f.text_field :title, :class=>"form_text", :placeholder=>"(例) 名古屋アートクラブ定期展覧会" %>
 					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
 				</td>
-				<td class="form_right">
-				</td>
 			</tr>
 			<tr>
 				<th class="form_left">
 					<p><span class="form_left_tag required">必須</span>紹介文</p>
 				</th>
 				<td class="form_center">
-	        <%= f.text_area :body, :class=>"form_text", :placeholder=>"(例) 名古屋アートクラブ定期展覧会", :rows=>8 %>
+	        <%= f.text_area :body, :class=>"form_text", :rows=>8 %>
 					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
-				</td>
-				<td class="form_right">
 				</td>
 			</tr>
 			<tr>
@@ -66,8 +60,6 @@ og: {
 				<td class="form_center form_select">
 					<%= f.collection_select :category_id, Category.all, :id, :title_ja %>
 				</td>
-				<td class="form_right">
-				</td>
 			</tr>
 			<tr>
 				<th class="form_left">
@@ -76,10 +68,8 @@ og: {
 				<td class="form_center">
 	        <%= f.text_field :open_date, :class=>"form_date", :placeholder=>"(例) 2014-11-03", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
 					<span class="form_date_span">　〜　</span>
-	        <%= f.text_field :close_date, :class=>"form_date beatpicker", :placeholder=>"(例) 2014-11-06", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
+	        <%= f.text_field :close_date, :class=>"form_date", :placeholder=>"(例) 2014-11-06", data: {"beatpicker"=>"true", "beatpicker-extra"=>"customOptions"} %>
 					<p class="form_date_text form_center_text">※開催期間中に休館日などがある場合は紹介文にその盲お書きください</p>
-				</td>
-				<td class="form_right">
 				</td>
 			</tr>
 			<tr>
@@ -92,18 +82,14 @@ og: {
 	        <%= f.text_field :close_time, :class=>"form_time timepicker", :placeholder=>"(例) 17:00" %>
 					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
 				</td>
-				<td class="form_right">
-				</td>
 			</tr>
 			<tr>
 				<th class="form_left">
 					<p><span class="form_left_tag required">必須</span>開催場所</p>
 				</th>
 				<td class="form_center">
-	        <%= f.text_field :place, :class=>"form_text", :placeholder=>"(例) ギャラリー名古屋" %>
+	        <%= f.text_field :place, :class=>"form_text", :placeholder=>"(例) ギャラリー栄" %>
 					<p class="form_center_text">※部屋番号なども明記してください。</p>
-				</td>
-				<td class="form_right">
 				</td>
 			</tr>
 			<tr>
@@ -117,19 +103,6 @@ og: {
 					<%= f.hidden_field :charge, :value=>'0' %>
 					<p class="form_center_text">※ドメイン指定受信を設定されている方は『artpocket.jp』を受信できるように設定してください。</p>
 				</td>
-				<td class="form_right">
-				</td>
-			</tr>
-			<tr>
-				<th class="form_left">
-					<p><span class="form_left_tag required">必須</span>主催者</p>
-				</th>
-				<td class="form_center">
-	        <%= f.text_field :promoter, :class=>"form_text", :placeholder=>"(例) 名古屋アートクラブ" %>
-					<p class="form_center_text">※</p>
-				</td>
-				<td class="form_right">
-				</td>
 			</tr>
 			<tr>
 				<th class="form_left">
@@ -137,9 +110,7 @@ og: {
 				</th>
 				<td class="form_center">
 	        <%= f.url_field :url, :class=>"form_text", :placeholder=>"(例) http://artpocket.me" %>
-					<p class="form_center_text">※ホームページやブログのURLをそのまま入力して下さい</p>
-				</td>
-				<td class="form_right">
+					<p class="form_center_text">※ホームページやブログのURLをそのまま入力して下さい。</p>
 				</td>
 			</tr>
 			<tr>
@@ -148,9 +119,7 @@ og: {
 				</th>
 				<td class="form_center">
 	        <%= f.url_field :facebook, :class=>"form_text", :placeholder=>"(例) https://facebook.com/artpocket.me" %>
-					<p class="form_center_text">※イベントページやグループページのURLをそのまま入力してください</p>
-				</td>
-				<td class="form_right">
+					<p class="form_center_text">※イベントページやグループページのURLをそのまま入力してください。</p>
 				</td>
 			</tr>
 			<tr>
@@ -159,9 +128,16 @@ og: {
 				</th>
 				<td class="form_center">
 	        <%= f.url_field :twitter, :class=>"form_text", :placeholder=>"(例) https://twitter.com/artpocket" %>
-					<p class="form_center_text">※プロフィールページのURLをそのまま入力してください</p>
+					<p class="form_center_text">※プロフィールページのURLをそのまま入力してください。</p>
 				</td>
-				<td class="form_right">
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>主催者</p>
+				</th>
+				<td class="form_center">
+					<%= f.text_field :promoter, :class=>"form_text", :placeholder=>"(例) 名古屋アートクラブ" %>
+					<p class="form_center_text">※主催団体もしくは個人のお名前を入力して下さい。</p>
 				</td>
 			</tr>
 			<tr>
@@ -169,10 +145,8 @@ og: {
 					<p><span class="form_left_tag required">必須</span>連絡先</p>
 				</th>
 				<td class="form_center">
-	        <%= f.email_field :mail, :class=>"form_text", :placeholder=>"(例) info@artpocket.me", :type=>"email" %>
-					<p class="form_center_text">※メールアドレスを入力してください</p>
-				</td>
-				<td class="form_right">
+	        <%= f.email_field :mail, :class=>"form_text", :placeholder=>"(例) support@artpocket.me", :type=>"email" %>
+					<p class="form_center_text">※メールアドレスを入力してください。webサイトには掲載されません。</p>
 				</td>
 			</tr>
 			<tr>
@@ -267,14 +241,6 @@ og: {
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p><span class="form_left_tag required">必須</span>主催者</p>
-				</th>
-				<td class="form_center">
-					<p id="confirm_promoter" class="form_center_text"></p>
-				</td>
-			</tr>
-			<tr>
-				<th class="form_left">
 					<p><span class="form_left_tag free">自由</span>Webサイト</p>
 				</th>
 				<td class="form_center">
@@ -299,7 +265,15 @@ og: {
 			</tr>
 			<tr>
 				<th class="form_left">
-					<p><span class="form_left_tag required">必須</span>お問い合わせ先</p>
+					<p><span class="form_left_tag required">必須</span>主催者</p>
+				</th>
+				<td class="form_center">
+					<p id="confirm_promoter" class="form_center_text"></p>
+				</td>
+			</tr>
+			<tr>
+				<th class="form_left">
+					<p><span class="form_left_tag required">必須</span>連絡先</p>
 				</th>
 				<td class="form_center">
 					<p id="confirm_mail" class="form_center_text"></p>
@@ -317,6 +291,93 @@ var Confirm = $('#confirm');
 var ConfirmCancel = $('#confirm_cancel');
 var ConfirmSubmit = $('#confirm_submit');
 
+Form.validate({
+	rules: {
+		"post[title]" :{
+			required: true,
+      minlength: 3,
+      maxlength: 30,
+		},
+		"post[body]" :{
+			required: true,
+			minlength: 3,
+			maxlength: 500,
+		},
+		"post[open_date]" :{
+			required: true,
+		},
+		"post[close_date]" :{
+			required: true,
+		},
+		"post[open_time]" :{
+			required: true,
+		},
+		"post[close_time]" :{
+			required: true,
+		},
+		"post[place]" :{
+			required: true,
+			minlength: 3,
+			maxlength: 30,
+		},
+		"post[url]" :{
+			url: true,
+		},
+		"post[facebook]" :{
+			url: true,
+		},
+		"post[twitter]" :{
+			url: true,
+		},
+		"post[mail]" :{
+			required: true,
+			mail: true,
+		},
+	},
+	messages: {
+		"post[title]" :{
+			required: "エラー：必須項目です",
+			minlength: "エラー：文字数が足りません",
+			maxlength: "エラー：文字数が長すぎます",
+		},
+		"post[body]" :{
+			required: "エラー：必須項目です",
+			minlength: "エラー：文字数が足りません",
+			maxlength: "エラー：文字数が長すぎます",
+		},
+		"post[open_date]" :{
+			required: "エラー：必須項目です",
+		},
+		"post[close_date]" :{
+			required: "エラー：必須項目です",
+		},
+		"post[open_time]" :{
+			required: "エラー：必須項目です",
+		},
+		"post[close_time]" :{
+			required: "エラー：必須項目です",
+		},
+		"post[place]" :{
+			required: "エラー：必須項目です",
+			minlength: "エラー：文字数が足りません",
+			maxlength: "エラー：文字数が長すぎます",
+		},
+		"post[url]" :{
+			url: "エラー：正しいURLを入力してください",
+		},
+		"post[facebook]" :{
+			url: "エラー：正しいURLを入力してください",
+		},
+		"post[twitter]" :{
+			url: "エラー：正しいURLを入力してください",
+		},
+		"post[mail]" :{
+			required: "エラー：必須項目です",
+			mail: "エラー：正しいメールアドレスを入力して下さい",
+		},
+	}
+});
+
 Confirm.hide();
 
 var isChecked = false;
@@ -332,6 +393,9 @@ $('#form_check').change(function(){
 
 FormSubmit.click(function() {
 	if(!isChecked) return;
+
+	Form.validate();
+	if(!Form.valid()) return;
 
 	Form.hide();
 
@@ -376,8 +440,8 @@ $(function() {
 	$('.timepicker').timepicker({
 		'step': 30,
 		'timeFormat': 'H:i',
-		'minTime': '6:00',
-		'maxTime': '23:30',
+		'minTime': '8:00',
+		'maxTime': '22:00',
 	});
 });
 
@@ -400,7 +464,7 @@ function preview(ele, n) {
 	if (!ele.files.length) return;  // ファイル未選択
 
 	var file = ele.files[0];
-	if (!/^image\/(png|jpg|jpeg|gif)$/.test(file.type)) return;  // typeプロパティでMIMEタイプを参照
+	if (!/^image\/(png|jpg|jpeg)$/.test(file.type)) return;  // typeプロパティでMIMEタイプを参照
 
 	var img = document.createElement('img');
 	var fr = new FileReader();
