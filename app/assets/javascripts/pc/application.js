@@ -3,6 +3,8 @@
 //= stub jquery-ui
 //= stub active_admin
 //= require_tree .
+//= require_self
+//= require ../main
 
 $(document).ready(function(){
   // Go Top

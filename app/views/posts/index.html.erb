@@ -26,7 +26,7 @@ og: {
 		$('#IndexList').masonry({
 			itemSelector: 'li',
 			<% if request.smart_phone? %>
-				columnWidth: (screen.availWidth)/2,
+				columnWidth: (screen.availWidth-10)/2,
 			<% else %>
 				columnWidth: 300,
 			<% end %>

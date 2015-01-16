@@ -3,6 +3,7 @@
 **********************************************/
 .index_list {
 	overflow: hidden;
+	margin-left: 10px;
 }
 
 .index_list li {
@@ -12,11 +13,13 @@
 
 .index_list li a {
 	display: block;
-	margin: 0 10px 10px 10px;
+	margin: 0 10px 10px 0;
 }
 
 .index_list_thumb {
 	border-radius: 3px;
+	padding: 4px;
+	background: white;
 }
 
 .index_list_thumb img {
@@ -29,14 +32,14 @@
 
 .index_list_title {
 	margin-top: 6px;
-	color: #555;
-	font-size: 16px;
+	color: #111;
+	font-size: 14px;
 	font-weight: normal;
-	line-height: 1.4em;
+	line-height: 1.2em;
 }
 
 .index_list_date {
-	margin-top: 6px;
+	margin-top: 3px;
 	font-size: 13px;
 	color: #aaa;
 }
@@ -61,30 +64,62 @@
 }
 
 .show_left {
-	float: left;
-	width: 440px;
-	margin-right: 30px;
+	overflow: hidden;
+}
+
+.show_left_picts {
+	overflow: hidden;
+	width: 9999px;
 }
 
 .show_left_picts li {
-	margin-bottom: 20px;
+	display: block;
+	float: left;
+	margin: 0 5px;
+	padding: 8px;
+	border-radius: 3px;
+	background: white;
 }
 
 .show_left_picts li:last-child {
 	margin-bottom: 0;
 }
 
+.show_left_picts li img {
+	display: block;
+}
+
+.show_slide_nav {
+	display: block;
+	margin: 5px 0 10px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.show_slide_nav li {
+	cursor: pointer;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 4px;
+	background: white;
+	border: 1px solid #eee;
+	border-radius: 50%;
+}
+
+.show_slide_nav li.active {
+	background: #555;
+}
+
 .show_right {
-	float: right;
-	width: 410px;
-	padding-right: 20px;
+	margin: 0 10px;
 }
 
 .show_right_title {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	line-height: 1.3em;
-	color: #555;
-	font-size: 26px;
+	color: #111;
+	font-size: 22px;
 	font-weight: bold;
 }
 
@@ -96,18 +131,14 @@
 .show_right_sns li {
 	cursor: pointer;
 	float: left;
-	width: 197px;
-	padding-bottom: 8px;
+	width: 49%;
+	padding: 10px 0;
 	border-radius: 5px;
 	-ms-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-o-border-radius: 5px;
 	-moz-border-radius: 5px;
-	font-size: 18px;
-}
-
-.show_right_sns li:hover {
-	opacity: 0.6;
+	font-size: 14px;
 }
 
 .show_right_sns li a {
@@ -115,15 +146,18 @@
 }
 
 .show_right_sns li i {
-	padding: 0 10px 0 20px;
-	font-size: 34px;
+	padding: 0 5px 0 20px;
 	position: relative;
-	top: 8px;
+	top: 2px;
+}
+
+.show_right_sns li i:before {
+	font-size: 20px;
 }
 
 .show_right_sns.facebook {
 	background: #3468af;
-	margin-right: 15px;
+	margin-right: 2%;
 }
 
 .show_right_sns.twitter {
@@ -131,34 +165,39 @@
 }
 
 .show_right_body {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	line-height: 1.6em;
+	text-align: justify;
 }
 
 .show_right_info {
 	table-layout: fixed;
-	border-top: 1px solid #eee;
+	width: 100%;
+	margin-top: 30px;
 }
 
 .show_right_info tr {
-	vertical-align: middle;
+padding-bottom: 5px;
+	margin-bottom: 10px;
+	display: block;
 	text-align: left;
+	border-bottom: 1px solid #eaeaea;
 }
 
 .show_right_info th {
-	width: 130px;
-	padding: 10px 0 10px 10px;
-	border-bottom: 1px solid #eaeaea;
+	padding: 1px 4px;
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 1.4em;
+	background: #555;
+	color: white;
+	border-radius: 2px;
 }
 
 .show_right_info td {
-	width: 365px;
-	padding: 10px 0;
-	border-bottom: 1px solid #eaeaea;
-	font-size: 16px;
+	display: block;
+	margin-top: 5px;
+	line-height: 1.4em;
 }
 
 .show_right_info td > a {
