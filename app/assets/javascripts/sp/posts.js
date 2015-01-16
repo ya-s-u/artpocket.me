@@ -2,12 +2,11 @@ $(document).ready(function(){
   var $frame = $('#showLeft');
   var $bar = $('#SlideNav');
 
-  $('#Slidee').css({'margin-left': screen.availWidth*0.1});
   $('#Slidee > li').css({'width': screen.availWidth*0.8});
 
   $frame.sly({
     horizontal: 1,
-    itemNav: 'centered',
+    itemNav: 'forceCentered',
     mouseDragging: 1,
     touchDragging: 1,
     releaseSwing: 1,

@@ -76,7 +76,7 @@
 	display: block;
 	float: left;
 	margin: 0 5px;
-	padding: 5px;
+	padding: 8px;
 	border-radius: 3px;
 	background: white;
 }
@@ -91,16 +91,16 @@
 
 .show_slide_nav {
 	display: block;
+	margin: 5px 0 10px;
 	overflow: hidden;
 	text-align: center;
-	margin-bottom: 10px;
 }
 
 .show_slide_nav li {
 	cursor: pointer;
 	display: inline-block;
-	width: 12px;
-	height: 12px;
+	width: 10px;
+	height: 10px;
 	margin: 0 4px;
 	background: white;
 	border: 1px solid #eee;
@@ -132,7 +132,7 @@
 	cursor: pointer;
 	float: left;
 	width: 49%;
-	padding: 8px 0;
+	padding: 10px 0;
 	border-radius: 5px;
 	-ms-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -172,6 +172,8 @@
 
 .show_right_info {
 	table-layout: fixed;
+	width: 100%;
+	margin-top: 30px;
 }
 
 .show_right_info tr {
@@ -183,12 +185,13 @@ padding-bottom: 5px;
 }
 
 .show_right_info th {
+	padding: 1px 4px;
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 1.4em;
 	background: #555;
 	color: white;
-	padding: 1px 4px;
+	border-radius: 2px;
 }
 
 .show_right_info td {
