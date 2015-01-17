@@ -21,17 +21,15 @@ og: {
 	</ul>
 	<!-- <p class="index_more">もっと表示する</p> -->
 
-	<script type="text/javascript">
-	$(window).load(function() {
-		$('#IndexList').masonry({
-			itemSelector: 'li',
-			<% if request.smart_phone? %>
-				columnWidth: (screen.availWidth-10)/2,
-			<% else %>
+	<% if !request.smart_phone? %>
+		<script type="text/javascript">
+		$(window).load(function() {
+			$('#IndexList').masonry({
+				itemSelector: 'li',
 				columnWidth: 300,
-			<% end %>
-			isFitWidth: true,
-		});
-	})
-	</script>
+				isFitWidth: true,
+			});
+		})
+		</script>
+	<% end %>
 </div>

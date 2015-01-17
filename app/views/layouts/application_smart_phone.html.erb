@@ -13,9 +13,6 @@
 <body>
   <%= render 'templates/header_smart_phone' %>
   <div class="main">
-    <% if request.path_info == '/' %>
-      <%= image_tag('ios_banner.png') %>
-    <% end %>
     <%= yield %>
     <i id="mainGoTop" class="gotop icon-up"></i>
   </div>
