@@ -11,7 +11,7 @@ module ApplicationHelper
         title: :title,
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp.png'),
+        image: "http:#{image_url('ogp.png')}",
         site_name: :site,
         description: :description,
         locale: 'ja_JP'
