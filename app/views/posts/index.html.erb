@@ -6,6 +6,7 @@ og: {
 })%>
 
 <div class="post">
+	<p class="index_text">アートイベントのフライヤー、無料で掲載いたします。<%= link_to :new_post do %>フライヤー登録申請する<% end %></p>
 	<ul id="IndexList" class="index_list">
 		<% @posts.each do |post| %>
 			<li>
@@ -21,17 +22,15 @@ og: {
 	</ul>
 	<!-- <p class="index_more">もっと表示する</p> -->
 
-	<script type="text/javascript">
-	$(window).load(function() {
-		$('#IndexList').masonry({
-			itemSelector: 'li',
-			<% if request.smart_phone? %>
-				columnWidth: (screen.availWidth-10)/2,
-			<% else %>
+	<% if !request.smart_phone? %>
+		<script type="text/javascript">
+		$(window).load(function() {
+			$('#IndexList').masonry({
+				itemSelector: 'li',
 				columnWidth: 300,
-			<% end %>
-			isFitWidth: true,
-		});
-	})
-	</script>
+				isFitWidth: true,
+			});
+		})
+		</script>
+	<% end %>
 </div>

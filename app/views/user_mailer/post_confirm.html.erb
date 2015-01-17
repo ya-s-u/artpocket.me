@@ -191,7 +191,7 @@ ul li, ol li {
 				<tr>
 					<td>
 						<h1>フライヤーの登録申請ありがとうございます</h1>
-						<%= image_tag(@post.pictures[0].image.url(:pc_thumb)) %>
+						<%= image_tag(@post.pictures[0].image.url(:resized)) %>
 						<h2>イベント名：<%= @post.title %></h2>
 						<p>フライヤー申請から24時間以内に掲載されます。入力内容に不備があります場合のみ連絡させて頂きます。申請ありがとうございます。</p>
 						<!-- <table>

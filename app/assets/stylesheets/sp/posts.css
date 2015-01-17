@@ -1,14 +1,26 @@
 /**********************************************
 * Index
 **********************************************/
+.index_text {
+	background: white;
+	margin: 0 20px 20px 20px;
+	padding: 20px 10px;
+	text-align: center;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.index_text > a {
+	text-decoration: underline;
+}
+
 .index_list {
 	overflow: hidden;
 	margin-left: 10px;
 }
 
 .index_list li {
-	float: left;
-	width: 50%;
+	margin: 0 10px 20px 10px;
 }
 
 .index_list li a {
@@ -18,7 +30,7 @@
 
 .index_list_thumb {
 	border-radius: 3px;
-	padding: 4px;
+	padding: 6px;
 	background: white;
 }
 
@@ -33,7 +45,7 @@
 .index_list_title {
 	margin-top: 6px;
 	color: #111;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
 	line-height: 1.2em;
 }
@@ -76,7 +88,7 @@
 	display: block;
 	float: left;
 	margin: 0 5px;
-	padding: 8px;
+	padding: 6px;
 	border-radius: 3px;
 	background: white;
 }
