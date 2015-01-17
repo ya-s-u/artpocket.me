@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    disable_mobile_view!
   end
 
   def create
