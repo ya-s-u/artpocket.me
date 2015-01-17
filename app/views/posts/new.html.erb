@@ -331,7 +331,7 @@ Form.validate({
 		},
 		"post[mail]" :{
 			required: true,
-			mail: true,
+			email: true,
 		},
 	},
 	messages: {
@@ -373,7 +373,7 @@ Form.validate({
 		},
 		"post[mail]" :{
 			required: "エラー：必須項目です",
-			mail: "エラー：正しいメールアドレスを入力して下さい",
+			email: "エラー：正しいメールアドレスを入力して下さい",
 		},
 	}
 });
@@ -410,9 +410,7 @@ FormSubmit.click(function() {
 	});
 
 	var category = [
-		'イラスト・グラフィック',  '建築・インテリア',  '',
-		'写真・映像・メディア', 'ファッション・クラフト', '',
-		'', '', 'その他'
+		'イラスト・グラフィック',  '建築・インテリア', '', '写真・映像・メディア', 'ファッション・クラフト', 'その他'
 	];
 	$('#confirm_category').text(category[Math.floor($('#post_category_id').val()/10)]);
 
@@ -469,6 +467,8 @@ function preview(ele, n) {
 	var img = document.createElement('img');
 	var fr = new FileReader();
 	fr.onload = function() {
+			$('#preview_field'+n).empty();
+			$('#confirm_field'+n).empty();
 			img.src = fr.result;  // 読み込んだ画像データをsrcにセット
 			$('#preview_field'+n).append('<img src="'+img.src+'">');
 			$('#confirm_field'+n).append('<img src="'+img.src+'">');
