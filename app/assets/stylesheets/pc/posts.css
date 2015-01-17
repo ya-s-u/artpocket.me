@@ -1,6 +1,19 @@
 /**********************************************
 * Index
 **********************************************/
+.index_text {
+	background: #f6f6f6;
+	width: 880px;
+	padding: 20px 0;
+	text-align: center;
+	border-radius: 6px;
+	margin-bottom: 20px;
+}
+
+.index_text > a {
+	text-decoration: underline;
+}
+
 .index_list {
 	overflow: hidden;
 }
