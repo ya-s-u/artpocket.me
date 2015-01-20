@@ -19,7 +19,11 @@ twitter: {
 	<div class="show_sp_head">
 		<h2 class="show_sp_head_title"><%= @post.title %></h2>
 		<p class="show_sp_head_data">
-			<%= @post.open_date.strftime("%-m月%-d日") %>〜<%= @post.close_date.strftime("%-m月%-d日") %> /
+			<% if @post.open_date!=@post.close_date %>
+				<%= @post.open_date.strftime("%-m月%-d日") %>〜<%= @post.close_date.strftime("%-m月%-d日") %>&nbsp;/&nbsp;
+			<% else %>
+				<%= @post.open_date.strftime("%-m月%-d日") %>&nbsp;/&nbsp;
+			<% end %>
 			<%= @post.open_time.strftime("%-H:%M") %>〜<%= @post.close_time.strftime("%-H:%M") %>
 		</p>
 	</div>
@@ -64,8 +68,12 @@ twitter: {
 				<tr>
 					<th>開催日</th>
 					<td>
-						<%= @post.open_date.strftime("%Y年%-m月%-d日") %> 〜 <%= @post.close_date.strftime("%Y年%-m月%-d日") %>
-					</br>
+						<% if @post.open_date!=@post.close_date %>
+							<%= @post.open_date.strftime("%Y年%-m月%-d日") %> 〜 <%= @post.close_date.strftime("%Y年%-m月%-d日") %>
+						<% else %>
+							<%= @post.open_date.strftime("%Y年%-m月%-d日") %> %>
+						<% end %>
+						</br>
 					<%= @post.open_time.strftime("%-H:%M") %> 〜 <%= @post.close_time.strftime("%-H:%M") %>
 				</td>
 			</tr>
@@ -104,6 +112,8 @@ twitter: {
 		</tbody>
 	</table>
 </div>
+
+<% if false %>
 <!-- <div class="show_bottom">
 <div id="map" class="show_bottom_map" style="width: 100%; height: 300px;"></div>
 </div> -->
@@ -173,4 +183,6 @@ twitter: {
 // 	}
 // });
 </script>
+<% end %>
+
 </div>
