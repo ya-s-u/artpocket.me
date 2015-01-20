@@ -74,9 +74,11 @@ body {
 }
 
 .header_slidemenu {
-	position: absolute;
-	left: 20px;
-	top: 8px;
+	margin: 8px 0;
+}
+
+.header_slidemenu a {
+	padding: 14px 10px 14px 20px;
 }
 
 .header_logo {
@@ -108,8 +110,8 @@ body {
 }
 
 .slidemenu  ul li {
-	margin-bottom: 5px;
-	padding-bottom: 5px;
+	margin-bottom: 7px;
+	padding-bottom: 7px;
 	border-bottom: 1px solid #eee;
 }
 
