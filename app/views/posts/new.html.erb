@@ -380,6 +380,11 @@ Form.validate({
 
 Confirm.hide();
 
+var is_alert = true;
+$(window).on('beforeunload', function() {
+	if(is_alert) return "『以上の内容で申請する』ボタンを押して頂くまで登録したことにはなりません。『以上の内容で申請する』ボタンを押して下さい。";
+});
+
 var isChecked = false;
 $('#form_check').change(function(){
 	if ($(this).is(':checked')) {
@@ -398,10 +403,6 @@ FormSubmit.click(function() {
 	if(!Form.valid()) return;
 
 	Form.hide();
-
-	$(window).on('beforeunload', function() {
-    return "『以上の内容で申請する』ボタンを押して頂くまで登録したことにはなりません。『以上の内容で申請する』ボタンを押して下さい。";
-  });
 
 	var form_list = [
 		'title',  'body', 'open_date',  'close_date',
@@ -435,6 +436,9 @@ ConfirmCancel.click(function() {
 ConfirmSubmit.click(function() {
 	var n=0;
 	$(this).addClass('disable').text('送信中...');
+
+	is_alert = false;
+
 	$('#new_post').submit();
 })
 
