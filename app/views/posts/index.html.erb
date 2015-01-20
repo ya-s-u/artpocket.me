@@ -22,15 +22,17 @@ og: {
 	</ul>
 	<!-- <p class="index_more">もっと表示する</p> -->
 
-	<% if !request.smart_phone? %>
-		<script type="text/javascript">
-		$(window).load(function() {
-			$('#IndexList').masonry({
-				itemSelector: 'li',
+	<script type="text/javascript">
+	$(window).load(function() {
+		$('#IndexList').masonry({
+			itemSelector: 'li',
+			<% if request.smart_phone? %>
+				columnWidth: (screen.availWidth-10)/2,
+			<% else %>
 				columnWidth: 300,
-				isFitWidth: true,
-			});
-		})
-		</script>
-	<% end %>
+			<% end %>
+			isFitWidth: true,
+		});
+	})
+	</script>
 </div>

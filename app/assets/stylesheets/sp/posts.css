@@ -3,7 +3,7 @@
 **********************************************/
 .index_text {
 	background: white;
-	margin: 0 20px 20px 20px;
+	margin: 0 10px 15px 10px;
 	padding: 20px 10px;
 	text-align: center;
 	border-radius: 3px;
@@ -20,12 +20,14 @@
 }
 
 .index_list li {
-	margin: 0 10px 20px 10px;
+	float: left;
+	width: 50%;
+	//margin: 0 10px 20px 10px;
 }
 
 .index_list li a {
 	display: block;
-	margin: 0 10px 10px 0;
+	margin: 0 10px 20px 0;
 }
 
 .index_list_thumb {
@@ -43,7 +45,7 @@
 }
 
 .index_list_title {
-	margin-top: 6px;
+	margin-top: 3px;
 	color: #111;
 	font-size: 16px;
 	font-weight: normal;
