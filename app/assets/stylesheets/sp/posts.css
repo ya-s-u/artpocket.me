@@ -60,6 +60,14 @@
 	color: #aaa;
 }
 
+.index_list_date i:before {
+	font-size:12px;
+}
+
+.index_list_date i.icon-map:before {
+	font-size:13px;
+}
+
 .index_more {
 	padding: 10px 0;
 	font-size: 16px;

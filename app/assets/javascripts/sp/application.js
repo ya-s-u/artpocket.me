@@ -7,6 +7,14 @@
 //= require ../main
 
 $(document).ready(function(){
+  // Slide Menu
+  $("body").mobile_menu({
+      menu: '#Slidemenu',
+      menu_width: 260,
+      prepend_button_to: '#SlidemenuButton',
+      button_content:'<i class="icon-menu"></i>'
+  });
+
   // Go Top
   mainGoTop = $('#mainGoTop');
   mainGoTop.hide();
