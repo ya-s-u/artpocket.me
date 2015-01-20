@@ -91,7 +91,7 @@
 }
 
 .show_sp_head_data {
-	margin-top: 4px;
+	margin-top: 3px;
 	font-size: 13px;
 	color: #aaa;
 }
@@ -205,8 +205,8 @@
 }
 
 .show_right_info tr {
-padding-bottom: 5px;
-	margin-bottom: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 14px;
 	display: block;
 	text-align: left;
 	border-bottom: 1px solid #eaeaea;
