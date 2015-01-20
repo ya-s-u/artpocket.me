@@ -78,12 +78,16 @@ body {
 }
 
 .header_slidemenu {
-	margin: 14px 0;
+	margin: 12px 0;
 	line-height: 1em;
 }
 
 .header_slidemenu a {
 	padding: 14px 20px 14px 20px;
+}
+
+.header_slidemenu i:before {
+	font-size: 22px;
 }
 
 .header_logo {
@@ -102,8 +106,16 @@ body {
 /**********************************************
 * Slide Menu
 **********************************************/
-.build-menu {
-	background: white;
+#build-menu {
+		background: white;
+		background: rgb(255,255,255); /* Old browsers */
+		background: -moz-linear-gradient(left,  rgba(255,255,255,1) 98%, rgba(188,188,188,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(98%,rgba(255,255,255,1)), color-stop(100%,rgba(188,188,188,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 98%,rgba(188,188,188,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  rgba(255,255,255,1) 98%,rgba(188,188,188,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  rgba(255,255,255,1) 98%,rgba(188,188,188,1) 100%); /* IE10+ */
+		background: linear-gradient(to right,  rgba(255,255,255,1) 98%,rgba(188,188,188,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bcbcbc',GradientType=1 ); /* IE6-9 */
 }
 
 .slidemenu {
@@ -132,6 +144,7 @@ body {
 
 .slidemenu_category > li > a > i {
 	float: left;
+	position: relative;
 	display: block;
 	width: 24px;
 	height: 23px;
