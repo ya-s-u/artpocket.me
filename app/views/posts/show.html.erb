@@ -15,6 +15,15 @@ twitter: {
 })%>
 
 <div class="show">
+	<% if request.smart_phone? %>
+	<div class="show_sp_head">
+		<h2 class="show_sp_head_title"><%= @post.title %></h2>
+		<p class="show_sp_head_data">
+			<%= @post.open_date.strftime("%-m月%-d日") %>〜<%= @post.close_date.strftime("%-m月%-d日") %> /
+			<%= @post.open_time.strftime("%-H:%M") %>〜<%= @post.close_time.strftime("%-H:%M") %>
+		</p>
+	</div>
+	<% end %>
 	<div id="showLeft" class="show_left">
 		<ul id="Slidee" class="show_left_picts">
 			<% @post.pictures.each do |picture| %>
@@ -26,7 +35,9 @@ twitter: {
 		<div id="SlideNav" class="show_slide_nav"></div>
 	<% end %>
 	<div id="showRight" class="show_right">
+		<% if !request.smart_phone? %>
 		<h2 class="show_right_title"><%= @post.title %></h2>
+		<% end %>
 		<ul class="show_right_sns">
 			<li class="show_right_sns facebook">
 				<a href="http://www.facebook.com/sharer.php?u=<%= request.url %>&amp;t=<%= @post.title %>"
