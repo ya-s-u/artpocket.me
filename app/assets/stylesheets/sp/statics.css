@@ -2,9 +2,8 @@
 * Common
 **********************************************/
 .static {
-  margin-right: 20px;
-  padding-right: 20px;
-  border-right: 1px solid #eee;
+  margin: 0 20px;
+  text-align: justify;
 }
 
 .static_section {
@@ -24,6 +23,7 @@
 **********************************************/
 .about > p {
   margin-bottom: 1em;
+  line-height: 1.4em;
 }
 
 
