@@ -71,7 +71,7 @@ twitter: {
 						<% if @post.open_date!=@post.close_date %>
 							<%= @post.open_date.strftime("%Y年%-m月%-d日") %> 〜 <%= @post.close_date.strftime("%Y年%-m月%-d日") %>
 						<% else %>
-							<%= @post.open_date.strftime("%Y年%-m月%-d日") %> %>
+							<%= @post.open_date.strftime("%Y年%-m月%-d日") %>
 						<% end %>
 						</br>
 					<%= @post.open_time.strftime("%-H:%M") %> 〜 <%= @post.close_time.strftime("%-H:%M") %>
