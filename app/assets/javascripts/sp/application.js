@@ -32,5 +32,10 @@ $(document).ready(function(){
     } else {
       mainGoTop.fadeOut("fast");
     }
+
+    // Clear transform
+    if(!$('html').hasClass("build-menu-open")){
+      $('#build-menu-page').removeAttr('style');
+    }
   })
 });

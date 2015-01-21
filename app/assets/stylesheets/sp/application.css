@@ -119,7 +119,7 @@ body {
 }
 
 .slidemenu_ad {
-	margin: 10px 15px 18px 11px;
+	margin: 11px 15px 18px 11px;
 }
 
 .slidemenu  ul {
@@ -197,7 +197,7 @@ body {
 
 .slidemenu_sns li a {
 	display: block;
-	padding-top: 6px;
+	padding-top: 10px;
 	color: white;
 }
 
