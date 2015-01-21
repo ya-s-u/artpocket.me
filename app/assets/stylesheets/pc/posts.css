@@ -32,6 +32,7 @@
 
 .index_list_thumb {
 	padding: 6px;
+	margin-bottom: 3px;
 	border-radius: 3px;
 	background: #eee;
 }
@@ -46,11 +47,10 @@
 
 .index_list_title {
 	display: inline;
-	margin-top: 6px;
 	color: #555;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: normal;
-	line-height: 1.4em;
+	line-height: 0;
 	background: linear-gradient(transparent 60%, rgba(249, 199, 20, 1) 0%);
 }
 
