@@ -107,6 +107,7 @@ body {
 * Slide Menu
 **********************************************/
 #build-menu {
+		-webkit-overflow-scrolling: touch;
 		background: white;
 		background: rgb(255,255,255); /* Old browsers */
 		background: -moz-linear-gradient(left,  rgba(255,255,255,1) 98%, rgba(188,188,188,1) 100%); /* FF3.6+ */
@@ -118,8 +119,8 @@ body {
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bcbcbc',GradientType=1 ); /* IE6-9 */
 }
 
-.slidemenu {
-	padding-top: 20px;
+.slidemenu_ad {
+	margin: 11px 15px 18px 11px;
 }
 
 .slidemenu  ul {
@@ -197,7 +198,7 @@ body {
 
 .slidemenu_sns li a {
 	display: block;
-	padding-top: 6px;
+	padding-top: 10px;
 	color: white;
 }
 

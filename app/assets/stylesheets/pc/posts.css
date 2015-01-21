@@ -21,7 +21,7 @@
 .index_list li {
 	float: left;
 	width: 259px;
-	padding: 0 20px 20px 0;
+	padding: 0 20px 40px 0;
 	margin-right: 20px;
 	border-right: 1px solid #eee;
 }
@@ -31,7 +31,9 @@
 }
 
 .index_list_thumb {
+	padding: 6px;
 	border-radius: 3px;
+	background: #eee;
 }
 
 .index_list_thumb img {
@@ -91,10 +93,17 @@
 
 .show_left_picts li {
 	margin-bottom: 20px;
+	padding: 8px;
+	background: #eee;
+	border-radius: 3px;
 }
 
 .show_left_picts li:last-child {
 	margin-bottom: 0;
+}
+
+.show_left_picts li img {
+	display: block;
 }
 
 .show_right {
