@@ -3,9 +3,9 @@
 **********************************************/
 .index_text {
 	background: white;
-	margin: 0 11px 15px;
+	margin: 0 10px 15px;
 	padding: 20px 10px;
-	text-align: center;
+	text-align: justify;
 	border-radius: 3px;
 	font-size: 14px;
 }
