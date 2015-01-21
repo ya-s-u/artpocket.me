@@ -45,11 +45,13 @@
 }
 
 .index_list_title {
+	display: inline;
 	margin-top: 6px;
 	color: #555;
 	font-size: 16px;
 	font-weight: normal;
 	line-height: 1.4em;
+	background: linear-gradient(transparent 60%, rgba(249, 199, 20, 1) 0%);
 }
 
 .index_list_date {
@@ -237,9 +239,11 @@
 }
 
 .new_title {
+	display: inline;
 	margin-bottom: 20px;
 	font-size: 22px;
 	font-weight: normal;
+	background: linear-gradient(transparent 60%, rgba(249, 199, 20, 1) 0%);
 }
 
 .form {
