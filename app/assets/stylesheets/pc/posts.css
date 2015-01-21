@@ -239,9 +239,11 @@
 }
 
 .new_title {
+	display: inline;
 	margin-bottom: 20px;
 	font-size: 22px;
 	font-weight: normal;
+	background: linear-gradient(transparent 60%, rgba(249, 199, 20, 1) 0%);
 }
 
 .form {
