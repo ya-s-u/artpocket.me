@@ -118,7 +118,8 @@ body {
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bcbcbc',GradientType=1 ); /* IE6-9 */
 }
 
-.slidemenu {
+.slidemenu_ad {
+	margin: 10px 15px 18px 11px;
 }
 
 .slidemenu  ul {
