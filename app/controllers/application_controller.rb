@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  # Basic Auth on Development
+  if ENV['BASIC_AUTH_USERNAME'] && ENV['BASIC_AUTH_PASSWORD']
+    http_basic_authenticate_with :name => ENV['BASIC_AUTH_USERNAME'], :password => ENV['BASIC_AUTH_PASSWORD']
+  end
+
   # Tablet uses PC view
   include Jpmobile::ViewSelector
   before_filter :disable_mobile_view_if_tablet
