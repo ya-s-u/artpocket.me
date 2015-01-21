@@ -21,7 +21,7 @@
 .index_list li {
 	float: left;
 	width: 259px;
-	padding: 0 20px 20px 0;
+	padding: 0 20px 40px 0;
 	margin-right: 20px;
 	border-right: 1px solid #eee;
 }
@@ -102,7 +102,7 @@
 	margin-bottom: 0;
 }
 
-.show_left_picts li a {
+.show_left_picts li img {
 	display: block;
 }
 
