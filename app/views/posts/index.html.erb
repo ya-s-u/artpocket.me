@@ -29,6 +29,9 @@ og: {
 				<% end %>
 			</li>
 		<% end %>
+		<% if request.smart_phone? && @posts.length==1 %>
+			<li><a style="background:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;"></a></li>
+		<% end %>
 	</ul>
 	<!-- <p class="index_more">もっと表示する</p> -->
 
