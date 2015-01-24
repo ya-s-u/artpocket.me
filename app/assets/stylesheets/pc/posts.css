@@ -2,9 +2,10 @@
 * Schedule
 **********************************************/
 .schedule {
-	padding: 0 20px 20px 0;
 	margin: 0 20px 0 0;
+	padding: 0 20px 30px 0;
 	border-right: 1px solid #eee;
+	border-radius: 3px;
 }
 
 .schedule_calendar {
@@ -20,6 +21,15 @@
 	border: 1px solid white;
 }
 
+.schedule_calendar tr > th:first-child {
+	width: 250px;
+}
+
+.schedule_calendar tr > td:first-child {
+	text-decoration: underline;
+	padding: 0 10px;
+}
+
 .schedule_calendar .enable {
 	display: block;
 	width: 100%;
@@ -30,7 +40,7 @@
 .schedule_calendar .enable_media{background:#27ae60}
 .schedule_calendar .enable_architecture{background:#e74c3c}
 .schedule_calendar .enable_fashion{background:#d35400}
-.schedule_calendar .enable_other{background:#f39c12}
+.schedule_calendar .enable_other{background:#0070d1}
 
 
 /**********************************************
