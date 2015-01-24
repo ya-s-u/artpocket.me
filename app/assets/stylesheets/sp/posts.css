@@ -2,6 +2,7 @@
 * Schedule
 **********************************************/
 .schedule {
+	-webkit-overflow-scrolling: touch;
 	overflow-x: scroll;
 	margin: 0 10px 15px;
 	border-radius: 3px;
@@ -11,18 +12,29 @@
 .schedule_calendar {
 	table-layout: fixed;
 	width: 100%;
-	margin: 5px 10px;
+	margin: 10px;
 	font-size: 13px;
 }
 
 .schedule_calendar tr {
-	height: 20px;
+	height: 30px;
 }
 
-.schedule_calendar th, .schedule_calendar td {
+.schedule_calendar th {
+	width: 40px;
+	font-size: 10px;
+	font-weight: normal;
+	line-height: 1.3em;
+}
+
+.schedule_calendar th > span {
+	display: block;
+	text-align: center;
+}
+
+.schedule_calendar td {
 	width: 60px;
 	border: 1px solid white;
-	font-weight: normal;
 }
 
 .schedule_calendar th:first-child {

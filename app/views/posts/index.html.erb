@@ -10,9 +10,8 @@ og: {
 	<table class="schedule_calendar">
 		<tr>
 			<th></th>
-			<th><%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)</th>
-			<% for i in 1..6 do %>
-				<th><%= i.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(i.days.from_now.strftime("%w").to_i) %>)</th>
+			<% for i in 0..6 do %>
+				<th><%= i.days.from_now.strftime("%-m/%-d") %><span>(<%= day_ja(i.days.from_now.strftime("%w").to_i) %>)</span></th>
 			<% end %>
 		</tr>
 		<% @schedules.each_with_index do |post, i| %>
