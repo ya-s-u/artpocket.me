@@ -23,7 +23,7 @@
 .schedule_calendar .enable {
 	display: block;
 	width: 100%;
-	height: 10px;
+	height: 8px;
 }
 
 .schedule_calendar .enable_graphic{background:#3498db}

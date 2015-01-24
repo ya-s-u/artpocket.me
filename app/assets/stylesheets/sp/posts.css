@@ -1,4 +1,48 @@
 /**********************************************
+* Schedule
+**********************************************/
+.schedule {
+	overflow-x: scroll;
+	margin: 0 10px 15px;
+	border-radius: 3px;
+	background: white;
+}
+
+.schedule_calendar {
+	table-layout: fixed;
+	width: 100%;
+	margin: 5px 10px;
+	font-size: 13px;
+}
+
+.schedule_calendar tr {
+	height: 20px;
+}
+
+.schedule_calendar th, .schedule_calendar td {
+	width: 60px;
+	border: 1px solid white;
+	font-weight: normal;
+}
+
+.schedule_calendar th:first-child {
+	width: 120px;
+}
+
+.schedule_calendar .enable {
+	display: block;
+	width: 100%;
+	height: 8px;
+}
+
+.schedule_calendar .enable_graphic{background:#3498db}
+.schedule_calendar .enable_media{background:#27ae60}
+.schedule_calendar .enable_architecture{background:#e74c3c}
+.schedule_calendar .enable_fashion{background:#d35400}
+.schedule_calendar .enable_other{background:#f39c12}
+
+
+/**********************************************
 * Index
 **********************************************/
 .index_text {

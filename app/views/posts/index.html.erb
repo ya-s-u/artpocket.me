@@ -17,7 +17,7 @@ og: {
 		</tr>
 		<% @schedules.each_with_index do |post, i| %>
 			<tr>
-				<td><%= truncate(post.title, :length=>16) %></td>
+				<td><%= link_to(truncate(post.title, :length=>16), show_post_path(post.id)) %></td>
 				<% for j in 0..6 do %>
 					<td><span class='<%= "enable enable_#{post.category.title}" if @calendar[i][j] %>'></span></td>
 				<% end %>
