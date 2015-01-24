@@ -28,6 +28,7 @@
 .schedule_calendar tr > td:first-child {
 	text-decoration: underline;
 	padding: 0 10px;
+	overflow: hidden;
 }
 
 .schedule_calendar .enable {

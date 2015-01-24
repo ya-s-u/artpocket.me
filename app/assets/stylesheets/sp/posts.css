@@ -21,7 +21,7 @@
 }
 
 .schedule_calendar th {
-	width: 40px;
+	width: 36px;
 	font-size: 11px;
 	font-weight: normal;
 	line-height: 1.3em;
@@ -37,8 +37,13 @@
 	border: 1px solid white;
 }
 
-.schedule_calendar th:first-child {
-	width: 120px;
+.schedule_calendar tr > th:first-child {
+	width: 110px;
+}
+
+.schedule_calendar tr > td:first-child {
+	text-decoration: underline;
+	overflow: hidden;
 }
 
 .schedule_calendar .enable {
