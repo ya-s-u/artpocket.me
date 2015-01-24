@@ -1,7 +1,19 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.order(created_at: :desc)
+
+    from = Time.now.at_beginning_of_day
+    to   = from + 7.day
+    @schedules = @posts.where("(open_date >= ? AND open_date <= ?)OR(close_date >= ? AND close_date <= ?)", from, to, from, to).order(category_id: :asc)
+
+    @calendar = Array.new(@schedules.length){ Array.new(7) }
+    @schedules.each_with_index do |post, i|
+      for j in 0..6 do
+        day = from + j.day
+        @calendar[i][j] = post.open_date <= day &&  day <= post.close_date ? true: false
+      end
+    end
   end
 
   def category
@@ -9,7 +21,7 @@ class PostsController < ApplicationController
     if @category == nil
       return redirect_to :root
     end
-    @posts = Post.where(:category_id => @category.id).order("created_at DESC")
+    @posts = Post.where(:category_id => @category.id).order(created_at: :desc)
     render :action => 'index'
   end
 
