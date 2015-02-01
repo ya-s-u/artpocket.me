@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc).page(1).per(10)
   end
 
   def category
@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     if @category == nil
       return redirect_to :root
     end
-    @posts = Post.where(:category_id => @category.id).order(created_at: :desc)
+    @posts = Post.where(:category_id => @category.id).order(created_at: :desc).page(1).per(10)
     render :action => 'index'
   end
 
