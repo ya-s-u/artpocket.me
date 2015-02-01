@@ -16,6 +16,9 @@ gem 'jquery-rails'
 #gem 'turbolinks'
 #gem 'jquery-turbolinks'
 
+# For Controller
+gem 'kaminari'
+
 # For API
 gem 'jbuilder', '~> 2.0'
 gem 'grape'
