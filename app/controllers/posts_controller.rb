@@ -5,8 +5,8 @@ class PostsController < ApplicationController
 
     today = Time.now.at_beginning_of_day
     tommorow   = today + 1.day
-    @today = @posts.where("open_date <= ? AND ? <= close_date", today, today).order(open_date: :desc)
-    @tommorow = @posts.where("open_date = ?", tommorow).order(open_date: :desc)
+    @today = @posts.where("open_date <= ? AND ? <= close_date", today, today).order(close_date: :asc)
+    @tommorow = @posts.where("open_date = ?", tommorow).order(close_date: :asc)
   end
 
   def category
