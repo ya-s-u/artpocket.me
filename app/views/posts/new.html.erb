@@ -433,7 +433,14 @@ ConfirmCancel.click(function() {
 	}, 300);
 })
 
+var is_submitted = false;
 ConfirmSubmit.click(function() {
+	if(is_submitted) {
+		alert("只今処理中です。\nそのままお待ちください。");
+		return;
+	}
+	is_submitted = true;
+
 	var n=0;
 	$(this).addClass('disable').text('送信中...');
 

@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'grape'
 gem 'grape-jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'hashie_rails'
 
 # For Development
 gem 'spring',        group: :development
