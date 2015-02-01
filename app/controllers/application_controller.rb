@@ -28,4 +28,13 @@ class ApplicationController < ActionController::Base
   def render_500(exception = nil)
     render template: "errors/500", status: 500, layout: 'application'
   end
+
+  # Common Sidebar
+  before_filter :sidebar_schedule
+  def sidebar_schedule
+    today = Time.now.at_beginning_of_day
+    tommorow   = today + 1.day
+    @today = Post.where("open_date <= ? AND ? <= close_date", today, today).order(close_date: :asc)
+    @tommorow = Post.where("open_date = ?", tommorow).order(close_date: :asc)
+  end
 end
