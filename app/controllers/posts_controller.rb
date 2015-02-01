@@ -3,17 +3,10 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order(created_at: :desc)
 
-    from = Time.now.at_beginning_of_day
-    to   = from + 7.day
-    @schedules = @posts.where("(open_date <= ? AND ? <= close_date)OR(? <= open_date AND close_date <= ?)OR(open_date <= ? AND ? <= close_date)", from, from, from, to, to, to).order(open_date: :desc)
-
-    @calendar = Array.new(@schedules.length){ Array.new(7) }
-    @schedules.each_with_index do |post, i|
-      for j in 0..6 do
-        day = from + j.day
-        @calendar[i][j] = post.open_date <= day &&  day <= post.close_date ? true: false
-      end
-    end
+    today = Time.now.at_beginning_of_day
+    tommorow   = today + 1.day
+    @today = @posts.where("open_date <= ? AND ? <= close_date", today, today).order(open_date: :desc)
+    @tommorow = @posts.where("open_date = ?", tommorow).order(open_date: :desc)
   end
 
   def category

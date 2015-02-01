@@ -9,8 +9,32 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </li>
-  <li>
-    <iframe class="sidebar_fb"        src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fartpocket.me&amp;width=277&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=705208482920560"
+  <li class="schedule">
+    <h3 class="schedule_title">本日開催中 <%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)</h3>
+    <% if @today.present? %>
+      <table class="schedule_calendar">
+        <% @today.each do |post| %>
+          <tr>
+            <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
+            <td><%= post.close_date.strftime("%-m/%-d") %>まで</td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+    <% if @tommorow.present? %>
+      <h3 class="schedule_title">明日から開催 <%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)</h3>
+      <table class="schedule_calendar">
+        <% @tommorow.each do |post| %>
+          <tr>
+            <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
+            <td><%= post.close_date.strftime("%-m/%-d") %>まで</td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </li>
+  <li class="fb">
+    <iframe        src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fartpocket.me&amp;width=277&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=705208482920560"
             scrolling="no"
             frameborder="0"
             style="overflow:hidden; width:297px; height:258px;"

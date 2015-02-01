@@ -5,27 +5,7 @@ og: {
 },
 })%>
 
-<% if request.smart_phone? %>
-	<p class="index_text">東海のアートイベントのフライヤー、無料で掲載いたします。<%= link_to :new_post do %>フライヤー登録申請する<% end %></p>
-<% end %>
-<div class="schedule">
-	<table class="schedule_calendar">
-		<tr>
-			<th></th>
-			<% for i in 0..6 do %>
-				<th><%= i.days.from_now.strftime("%-m/%-d") %><span>(<%= day_ja(i.days.from_now.strftime("%w").to_i) %>)</span></th>
-			<% end %>
-		</tr>
-		<% @schedules.each_with_index do |post, i| %>
-			<tr>
-				<td><%= post.open_date %>/<%= post.close_date %></td>
-				<% for j in 0..6 do %>
-					<td><span class='<%= "enable enable_#{post.category.title}" if @calendar[i][j] %>'></span></td>
-				<% end %>
-			</tr>
-		<% end %>
-	</table>
-</div>
+<p class="index_text">東海のアートイベントのフライヤー、無料で掲載いたします。<%= link_to :new_post do %>フライヤー登録申請する<% end %></p>
 <div class="post">
 	<ul id="IndexList" class="index_list">
 		<% @posts.each do |post| %>

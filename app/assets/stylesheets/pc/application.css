@@ -261,10 +261,36 @@ body {
 }
 
 .sidebar li {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
-.sidebar_fb {
+.sidebar .schedule_title  {
+	text-align: center;
+	font-size: 16px;
+	font-weight: normal;
+	color: #555;
+	border: 1px solid #eee;
+}
+
+.sidebar .schedule_calendar {
+	width: 100%;
+	margin-bottom: 10px;
+	line-height: 2.2em;
+}
+
+.sidebar .schedule_calendar a {
+	text-decoration: underline;
+}
+
+.sidebar .schedule_calendar td:nth-child(2) {
+	width: 75px;
+}
+
+.sidebar > .fb {
+	height: 258px;
+}
+
+.sidebar > .fb > iframe {
 	border: 1px solid #eee;
 }
 
