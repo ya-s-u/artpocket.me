@@ -261,10 +261,42 @@ body {
 }
 
 .sidebar li {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
-.sidebar_fb {
+.sidebar > .ad {
+	height: 250px;
+}
+
+.sidebar .schedule_title  {
+	margin-bottom: 4px;
+	padding: 2px 0;
+	background: #f6f6f6;
+	text-align: center;
+	font-size: 16px;
+	font-weight: normal;
+	color: #555;
+	border: 1px solid #eee;
+}
+
+.sidebar .schedule_calendar {
+	width: 100%;
+	line-height: 2.4em;
+}
+
+.sidebar .schedule_calendar a {
+	text-decoration: underline;
+}
+
+.sidebar .schedule_calendar td:nth-child(2) {
+	width: 75px;
+}
+
+.sidebar > .fb {
+	height: 260px;
+}
+
+.sidebar > .fb > iframe {
 	border: 1px solid #eee;
 }
 

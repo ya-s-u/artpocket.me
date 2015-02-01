@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.order(created_at: :desc)
+
+    today = Time.now.at_beginning_of_day
+    tommorow   = today + 1.day
+    @today = @posts.where("open_date <= ? AND ? <= close_date", today, today).order(open_date: :desc)
+    @tommorow = @posts.where("open_date = ?", tommorow).order(open_date: :desc)
   end
 
   def category
@@ -9,7 +14,7 @@ class PostsController < ApplicationController
     if @category == nil
       return redirect_to :root
     end
-    @posts = Post.where(:category_id => @category.id).order("created_at DESC")
+    @posts = Post.where(:category_id => @category.id).order(created_at: :desc)
     render :action => 'index'
   end
 
