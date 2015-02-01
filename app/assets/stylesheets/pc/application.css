@@ -269,6 +269,9 @@ body {
 }
 
 .sidebar .schedule_title  {
+	margin-bottom: 4px;
+	padding: 2px 0;
+	background: #f6f6f6;
 	text-align: center;
 	font-size: 16px;
 	font-weight: normal;
@@ -278,7 +281,7 @@ body {
 
 .sidebar .schedule_calendar {
 	width: 100%;
-	line-height: 2.2em;
+	line-height: 2.4em;
 }
 
 .sidebar .schedule_calendar a {
