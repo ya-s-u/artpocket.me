@@ -264,6 +264,10 @@ body {
 	margin-bottom: 20px;
 }
 
+.sidebar > .ad {
+	height: 250px;
+}
+
 .sidebar .schedule_title  {
 	text-align: center;
 	font-size: 16px;
@@ -274,7 +278,6 @@ body {
 
 .sidebar .schedule_calendar {
 	width: 100%;
-	margin-bottom: 10px;
 	line-height: 2.2em;
 }
 
@@ -287,7 +290,7 @@ body {
 }
 
 .sidebar > .fb {
-	height: 258px;
+	height: 260px;
 }
 
 .sidebar > .fb > iframe {
