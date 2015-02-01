@@ -2,7 +2,7 @@
 //= require jquery_ujs
 //= require angular.min
 //= require angular-masonry.min
-//= require ../main
+//= require loader
 //= require_self
 //= require_tree .
 //= stub jquery-ui
