@@ -1,65 +1,4 @@
 /**********************************************
-* Schedule
-**********************************************/
-.schedule {
-	-webkit-overflow-scrolling: touch;
-	overflow-x: scroll;
-	margin: 0 10px 15px;
-	border-radius: 3px;
-	background: white;
-}
-
-.schedule_calendar {
-	table-layout: fixed;
-	width: 100%;
-	margin: 10px;
-	font-size: 13px;
-}
-
-.schedule_calendar tr {
-	height: 30px;
-}
-
-.schedule_calendar th {
-	width: 36px;
-	font-size: 11px;
-	font-weight: normal;
-	line-height: 1.3em;
-}
-
-.schedule_calendar th > span {
-	display: block;
-	text-align: center;
-}
-
-.schedule_calendar td {
-	width: 60px;
-	border: 1px solid white;
-}
-
-.schedule_calendar tr > th:first-child {
-	width: 110px;
-}
-
-.schedule_calendar tr > td:first-child {
-	text-decoration: underline;
-	overflow: hidden;
-}
-
-.schedule_calendar .enable {
-	display: block;
-	width: 100%;
-	height: 8px;
-}
-
-.schedule_calendar .enable_graphic{background:#3498db}
-.schedule_calendar .enable_media{background:#27ae60}
-.schedule_calendar .enable_architecture{background:#e74c3c}
-.schedule_calendar .enable_fashion{background:#d35400}
-.schedule_calendar .enable_other{background:#0070d1}
-
-
-/**********************************************
 * Index
 **********************************************/
 .index_text {
@@ -73,6 +12,35 @@
 
 .index_text > a {
 	text-decoration: underline;
+}
+
+.index_schedule {
+	overflow: hidden;
+	margin: 0 10px 15px;
+	border-radius: 3px;
+	background: white;
+}
+
+.index_schedule_title {
+	padding: 12px 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1em;
+	color: white;
+	text-align: center;
+	background: #777;
+	border-radius: 3px 3px 0 0;
+}
+
+.index_schedule_calendar {
+	width: 96%;
+	margin: 5px 2%;
+	line-height: 1.8em;
+	font-size: 14px;
+}
+
+.index_schedule_calendar td:nth-child(2) {
+	width: 70px;
 }
 
 .index_list {
