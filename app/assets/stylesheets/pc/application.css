@@ -285,7 +285,7 @@ body {
 }
 
 .sidebar .schedule_calendar a {
-	text-decoration: underline;
+	background: linear-gradient(transparent 60%, #f9c714 0%);
 }
 
 .sidebar .schedule_calendar td:nth-child(2) {
