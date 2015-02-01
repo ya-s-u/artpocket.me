@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
     from = Time.now.at_beginning_of_day
     to   = from + 7.day
-    @schedules = @posts.where("(open_date >= ? AND open_date <= ?)OR(close_date >= ? AND close_date <= ?)", from, to, from, to).order(category_id: :asc)
+    @schedules = @posts.where("(open_date <= ? AND ? <= close_date)OR(? <= open_date AND close_date <= ?)OR(open_date <= ? AND ? <= close_date)", from, from, from, to, to, to).order(open_date: :desc)
 
     @calendar = Array.new(@schedules.length){ Array.new(7) }
     @schedules.each_with_index do |post, i|
