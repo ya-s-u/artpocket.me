@@ -14,7 +14,7 @@ og: {
 			<table class="index_schedule_calendar">
 				<% @today.each do |post| %>
 					<tr>
-						<td>・<%= link_to(truncate(post.title, :length=>16), show_post_path(post.id)) %></td>
+						<td>・<%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
 						<td>
 							<% if post.close_date.strftime("%-m/%-d")==Time.zone.now.strftime("%-m/%-d") %>
 								今日まで
