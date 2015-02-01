@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order(created_at: :desc).page(1).per(10)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(10)
+    respond_to do |format|
+      format.html
+      format.js if request.xhr?
+    end
   end
 
   def category
