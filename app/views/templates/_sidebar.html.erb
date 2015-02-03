@@ -11,7 +11,7 @@
   </li>
   <% if @today.present? %>
     <li class="schedule">
-      <h3 class="schedule_title">本日開催中 -<%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)-</h3>
+      <h3 class="schedule_title">本日開催中 <%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)</h3>
         <table class="schedule_calendar">
           <% @today.each do |post| %>
             <tr>
@@ -32,7 +32,7 @@
   <% end %>
   <% if @tommorow.present? %>
     <li class="schedule">
-        <h3 class="schedule_title">明日から開催 -<%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)-</h3>
+        <h3 class="schedule_title">明日から開催 <%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)</h3>
         <table class="schedule_calendar">
           <% @tommorow.each do |post| %>
             <tr>
