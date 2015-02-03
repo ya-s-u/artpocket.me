@@ -1,80 +1,58 @@
-<div class="sidebar">
-  <%= link_to :new_post, {:target=>"_blank",:class=>"sidebar_submit"} do %>
-    フライヤー登録申請はこちら
+<ul class="sidebar">
+  <li class="ad">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-7183337843978214"
+         data-ad-slot="6634443081"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </li>
+  <% if @today.present? %>
+    <li class="schedule">
+      <h3 class="schedule_title">本日開催中 -<%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)-</h3>
+        <table class="schedule_calendar">
+          <% @today.each do |post| %>
+            <tr>
+              <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
+              <td>
+                <% if post.close_date.strftime("%-m/%-d")==Time.zone.now.strftime("%-m/%-d") %>
+                  今日まで
+                <% elsif post.close_date.strftime("%-m/%-d")==1.days.from_now.strftime("%-m/%-d") %>
+                  明日まで
+                <% else %>
+                  <%= post.close_date.strftime("%-m/%-d") %>まで
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+    </li>
   <% end %>
-  <h3 class="sidebar_title calendar">カレンダーから探す</h3>
-  <table class="sidebar_calendar">
-    <tr>
-    <td colspan="7">2014年12月</td>
-    </tr>
-    <tr>
-    <td>日</td>
-    <td>月</td>
-    <td>火</td>
-    <td>水</td>
-    <td>木</td>
-    <td>金</td>
-    <td>土</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-    <td>5</td>
-    <td>6</td>
-    </tr>
-    <tr>
-    <td>7</td>
-    <td>8</td>
-    <td>9</td>
-    <td>10</td>
-    <td>11</td>
-    <td>12</td>
-    <td>13</td>
-    </tr>
-    <tr>
-    <td>14</td>
-    <td>15</td>
-    <td>16</td>
-    <td>17</td>
-    <td>18</td>
-    <td>19</td>
-    <td>20</td>
-    </tr>
-    <tr>
-    <td>21</td>
-    <td>22</td>
-    <td>23</td>
-    <td>24</td>
-    <td>25</td>
-    <td>26</td>
-    <td>27</td>
-    </tr>
-    <tr>
-    <td>28</td>
-    <td>29</td>
-    <td>30</td>
-    <td>31</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-  </table>
-  <h3 class="sidebar_title category">カテゴリーから探す</h3>
-  <ul class="sidebar_category">
-    <li><a href="">イラスト・グラフィック</a></li>
-    <li><a href="">建築・インテリア・空間</a></li>
-    <li><a href="">プロダクト・パッケージ</a></li>
-    <li><a href="">写真・映像・デジタル</a></li>
-    <li><a href="">ファッション</a></li>
-    <li><a href="">インスタレーション</a></li>
-    <li><a href="">セミナー・講演会</a></li>
-    <li><a href="">ワークショップ</a></li>
-  </ul>
-  <ul class="sidebar_banner">
-    <li><span>バナー</span></li>
-    <li><span>バナー</span></li>
-  </ul>
-</div>
+  <% if @tommorow.present? %>
+    <li class="schedule">
+        <h3 class="schedule_title">明日から開催 -<%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)-</h3>
+        <table class="schedule_calendar">
+          <% @tommorow.each do |post| %>
+            <tr>
+              <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
+              <td><%= post.close_date.strftime("%-m/%-d") %>まで</td>
+            </tr>
+          <% end %>
+        </table>
+    </li>
+  <% end %>
+  <li class="fb">
+    <iframe        src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fartpocket.me&amp;width=277&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=705208482920560"
+            scrolling="no"
+            frameborder="0"
+            style="overflow:hidden; width:297px; height:258px;"
+            allowTransparency="true">
+    </iframe>
+  </li>
+  <li>
+    <a class="twitter-timeline" href="https://twitter.com/artpocket_me" data-widget-id="555687046774153216">@artpocket_meさんのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </li>
+</ul>

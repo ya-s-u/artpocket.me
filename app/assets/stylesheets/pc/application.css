@@ -1,0 +1,315 @@
+/*
+ *= stub active_admin
+ *= require_tree .
+ *= require_self
+ *= require ../main
+ */
+
+/**********************************************
+* Reset
+**********************************************/
+h1,h2,h3,h4,h5 {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #555;
+}
+
+p {
+	margin: 0;
+	color: #555;
+	line-height: 1.3em;
+	font-size: 16px;
+}
+
+img {
+	width: 100%;
+	border: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+table {
+	color: #555;
+	font-size: 14px;
+	word-wrap: break-word;
+}
+
+
+/**********************************************
+* Common
+**********************************************/
+body {
+	font-family: 'futura-pt',YuGothic, '游ゴシック','meiryo','メイリオ','ms pgothic','ms pゴシック',osaka,sans-serif;
+}
+
+.container {
+	position: relative;
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+/**********************************************
+* Global Menu
+**********************************************/
+.top {
+	overflow: hidden;
+	min-width: 1200px;
+	height: 60px;
+	background: #F9C704;
+}
+
+.top_logo {
+	float: left;
+	width: 180px;
+	margin: 16px 0 0 0;
+}
+
+.top_logo > a > img {
+	display: block;
+}
+
+.top_description {
+	float: left;
+	margin: 22px 0 0 20px;
+	font-size: 14px;
+	color: white;
+}
+
+.top_menu {
+	float: right;
+	margin-top: 12px;
+}
+
+.top_menu > li {
+	float: left;
+	position: relative;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
+.top_menu > li:after {
+	content: '/';
+	position: absolute;
+	right: -14px;
+	top: 1px;
+	color: white;
+	font-size: 16px;
+}
+
+.top_menu > li:last-child:after {
+	content: '';
+}
+
+.top_menu > li > a {
+	font-size: 13px;
+	color: white;
+}
+
+
+/**********************************************
+* Header
+**********************************************/
+.header {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	min-width: 1200px;
+	z-index: 9999;
+	background: #f6f6f6;
+}
+
+.header_category {
+	overflow: hidden;
+	float: left;
+	padding: 8px 0;
+	border-radius: 6px;
+}
+
+.header_category > li {
+	float: left;
+	margin-right: 20px;
+}
+
+.header_category > li:first-child {
+	padding-right: 20px;
+	border-right: 1px solid #ddd;
+}
+
+.header_category > li > a:hover {
+	opacity: 0.5;
+}
+
+.header_category > li > a > i {
+	float: left;
+	display: block;
+	position: relative;
+	top: 5px;
+	width: 24px;
+	height: 23px;
+	text-align: center;
+	margin-right: 6px;
+	padding-top: 1px;
+	font-size: 18px;
+	color: white;
+	border-radius: 50%;
+}
+
+.header_category > li > a > i:before {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	font-size: 19px;
+}
+
+.header_category > li > a > i.graphic{background:#3498db}
+.header_category > li > a > i.digital{background:#27ae60}
+.header_category > li > a > i.architecture{background:#e74c3c}
+.header_category > li > a > i.fashion{background:#d35400}
+.header_category > li > a > i.other{background:#0070d1}
+
+.header_category > li > a > i.graphic:before{font-size:24px;top:0;left:1px}
+.header_category > li > a > i.digital:before{font-size:14px;top:5px;left:3px}
+.header_category > li > a > i.architecture:before{font-size:21px;top:2px;left:2px}
+.header_category > li > a > i.fashion:before{font-size:23px;top:1px;left:1px}
+.header_category > li > a > i.other:before{top:2px}
+
+.header_share {
+	float: right;
+	margin-top: 9px;
+}
+
+.header_share > li {
+	float: left;
+	margin-left: 10px;
+}
+
+.header_share > li > a > i {
+	display: block;
+	position: relative;
+	top: 5px;
+	width: 24px;
+	height: 23px;
+	text-align: center;
+	padding-top: 1px;
+	font-size: 18px;
+	background: #0070d1;
+	color: white;
+	border-radius: 50%;
+}
+
+.header_share > li > a > i:before {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	font-size: 16px;
+}
+
+.header_share > li > a > i.facebook{background:#315096}
+.header_share > li > a > i.twitter{background:#55acee}
+
+.header_share > li > a > i.facebook:before{font-size:17px;top:4px;left:8px}
+
+
+/**********************************************
+* Main
+**********************************************/
+.main {
+	overflow: hidden;
+	margin: 80px 0 40px;
+}
+
+.left {
+	float: left;
+	width: 900px;
+}
+
+.gotop {
+	cursor: pointer;
+	position: fixed;
+	right: 40px;
+	bottom: 80px;
+	color: #777;
+	border-radius: 4px;
+	padding: 18px;
+	background: rgba(0,0,0,0.2);
+	line-height: 1em;
+}
+
+.gotop:hover {
+	background: rgba(0,0,0,0.4);
+}
+
+
+/**********************************************
+* Sidebar
+**********************************************/
+.sidebar {
+	float: right;
+	width: 300px;
+}
+
+.sidebar li {
+	margin-bottom: 20px;
+}
+
+.sidebar > .ad {
+	height: 250px;
+}
+
+.sidebar .schedule_title  {
+	margin-bottom: 4px;
+	padding: 2px 0;
+	background: #f6f6f6;
+	text-align: center;
+	font-size: 16px;
+	font-weight: normal;
+	color: #555;
+	border: 1px solid #eee;
+}
+
+.sidebar .schedule_calendar {
+	width: 100%;
+	line-height: 2.4em;
+}
+
+.sidebar .schedule_calendar a {
+	background: linear-gradient(transparent 60%, #f9c714 0%);
+}
+
+.sidebar .schedule_calendar td:nth-child(2) {
+	width: 75px;
+}
+
+.sidebar > .fb {
+	height: 260px;
+}
+
+.sidebar > .fb > iframe {
+	border: 1px solid #eee;
+}
+
+
+/**********************************************
+* Footer
+**********************************************/
+.footer {
+	background-color: #f6f6f6;
+}
+
+.footer_credit {
+	padding: 20px 0;
+	text-align: center;
+	font-size: 12px;
+}
