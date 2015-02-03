@@ -1,0 +1,7 @@
+<strong>このページは存在しません。5秒後にトップページに移動します。</strong>
+<script language="javascript">
+function jumpPage() {
+  location.href = "<%= request.base_url %>";
+}
+setTimeout("jumpPage()", 5000)
+</script>

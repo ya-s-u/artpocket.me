@@ -1,28 +1,75 @@
+<% set_meta_tags({
+title: '新着フライヤー',
+og: {
+	type: 'website',
+},
+})%>
+
+<% if !request.smart_phone? %>
+	<p class="index_text">東海のアートイベントのフライヤー、無料で掲載いたします。<%= link_to :new_post do %>フライヤー登録申請する<% end %></p>
+<% else %>
+	<% if @today.present? %>
+		<div class="index_schedule">
+			<h3 class="index_schedule_title">本日開催中 <%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)</h3>
+			<table class="index_schedule_calendar">
+				<% @today.each do |post| %>
+					<tr>
+						<td>・<%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
+						<td>
+							<% if post.close_date.strftime("%-m/%-d")==Time.zone.now.strftime("%-m/%-d") %>
+								今日まで
+							<% elsif post.close_date.strftime("%-m/%-d")==1.days.from_now.strftime("%-m/%-d") %>
+								明日まで
+							<% else %>
+								<%= post.close_date.strftime("%-m/%-d") %>まで
+							<% end %>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	<% end %>
+<% end %>
 <div class="post">
-	<div class="container">
-		<ul id="IndexList" class="index_list">
-			<% @posts.each do |post| %>
-				<li>
-					<%= link_to post_path(post.id) do %>
-						<div class="index_list_thumb">
-							<%= image_tag(post.pictures[0].image.url(:pc_thumb)) %>
-						</div>
-						<h2 class="index_list_title"><%= truncate(post.title, :length=>35) %></h2>
-						<p class="index_list_date"><i class="icon-calendar"></i><%= post.open_date.strftime("%m/%d") %>〜<%= post.close_date.strftime("%m/%d") %>　<i class="icon-map"></i>市民文化ギャラリー</p>
-					<% end %>
-				</li>
-			<% end %>
-		</ul>
-		<!-- <p class="index_more">もっと表示する</p> -->
-	</div>
+	<ul id="IndexList" class="index_list">
+		<% @posts.each do |post| %>
+			<li>
+				<%= link_to show_post_path(post.id) do %>
+					<div class="index_list_thumb">
+						<%= image_tag(post.pictures[0].image.url(:resized)) %>
+					</div>
+					<h2 class="index_list_title"><%= truncate(post.title, :length=>35) %></h2>
+					<p class="index_list_date">
+						<i class="icon-calendar"></i>
+						<% if post.open_date!=post.close_date %>
+							<%= post.open_date.strftime("%-m/%-d") %>〜<%= post.close_date.strftime("%-m/%-d") %>
+						<% else %>
+							<%= post.open_date.strftime("%-m/%-d") %>
+						<% end %>
+						&nbsp;
+						<i class="icon-map"></i>
+						<%= post.place %>
+					</p>
+				<% end %>
+			</li>
+		<% end %>
+		<% if request.smart_phone? && @posts.length==1 %>
+			<li><a style="background:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;"></a></li>
+		<% end %>
+	</ul>
+	<!-- <p class="index_more">もっと表示する</p> -->
 
 	<script type="text/javascript">
 	$(window).load(function() {
 		$('#IndexList').masonry({
 			itemSelector: 'li',
-			columnWidth: 300,
+			<% if request.smart_phone? %>
+				columnWidth: (screen.availWidth-10)/2,
+			<% else %>
+				columnWidth: 300,
+			<% end %>
 			isFitWidth: true,
-		});
+	  });
 	})
 	</script>
 </div>

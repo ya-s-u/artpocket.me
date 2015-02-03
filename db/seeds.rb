@@ -9,10 +9,7 @@
 # coding: utf-8
 
 Category.create(:title => 'graphic', :title_ja => 'イラスト・グラフィック')
-Category.create(:title => 'interior', :title_ja => '建築・インテリア・空間')
-Category.create(:title => 'product', :title_ja => 'プロダクト・パッケージ')
-Category.create(:title => 'degital', :title_ja => '写真・映像・デジタル')
-Category.create(:title => 'fashion', :title_ja => 'ファッション')
-Category.create(:title => 'installation', :title_ja => 'インスタレーション')
-Category.create(:title => 'seminar', :title_ja => 'セミナー・講演会')
-Category.create(:title => 'workshop', :title_ja => 'ワークショップ')
+Category.create(:title => 'architecture', :title_ja => '建築・インテリア')
+Category.create(:title => 'media', :title_ja => '写真・映像・メディア')
+Category.create(:title => 'fashion', :title_ja => 'ファッション・クラフト')
+Category.create(:title => 'other', :title_ja => 'その他')

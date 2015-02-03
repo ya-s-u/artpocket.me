@@ -16,11 +16,15 @@ gem 'jquery-rails'
 #gem 'turbolinks'
 #gem 'jquery-turbolinks'
 
+# For Controller
+gem 'kaminari'
+
 # For API
 gem 'jbuilder', '~> 2.0'
 gem 'grape'
 gem 'grape-jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'hashie_rails'
 
 # For Development
 gem 'spring',        group: :development
@@ -36,6 +40,12 @@ gem 'aws-sdk'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 
+# For Responsive
+gem 'jpmobile'
+
+# For meta tag
+gem 'meta-tags'
+
 group :development do
   gem 'letter_opener'
   gem 'letter_opener_web'
@@ -47,4 +57,6 @@ end
 
 group :production do
   gem 'newrelic_rpm'
+  gem 'asset_sync'
+  gem 'google-analytics-rails'
 end
