@@ -1,0 +1,40 @@
+/* statics#about */
+.about_copy {
+  text-align: center;
+  font-size: 24px;
+}
+
+.about_logo {
+  display: block;
+  width: 500px;
+  margin: 20px auto;
+}
+
+.about_text {
+  text-align: center;
+  font-size: 18px;
+}
+
+.about_mock {
+}
+
+/* statics#terms */
+.terms > li {
+  list-style: decimal;
+  margin: 0 0 2px 25px;
+  padding: 20px 0;
+}
+
+.tems_title {
+  font-size: 20px;
+}
+
+.terms_ol {
+  margin-left: -50px;
+}
+
+.terms_ol > li {
+  list-style: decimal;
+  margin: 0 0 2px 2em;
+  color: #555;
+}

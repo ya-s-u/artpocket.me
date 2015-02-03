@@ -1,42 +1,50 @@
 <div id="Header" class="header">
 	<div class="container">
-		<ul class="header_category">
+		<p class="header_description">東海のアートイベントのフライヤー集めました</p>
+		<ul class="header_menu">
 			<li>
-				<%= link_to :root do %>全て<% end %>
+	      <%= link_to do %>このサイトとは<% end %>
 			</li>
 			<li>
-				<%= link_to category_post_path('graphic') do %>
-				  <i class="icon-painter graphic"></i> イラスト・グラフィック
-				<% end %>
+	      <%= link_to :new_post, :target=>"_blank" do %>フライヤー登録<% end %>
 			</li>
 			<li>
-				<%= link_to category_post_path('media') do %>
-					<i class="icon-video digital"></i> 写真・映像・メディア
-				<% end %>
+	      <%= link_to do %>お問い合わせ<% end %>
 			</li>
 			<li>
-				<%= link_to category_post_path('architecture') do %>
-					<i class="icon-home architecture"></i> 建築・インテリア
-				<% end %>
-			</li>
-			<li>
-				<%= link_to category_post_path('fashion') do %>
-					<i class="icon-tshirt fashion"></i> ファッション・クラフト
-				<% end %>
-			</li>
-			<li>
-				<%= link_to category_post_path('other') do %>
-					<i class="icon-more other"></i> その他
-				<% end %>
+	      <%= link_to :terms_statics do %>利用規約<% end %>
 			</li>
 		</ul>
-		<ul class="header_share">
-			<li>
-				<%= link_to 'https://www.facebook.com/artpocket.me', {:target=>"_blank"} do %><i class="icon-facebook facebook"></i><% end %>
-			</li>
-			<li>
-				<%= link_to 'https://twitter.com/art_pocket', {:target=>"_blank"} do %><i class="icon-twitter twitter"></i><% end %>
-			</li>
-		</ul>
+		<h1 class="header_logo"><%= link_to image_tag('logo.png'), :root %></h1>
 	</div>
 </div>
+
+
+<!-- <div id="Header" class="header">
+	<div class="container">
+		<p class="header_description">東海のアートイベントのフライヤー集めました</p>
+		<ul class="header_menu">
+			<li>
+				<%= link_to do %>
+					<i class="icon-heart"></i>このサイトとは
+				<% end %>
+			</li>
+			<li>
+				<%= link_to :new_post, :target=>"_blank" do %>
+					<i class="icon-user"></i>フライヤー登録
+				<% end %>
+			</li>
+			<li>
+				<%= link_to do %>
+					<i class="icon-mail"></i>お問い合わせ
+				<% end %>
+			</li>
+			<li>
+				<%= link_to :terms_statics do %>
+					<i class="icon-book"></i>利用規約
+				<% end %>
+			</li>
+		</ul>
+		<h1 class="header_logo"><%= link_to image_tag('logo.png'), :root %></h1>
+	</div>
+</div> -->

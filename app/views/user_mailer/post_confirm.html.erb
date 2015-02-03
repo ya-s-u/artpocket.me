@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>フライヤーの登録申請ありがとうございます</title>
+<title>フライヤーの申請ありがとうございます</title>
 <style>
 /* -------------------------------------
 		GLOBAL
@@ -124,10 +124,10 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 26px;
+	font-size: 36px;
 }
 h2 {
-	font-size: 18px;
+	font-size: 28px;
 }
 h3 {
 	font-size: 22px;
@@ -190,17 +190,17 @@ ul li, ol li {
 			<table>
 				<tr>
 					<td>
-						<h1>フライヤーの登録申請ありがとうございます</h1>
-						<%= image_tag(@post.pictures[0].image.url(:resized)) %>
-						<h2>イベント名：<%= @post.title %></h2>
-						<p>フライヤー申請から24時間以内に掲載されます。入力内容に不備があります場合のみ連絡させて頂きます。申請ありがとうございます。</p>
-						<!-- <table>
+						<h1>フライヤーの申請ありがとうございます</h1>
+						<%= image_tag(@post.pictures[0].image.url(:pc_thumb)) %>
+						<p>イベント名：<%= @post.title %></p>
+						<table>
 							<tr>
 								<td class="padding">
 									<p><%= link_to "レポートページを見る", :root, {:class=>"btn-primary"} %></p>
 								</td>
 							</tr>
-						</table> -->
+						</table>
+						<p>こちらのメールは送信専用です。お問い合わせは、info@artpocket.meまでお願いします。</p>
 					</td>
 				</tr>
 			</table>
@@ -223,7 +223,7 @@ ul li, ol li {
 				<table>
 					<tr>
 						<td align="center">
-							<p>申請内容の変更や疑問点がある場合、遠慮なくsupport@artpocket.meまでお問い合わせください。</p>
+							<p>アートポケット運営</p>
 						</td>
 					</tr>
 				</table>

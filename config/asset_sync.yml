@@ -1,9 +1,0 @@
-production:
-  fog_provider: 'AWS'
-  fog_directory: <%= ENV['S3_BUCKET_NAME'] %>
-  fog_region: 'ap-northeast-1'
-  aws_access_key_id: 'AKIAI4NDC7E4AMJZIP4A'
-  aws_secret_access_key: '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'
-  existing_remote_files: delete
-  manifest: true
-  gzip_compression: true

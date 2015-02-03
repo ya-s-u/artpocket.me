@@ -88,11 +88,4 @@ Rails.application.configure do
     :authentication => 'login',
     :domain => 'heroku.com',
   }
-
-  # For Asset Sync
-  config.action_controller.asset_host = "//#{ENV['S3_BUCKET_NAME']}"
-
-  # For Google Analytics
-  GA.tracker = ENV['GA_TRACK_ID']
-
 end

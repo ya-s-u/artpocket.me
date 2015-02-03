@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "support@artpocket.me"
+  default from: "noreply@artpocket.me"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
   #
   def post_confirm(post)
     @post = post
-    mail to: "#{@post.mail}, support@artpocket.me",
-         subject: "フライヤーの登録申請ありがとうございます"
+    mail to: @post.mail,
+         subject: "フライヤーの申請ありがとうございます"
   end
 end

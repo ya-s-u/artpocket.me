@@ -1,4 +1,4 @@
-ActiveAdmin.register Post do
+ActiveAdmin.register Picture do
 
 
   # See permitted parameters documentation:

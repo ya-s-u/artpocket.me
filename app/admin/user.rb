@@ -1,4 +1,4 @@
-ActiveAdmin.register Post do
+ActiveAdmin.register User do
 
 
   # See permitted parameters documentation:

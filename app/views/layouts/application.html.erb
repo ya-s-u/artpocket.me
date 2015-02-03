@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html>
 <head>
-  <%= display_meta_tags(default_meta_tags) %>
-  <%= stylesheet_link_tag 'pc/application', media: 'all' %>
+  <title>アートポケット</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <%= javascript_include_tag 'pc/application' %>
-  <%= analytics_init if Rails.env.production? %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag %>
 </head>
 <body>
-  <%= render 'templates/top' %>
-  <%= render 'templates/header' %>
-  <div class="container">
-    <div id="Main" class="main">
-      <div class="left">
-        <%= yield %>
-      </div>
-      <%= render 'templates/sidebar' %>
-      <i id="mainGoTop" class="gotop icon-up"></i>
-    </div>
+<%= render 'templates/header' %>
+<div class="main">
+	<div class="container">
+    <%= yield %>
+    <i id="mainGoTop" class="main_gotop icon-up"></i>
   </div>
-  <%= render 'templates/footer' %>
+</div>
+<%= render 'templates/footer' %>
 </body>
 </html>
