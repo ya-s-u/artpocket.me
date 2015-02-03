@@ -1,13 +1,24 @@
 <nav id="Slidemenu" class="slidemenu">
   <div class="slidemenu_ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:234px;height:60px"
-         data-ad-client="ca-pub-7183337843978214"
-         data-ad-slot="4981083083"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <% if true %>
+      <%= link_to image_tag('ad_mikke_sp.png'),
+          'http://mikke-app.com/',
+          {
+            :onclick=>"_gaq.push(['_trackEvent', 'ads', 'mikke', 'sp', , true]);",
+            :target=>"_blank"
+            :class=>"slidemenu_ad_custom"
+          }
+      %>
+    <% else %>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="slidemenu_ad_google adsbygoogle"
+           style="display:inline-block;width:234px;height:60px"
+           data-ad-client="ca-pub-7183337843978214"
+           data-ad-slot="4981083083"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    <% end %>
   </div>
   <ul class="slidemenu_category">
     <li>カテゴリー</li>

@@ -268,6 +268,10 @@ body {
 	height: 250px;
 }
 
+.sidebar .schedule {
+	border: 1px solid #eee;
+}
+
 .sidebar .schedule_title  {
 	margin-bottom: 4px;
 	padding: 2px 0;
@@ -276,11 +280,12 @@ body {
 	font-size: 16px;
 	font-weight: normal;
 	color: #555;
-	border: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 
 .sidebar .schedule_calendar {
-	width: 100%;
+	margin: 5px 10px;
+	width: 278px;
 	line-height: 2.4em;
 }
 
@@ -289,7 +294,7 @@ body {
 }
 
 .sidebar .schedule_calendar td:nth-child(2) {
-	width: 75px;
+	width: 70px;
 }
 
 .sidebar > .fb {
