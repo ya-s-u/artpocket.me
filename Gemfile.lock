@@ -357,6 +357,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jpmobile
   jquery-rails
+  kaminari
   letter_opener
   letter_opener_web
   meta-tags

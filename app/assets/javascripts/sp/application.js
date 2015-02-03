@@ -1,10 +1,12 @@
 //= require jquery
 //= require jquery_ujs
+//= require angular.min
+//= require angular-masonry.min
+//= require loader
+//= require_self
+//= require_tree .
 //= stub jquery-ui
 //= stub active_admin
-//= require_tree .
-//= require_self
-//= require ../main
 
 $(document).ready(function(){
   // Slide Menu

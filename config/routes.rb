@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # API
-  mount API => '/api'
+  mount API => '/'
 
   # Only Local Env
   if Rails.env.development?

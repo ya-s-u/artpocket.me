@@ -14,7 +14,9 @@ class API < Grape::API
 
     #GET api/v1/posts
     get '/', jbuilder:'posts/index' do
-      @posts = Post.all.order("created_at DESC")
+      page = params[:page].blank? ? 1 : params[:page]
+      per = params[:per].blank? ? 10 : params[:per]
+      @posts = Post.all.order("created_at DESC").page(page).per(per)
     end
 
     #GET api/v1/posts/:id
