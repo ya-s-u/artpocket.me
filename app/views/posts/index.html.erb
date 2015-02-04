@@ -6,7 +6,7 @@ og: {
 })%>
 
 <% if !request.smart_phone? %>
-	<p class="index_text">東海のアートイベントのフライヤー、無料で掲載いたします。<%= link_to :new_post do %>フライヤー登録申請する<% end %></p>
+	<p class="index_text"><span>NEW</span>イベントカレンダー公開しました。素敵な出会いがありますように。<%= link_to this_schedule_path do %><%= Time.zone.now.strftime("%-m月") %>のカレンダーはこちら<% end %></p>
 <% else %>
 	<% if @today.present? %>
 		<div class="index_schedule">

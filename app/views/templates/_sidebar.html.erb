@@ -12,35 +12,38 @@
   <% if @today.present? %>
     <li class="sidebar_schedule">
       <h3 class="sidebar_schedule_title">本日開催中 <%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)</h3>
-        <table class="sidebar_schedule_list">
-          <% @today.each do |post| %>
-            <tr>
-              <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
-              <td>
-                <% if post.close_date.strftime("%-m/%-d")==Time.zone.now.strftime("%-m/%-d") %>
-                  今日まで
-                <% elsif post.close_date.strftime("%-m/%-d")==1.days.from_now.strftime("%-m/%-d") %>
-                  明日まで
-                <% else %>
-                  <%= post.close_date.strftime("%-m/%-d") %>まで
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </table>
+      <table class="sidebar_schedule_list">
+        <% @today.each do |post| %>
+          <tr>
+            <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
+            <td>
+              <% if post.close_date.strftime("%-m/%-d")==Time.zone.now.strftime("%-m/%-d") %>
+                今日まで
+              <% elsif post.close_date.strftime("%-m/%-d")==1.days.from_now.strftime("%-m/%-d") %>
+                明日まで
+              <% else %>
+                <%= post.close_date.strftime("%-m/%-d") %>まで
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <%= link_to this_schedule_path, {:class=>"sidebar_schedule_link"} do %>
+        今月のイベント一覧はこちら
+      <% end %>
     </li>
   <% end %>
   <% if @tommorow.present? %>
     <li class="sidebar_schedule">
-        <h3 class="sidebar_schedule_title">明日から開催 <%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)</h3>
-        <table class="sidebar_schedule_list">
-          <% @tommorow.each do |post| %>
-            <tr>
-              <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
-              <td><%= post.close_date.strftime("%-m/%-d") %>まで</td>
-            </tr>
-          <% end %>
-        </table>
+      <h3 class="sidebar_schedule_title">明日から開催 <%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)</h3>
+      <table class="sidebar_schedule_list">
+        <% @tommorow.each do |post| %>
+          <tr>
+            <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
+            <td><%= post.close_date.strftime("%-m/%-d") %>まで</td>
+          </tr>
+        <% end %>
+      </table>
     </li>
   <% end %>
   <li class="sidebar_fb">

@@ -10,6 +10,12 @@
 	margin-bottom: 20px;
 }
 
+.index_text > span {
+	margin-right: 5px;
+	color: rgb(255, 18, 144);
+	font-weight: bold;
+}
+
 .index_text > a {
 	text-decoration: underline;
 }
