@@ -8,7 +8,23 @@
 	border-radius: 3px;
 }
 
+.schedule_prev {
+	float: left;
+	margin-top: 10px;
+}
+
+.schedule_next {
+	float: right;
+	margin-top: 10px;
+}
+
+.schedule_title {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
 .schedule_calendar {
+	clear: both;
 	background: #f6f6f6;
 }
 

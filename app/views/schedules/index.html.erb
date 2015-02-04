@@ -1,18 +1,18 @@
 <% set_meta_tags({
-title: "#{@from.strftime("%-m月")}のスケジュール",
+title: "#{@from.strftime("%Y年%-m月")}のスケジュール",
 og: {
   type: 'website',
 },
 })%>
 
 <div class="schedule">
-<%= link_to index_schedule_path(@from.last_month.strftime("%Y%m")) do %>
-  先月(<%= @from.last_month.strftime("%-m月") %>)のイベント
+<%= link_to index_schedule_path(@from.last_month.strftime("%Y%m")), {:class=>"schedule_prev"} do %>
+  先月(<%= @from.last_month.strftime("%Y/%-m") %>)
 <% end %>
-<%= link_to index_schedule_path(@from.next_month.strftime("%Y%m")) do %>
-  来月(<%= @from.next_month.strftime("%-m月") %>)のイベント
+<%= link_to index_schedule_path(@from.next_month.strftime("%Y%m")), {:class=>"schedule_next"} do %>
+  来月(<%= @from.next_month.strftime("%Y/%-m") %>)
 <% end %>
-  <h2 class="schedule_title">今月(<%= @from.strftime("%-m月") %>)のイベント</h2>
+  <h2 class="schedule_title">今月(<%= @from.strftime("%Y/%-m") %>)のイベント</h2>
 	<table class="schedule_calendar">
     <tr>
       <th></th>
