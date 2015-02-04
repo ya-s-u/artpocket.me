@@ -1,14 +1,14 @@
 <% set_meta_tags({
-title: "#{Time.now.strftime("%-m月")}のスケジュール",
+title: "#{@from.strftime("%-m月")}のスケジュール",
 og: {
   type: 'website',
 },
 })%>
 
 <div class="schedule">
-<a>先月(<%= Time.now.last_month.strftime("%-m月") %>)のイベント</a>
-<a>来月(<%= Time.now.next_month.strftime("%-m月") %>)のイベント</a>
-  <h2 class="schedule_title">今月(<%= Time.now.strftime("%-m月") %>)のイベント</h2>
+<a>先月(<%= @from.last_month.strftime("%-m月") %>)のイベント</a>
+<a>来月(<%= @from.next_month.strftime("%-m月") %>)のイベント</a>
+  <h2 class="schedule_title">今月(<%= @from.strftime("%-m月") %>)のイベント</h2>
 	<table class="schedule_calendar">
     <tr>
       <th></th>
