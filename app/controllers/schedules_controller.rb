@@ -18,7 +18,7 @@ class SchedulesController < ApplicationController
     @schedules.each_with_index do |post, i|
       for j in 0..@size do
         day = @from + j.day
-        @calendar[i][j] = post.open_date <= day && day <= post.close_date ? true: false
+        @calendar[i][j] = post.open_date.beginning_of_day <= day.beginning_of_day && day.end_of_day <= post.close_date.end_of_day ? true: false
       end
     end
   end
