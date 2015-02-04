@@ -6,8 +6,12 @@ og: {
 })%>
 
 <div class="schedule">
-<a>先月(<%= @from.last_month.strftime("%-m月") %>)のイベント</a>
-<a>来月(<%= @from.next_month.strftime("%-m月") %>)のイベント</a>
+<%= link_to index_schedule_path(@from.last_month.strftime("%Y%m")) do %>
+  先月(<%= @from.last_month.strftime("%-m月") %>)のイベント
+<% end %>
+<%= link_to index_schedule_path(@from.next_month.strftime("%Y%m")) do %>
+  来月(<%= @from.next_month.strftime("%-m月") %>)のイベント
+<% end %>
   <h2 class="schedule_title">今月(<%= @from.strftime("%-m月") %>)のイベント</h2>
 	<table class="schedule_calendar">
     <tr>
