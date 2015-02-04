@@ -1,18 +1,18 @@
 <% set_meta_tags({
-title: "#{@from.strftime("%-m月")}のスケジュール",
+title: "#{@from.strftime("%Y年%-m月")}のスケジュール",
 og: {
   type: 'website',
 },
 })%>
 
 <div class="schedule">
-<%= link_to index_schedule_path(@from.last_month.strftime("%Y%m")) do %>
-  先月(<%= @from.last_month.strftime("%-m月") %>)のイベント
+<%= link_to index_schedule_path(@from.last_month.strftime("%Y%m")), {:class=>"schedule_prev"} do %>
+  先月(<%= @from.last_month.strftime("%Y/%-m") %>)
 <% end %>
-<%= link_to index_schedule_path(@from.next_month.strftime("%Y%m")) do %>
-  来月(<%= @from.next_month.strftime("%-m月") %>)のイベント
+<%= link_to index_schedule_path(@from.next_month.strftime("%Y%m")), {:class=>"schedule_next"} do %>
+  来月(<%= @from.next_month.strftime("%Y/%-m") %>)
 <% end %>
-  <h2 class="schedule_title">今月(<%= @from.strftime("%-m月") %>)のイベント</h2>
+  <h2 class="schedule_title">今月(<%= @from.strftime("%Y/%-m") %>)のイベント</h2>
 	<table class="schedule_calendar">
     <tr>
       <th></th>
@@ -39,6 +39,32 @@ og: {
 			<% end %>
 		</tr>
 		<% @schedules.each_with_index do |post, i| %>
+      <% if i != 0 && i%10 == 0 %>
+        <tr>
+          <th></th>
+          <% for j in 0...@size do %>
+            <th
+              <% if @from.days_since(j).strftime("%w").to_i == 0 %>
+                class="sunday"
+              <% elsif @from.days_since(j).strftime("%w").to_i == 6 %>
+                class="saturday"
+              <% end %>
+            ><%= @from.days_since(j).strftime("%-d") %></th>
+          <% end %>
+        </tr>
+        <tr>
+          <th></th>
+          <% for j in 0...@size do %>
+            <th
+              <% if @from.days_since(j).strftime("%w").to_i == 0 %>
+                class="sunday"
+              <% elsif @from.days_since(j).strftime("%w").to_i == 6 %>
+                class="saturday"
+              <% end %>
+            ><%= day_ja(@from.days_since(j).strftime("%w").to_i) %></th>
+          <% end %>
+        </tr>
+      <% end %>
 			<tr>
 				<td>
           <%= link_to show_post_path(post.id) do %>
