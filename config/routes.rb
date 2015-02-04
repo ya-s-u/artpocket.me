@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'flyer/category/:category' => 'posts#category', as: :category_post
   get 'flyer/:id' => 'posts#show', as: :show_post
 
+  # Schedule
+  get 'schedule' => 'schedules#index', as: :this_schedule
+  get 'schedule/:year_month' => 'schedules#index', as: :index_schedule
+
   # Static
   get 'about' => 'statics#about', as: :about_statics
   get 'terms' => 'statics#terms', as: :terms_statics

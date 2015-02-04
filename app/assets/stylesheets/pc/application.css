@@ -268,11 +268,11 @@ body {
 	height: 250px;
 }
 
-.sidebar .schedule {
+.sidebar_schedule {
 	border: 1px solid #eee;
 }
 
-.sidebar .schedule_title  {
+.sidebar_schedule_title  {
 	margin-bottom: 4px;
 	padding: 2px 0;
 	background: #f6f6f6;
@@ -283,25 +283,25 @@ body {
 	border-bottom: 1px solid #eee;
 }
 
-.sidebar .schedule_calendar {
+.sidebar_schedule_list {
 	margin: 5px 10px;
 	width: 278px;
 	line-height: 2.4em;
 }
 
-.sidebar .schedule_calendar a {
+.sidebar_schedule_list a {
 	background: linear-gradient(transparent 60%, #f9c714 0%);
 }
 
-.sidebar .schedule_calendar td:nth-child(2) {
+.sidebar_schedule_list td:nth-child(2) {
 	width: 70px;
 }
 
-.sidebar > .fb {
+.sidebar_fb {
 	height: 260px;
 }
 
-.sidebar > .fb > iframe {
+.sidebar_fb > iframe {
 	border: 1px solid #eee;
 }
 
