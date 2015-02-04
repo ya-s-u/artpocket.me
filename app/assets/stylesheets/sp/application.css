@@ -78,6 +78,7 @@ body {
 }
 
 .header_slidemenu {
+	width: 60px;
 	margin: 13px 0;
 	line-height: 1em;
 }
