@@ -1,14 +1,16 @@
 <nav id="Slidemenu" class="slidemenu">
   <div class="slidemenu_ad">
     <% if true %>
-      <%= link_to image_tag('ad_mikke_sp.png'),
-          'http://mikke-app.com/',
-          {
-            :onclick=>"_gaq.push(['_trackEvent', 'ads', 'mikke', 'sp', , true]);",
-            :target=>"_blank",
-            :class=>"slidemenu_ad_custom"
-          }
-      %>
+      <div class="slidemenu_ad_custom">
+        <p>AD:広告募集中</p>
+        <%= link_to image_tag('ad_mikke_sp.png'),
+            'http://mikke-app.com/',
+            {
+              :onclick=>"_gaq.push(['_trackEvent', 'ads', 'mikke', 'sp', , true]);",
+              :target=>"_blank",
+            }
+        %>
+      </div>
     <% else %>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="slidemenu_ad_google adsbygoogle"
