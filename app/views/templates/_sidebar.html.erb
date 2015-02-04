@@ -10,9 +10,9 @@
     </script>
   </li>
   <% if @today.present? %>
-    <li class="schedule">
-      <h3 class="schedule_title">本日開催中 <%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)</h3>
-        <table class="schedule_calendar">
+    <li class="sidebar_schedule">
+      <h3 class="sidebar_schedule_title">本日開催中 <%= Time.zone.now.strftime("%-m/%-d") %>(<%= day_ja(Time.zone.now.strftime("%w").to_i) %>)</h3>
+        <table class="sidebar_schedule_list">
           <% @today.each do |post| %>
             <tr>
               <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
@@ -31,9 +31,9 @@
     </li>
   <% end %>
   <% if @tommorow.present? %>
-    <li class="schedule">
-        <h3 class="schedule_title">明日から開催 <%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)</h3>
-        <table class="schedule_calendar">
+    <li class="sidebar_schedule">
+        <h3 class="sidebar_schedule_title">明日から開催 <%= 1.days.from_now.strftime("%-m/%-d") %>(<%= day_ja(1.days.from_now.strftime("%w").to_i) %>)</h3>
+        <table class="sidebar_schedule_list">
           <% @tommorow.each do |post| %>
             <tr>
               <td><%= link_to(truncate(post.title, :length=>18), show_post_path(post.id)) %></td>
@@ -43,7 +43,7 @@
         </table>
     </li>
   <% end %>
-  <li class="fb">
+  <li class="sidebar_fb">
     <iframe        src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fartpocket.me&amp;width=277&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=705208482920560"
             scrolling="no"
             frameborder="0"
