@@ -30,13 +30,8 @@
 				<% end %>
 			</li>
 		</ul>
-		<ul class="header_share">
-			<li>
-				<%= link_to 'https://www.facebook.com/artpocket.me', {:target=>"_blank"} do %><i class="icon-facebook facebook"></i><% end %>
-			</li>
-			<li>
-				<%= link_to 'https://twitter.com/art_pocket', {:target=>"_blank"} do %><i class="icon-twitter twitter"></i><% end %>
-			</li>
-		</ul>
+		<%= link_to this_schedule_path, {:class=>"header_schedule"} do %>
+			<span>NEW</span>イベントカレンダー
+		<% end %>
 	</div>
 </div>
