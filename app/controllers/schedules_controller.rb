@@ -11,7 +11,7 @@ class SchedulesController < ApplicationController
     @from = set_time.beginning_of_month
     to = set_time.end_of_month
 
-    @schedules = Post.where("(open_date <= ? AND ? <= close_date)OR(? <= open_date AND close_date <= ?)OR(open_date <= ? AND ? <= close_date)", @from, @from, @from, to, to, to).order(open_date: :desc)
+    @schedules = Post.where("(open_date <= ? AND ? <= close_date)OR(? <= open_date AND close_date <= ?)OR(open_date <= ? AND ? <= close_date)", @from, @from, @from, to, to, to).order(open_date: :asc)
 
     @size = set_time.at_end_of_month.day
     @calendar = Array.new(@schedules.length){ Array.new(@size) }
