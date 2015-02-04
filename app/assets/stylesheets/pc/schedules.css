@@ -16,6 +16,10 @@
 	height: 40px;
 }
 
+.schedule_calendar tr:nth-child(2n) {
+  background: #f2f2f2;
+}
+
 .schedule_calendar th, .schedule_calendar td {
   width: 22px;
 	border: 1px solid white;
@@ -39,6 +43,10 @@
 
 .schedule_calendar td.sunday {background: rgba(255, 0, 0, 0.05)}
 .schedule_calendar td.saturday {background: rgba(0, 158, 255, 0.05)}
+
+.schedule_calendar a:hover .schedule_calendar_title {
+  color: #F9C704;
+}
 
 .schedule_calendar_title {
   overflow: hidden;
