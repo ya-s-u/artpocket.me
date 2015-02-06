@@ -9,7 +9,7 @@ class Picture < ActiveRecord::Base
   end
 
   has_attached_file :image, :styles => {
-      :resized => "440x9999>",
+      :resized => "880x9999>",
     },
     :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/s3.yml",

@@ -13,7 +13,7 @@ og: {
     <%= @from.next_month.strftime("%Y年%-m月") %>
   <% end %>
   <h2 class="schedule_title"><%= @from.strftime("%Y年%-m月") %>のイベント</h2>
-	<table class="schedule_calendar">
+  <table class="schedule_calendar">
     <tr>
       <th></th>
       <% for i in 0...@size do %>
@@ -26,19 +26,19 @@ og: {
         ><%= @from.days_since(i).strftime("%-d") %></th>
       <% end %>
     </tr>
-		<tr>
-			<th></th>
-			<% for i in 0...@size do %>
-				<th
+    <tr>
+      <th></th>
+      <% for i in 0...@size do %>
+        <th
           <% if @from.days_since(i).strftime("%w").to_i == 0 %>
             class="sunday"
           <% elsif @from.days_since(i).strftime("%w").to_i == 6 %>
             class="saturday"
           <% end %>
         ><%= day_ja(@from.days_since(i).strftime("%w").to_i) %></th>
-			<% end %>
-		</tr>
-		<% @schedules.each_with_index do |post, i| %>
+      <% end %>
+    </tr>
+    <% @schedules.each_with_index do |post, i| %>
       <% if i != 0 && i%10 == 0 %>
         <tr>
           <th></th>
@@ -65,8 +65,8 @@ og: {
           <% end %>
         </tr>
       <% end %>
-			<tr>
-				<td>
+      <tr>
+        <td>
           <%= link_to show_post_path(post.id) do %>
             <h3 class="schedule_calendar_title"><%= post.title %></h3>
             <p class="schedule_calendar_date">
@@ -78,16 +78,16 @@ og: {
             </p>
           <% end %>
         </td>
-				<% for j in 0...@size do %>
-					<td
+        <% for j in 0...@size do %>
+          <td
             <% if @from.days_since(j).strftime("%w").to_i == 0 %>
               class="sunday"
             <% elsif @from.days_since(j).strftime("%w").to_i == 6 %>
               class="saturday"
             <% end %>
           ><span class='<%= "enable enable_#{post.category.title}" if @calendar[i][j] %>'></span></td>
-				<% end %>
-			</tr>
-		<% end %>
-	</table>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
 </div>
