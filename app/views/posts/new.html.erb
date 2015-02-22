@@ -29,7 +29,7 @@ og: {
 						</li>
 						<li>
 							<div id="preview_field4"></div>
-							<%= file_field_tag "images[]", :type => "file", :onchange => "preview(this,4)" %>
+							<%= file_field_tag "images[]", :type => "file", :accept => "image/*", :onchange => "preview(this,4)" %>
 						</li>
 					</ul>
 					<p class="form_center_text clear">※「.jpg」「.jpeg」「.png」ファイルを4つまでアップロードできます。</p>
