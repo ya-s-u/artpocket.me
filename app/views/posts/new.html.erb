@@ -17,15 +17,15 @@ og: {
 					<ul class="form_uploads">
 						<li>
 							<div id="preview_field1"></div>
-	            <%= file_field_tag "images[]", :type => "file", :onchange => "preview(this,1)" %>
+	            <%= file_field_tag "images[]", :type => "file", :accept => "image/*", :onchange => "preview(this,1)" %>
 						</li>
 						<li>
 							<div id="preview_field2"></div>
-							<%= file_field_tag "images[]", :type => "file", :onchange => "preview(this,2)" %>
+							<%= file_field_tag "images[]", :type => "file", :accept => "image/*", :onchange => "preview(this,2)" %>
 						</li>
 						<li>
 							<div id="preview_field3"></div>
-							<%= file_field_tag "images[]", :type => "file", :onchange => "preview(this,3)" %>
+							<%= file_field_tag "images[]", :type => "file", :accept => "image/*", :onchange => "preview(this,3)" %>
 						</li>
 						<li>
 							<div id="preview_field4"></div>
